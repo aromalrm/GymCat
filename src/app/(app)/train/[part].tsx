@@ -44,7 +44,8 @@ export default function ExerciseListScreen() {
           accessibilityRole="button"
           style={styles.card}
           onPress={() => {
-            router.push(`/exercise/${exercise.id}`);
+            const query = typeof date === "string" ? `?date=${date}` : "";
+            router.push(`/exercise/${exercise.id}${query}`);
           }}
         >
           {exercise.thumbnailUrl ? (
