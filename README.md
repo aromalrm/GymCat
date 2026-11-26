@@ -1,6 +1,6 @@
 # GymCat
 
-Web UI copied from the Kinetic Obsidian Stitch export. Screens are the exported HTML, including the static figure treatment. There is no auth flow and no real-time 3D engine.
+Web UI uses the Stitch layout under the GymCat name. Screens are the exported HTML, including the static figure treatment. There is no auth flow and no real-time 3D engine.
 
 ## Routes
 
