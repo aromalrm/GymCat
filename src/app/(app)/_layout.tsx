@@ -30,7 +30,8 @@ export default function AppLayout() {
         contentStyle: { backgroundColor: "#14110E" },
       }}
     >
-      <Stack.Screen name="index" options={{ title: "GymCat" }} />
+      <Stack.Screen name="index" options={{ title: "Calendar" }} />
+      <Stack.Screen name="day/[date]" options={{ title: "Day" }} />
     </Stack>
   );
 }

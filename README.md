@@ -18,6 +18,8 @@ If those variables are empty, the auth screens still open and keep a session on 
 
 After sign-in, onboarding asks for height (cm), weight (kg), age, gender, and goal (cut, maintain, or bulk). The calorie target uses Mifflin–St Jeor with a sedentary factor of 1.2, then −500 kcal for cut, no change for maintain, or +300 kcal for bulk. Edit the number before saving. A finished profile is skipped on later launches. It is written to `public.users` when Supabase is configured, and to on-device storage otherwise.
 
+A finished profile opens the monthly calendar. Days with `workout_logs` for the signed-in user show a dot. Tap a date to see that day's exercises. Logging, the body-part picker, and the video player are not built yet, so a new account shows an empty day.
+
 ## Database
 
 Apply `supabase/migrations/20261126120000_initial_schema.sql` in the Supabase SQL editor (or `supabase db push` once the CLI is linked). It creates `users`, `body_parts`, `exercises`, `workout_logs`, and `meal_logs`, enables row level security, and seeds six body parts with five exercises each.
