@@ -4,12 +4,17 @@ import { EXERCISE_DEMO_SOURCE_URL } from "@/constants/demo-video";
 import { useAuth } from "@/providers/auth-provider";
 
 export default function HomeScreen() {
-  const { email, mode, signOut } = useAuth();
+  const { email, mode, profile, signOut } = useAuth();
 
   return (
     <View style={styles.screen}>
       <Text style={styles.heading}>You are signed in</Text>
       <Text style={styles.body}>{email}</Text>
+      {profile ? (
+        <Text style={styles.body}>
+          {profile.goal} · {profile.calorieTarget} kcal · {profile.weightKg} kg
+        </Text>
+      ) : null}
       <Text style={styles.body}>
         {mode === "supabase"
           ? "Session is stored with Supabase."

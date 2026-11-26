@@ -11,9 +11,13 @@ import {
 } from "react";
 
 import { supabaseConfig } from "@/lib/config";
+import type { Profile } from "@/lib/profile";
+import { parseProfile } from "@/lib/profile";
+import { fetchProfile, saveProfile as saveRemoteProfile } from "@/lib/profile-store";
 import { supabase } from "@/lib/supabase";
 
 const LOCAL_SESSION_KEY = "gymcat.localSession";
+const LOCAL_PROFILES_KEY = "gymcat.localProfiles";
 
 type LocalSession = {
   email: string;
@@ -24,9 +28,12 @@ export type AuthContextValue = {
   /** Supabase is wired via env. Otherwise sign-in stays on this device only. */
   mode: "supabase" | "local";
   email: string | null;
+  /** Set when onboarding has been saved. Null means onboarding is still required. */
+  profile: Profile | null;
   signIn: (email: string, password: string) => Promise<string | null>;
   signUp: (email: string, password: string) => Promise<string | null>;
   signOut: () => Promise<void>;
+  saveProfile: (profile: Profile) => Promise<string | null>;
 };
 
 const AuthContext = createContext<AuthContextValue | null>(null);
@@ -51,6 +58,41 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     : "local";
   const [ready, setReady] = useState(false);
   const [email, setEmail] = useState<string | null>(null);
+  const [userId, setUserId] = useState<string | null>(null);
+  const [profile, setProfile] = useState<Profile | null>(null);
+
+  const applyLocal = useCallback(async (nextEmail: string | null) => {
+    setEmail(nextEmail);
+    setUserId(null);
+    if (!nextEmail) {
+      setProfile(null);
+      return;
+    }
+    const raw = await AsyncStorage.getItem(LOCAL_PROFILES_KEY);
+    if (!raw) {
+      setProfile(null);
+      return;
+    }
+    try {
+      const stored = JSON.parse(raw) as Record<string, unknown>;
+      setProfile(parseProfile(stored[nextEmail]));
+    } catch {
+      setProfile(null);
+    }
+  }, []);
+
+  const applyRemote = useCallback(async (session: Session | null) => {
+    const nextEmail = session?.user.email ?? null;
+    const nextId = session?.user.id ?? null;
+    setEmail(nextEmail);
+    setUserId(nextId);
+    if (!supabase || !nextId) {
+      setProfile(null);
+      return;
+    }
+    const { profile: loaded } = await fetchProfile(supabase, nextId);
+    setProfile(loaded);
+  }, []);
 
   useEffect(() => {
     let cancelled = false;
@@ -58,10 +100,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     async function restore() {
       if (supabase) {
         const { data } = await supabase.auth.getSession();
-        if (!cancelled) {
-          setEmail(data.session?.user.email ?? null);
-          setReady(true);
-        }
+        if (cancelled) return;
+        await applyRemote(data.session);
+        if (!cancelled) setReady(true);
         return;
       }
 
@@ -70,12 +111,13 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       if (raw) {
         try {
           const parsed = JSON.parse(raw) as LocalSession;
-          setEmail(parsed.email);
+          await applyLocal(parsed.email);
         } catch {
           await AsyncStorage.removeItem(LOCAL_SESSION_KEY);
+          await applyLocal(null);
         }
       }
-      setReady(true);
+      if (!cancelled) setReady(true);
     }
 
     void restore();
@@ -88,7 +130,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
     const { data } = supabase.auth.onAuthStateChange(
       (_event: string, session: Session | null) => {
-        setEmail(session?.user.email ?? null);
+        void applyRemote(session);
       },
     );
 
@@ -96,7 +138,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       cancelled = true;
       data.subscription.unsubscribe();
     };
-  }, []);
+  }, [applyLocal, applyRemote]);
 
   const signIn = useCallback(async (rawEmail: string, password: string) => {
     const email = normalizeEmail(rawEmail);
@@ -108,7 +150,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         LOCAL_SESSION_KEY,
         JSON.stringify({ email } satisfies LocalSession),
       );
-      setEmail(email);
+      await applyLocal(email);
       return null;
     }
 
@@ -117,7 +159,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       password,
     });
     return error?.message ?? null;
-  }, []);
+  }, [applyLocal]);
 
   const signUp = useCallback(async (rawEmail: string, password: string) => {
     const email = normalizeEmail(rawEmail);
@@ -129,7 +171,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         LOCAL_SESSION_KEY,
         JSON.stringify({ email } satisfies LocalSession),
       );
-      setEmail(email);
+      await applyLocal(email);
       return null;
     }
 
@@ -139,7 +181,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       return "Check your email to confirm the account, then log in.";
     }
     return null;
-  }, []);
+  }, [applyLocal]);
 
   const signOut = useCallback(async () => {
     if (supabase) {
@@ -147,11 +189,34 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     }
     await AsyncStorage.removeItem(LOCAL_SESSION_KEY);
     setEmail(null);
+    setUserId(null);
+    setProfile(null);
   }, []);
 
+  const saveProfile = useCallback(
+    async (next: Profile) => {
+      if (!supabase) {
+        if (!email) return "Sign in before saving a profile.";
+        const raw = await AsyncStorage.getItem(LOCAL_PROFILES_KEY);
+        const stored: Record<string, Profile> = raw
+          ? (JSON.parse(raw) as Record<string, Profile>)
+          : {};
+        stored[email] = next;
+        await AsyncStorage.setItem(LOCAL_PROFILES_KEY, JSON.stringify(stored));
+        setProfile(next);
+        return null;
+      }
+      if (!userId) return "Sign in before saving a profile.";
+      const error = await saveRemoteProfile(supabase, userId, next);
+      if (!error) setProfile(next);
+      return error;
+    },
+    [email, userId],
+  );
+
   const value = useMemo(
-    () => ({ ready, mode, email, signIn, signUp, signOut }),
-    [ready, mode, email, signIn, signUp, signOut],
+    () => ({ ready, mode, email, profile, signIn, signUp, signOut, saveProfile }),
+    [ready, mode, email, profile, signIn, signUp, signOut, saveProfile],
   );
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
