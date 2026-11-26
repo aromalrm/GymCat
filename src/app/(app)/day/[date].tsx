@@ -1,9 +1,17 @@
-import { useLocalSearchParams } from "expo-router";
+import { router, useLocalSearchParams } from "expo-router";
 import { useEffect, useState } from "react";
-import { ActivityIndicator, StyleSheet, Text, View } from "react-native";
+import {
+  ActivityIndicator,
+  Pressable,
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+} from "react-native";
 
-import { isIsoDate, logsForDate, type DayLog } from "@/lib/workout-logs";
+import { labelPart, listBodyParts, type BodyPart } from "@/lib/catalog";
 import { supabase } from "@/lib/supabase";
+import { isIsoDate, logsForDate, type DayLog } from "@/lib/workout-logs";
 
 export default function DayScreen() {
   const { date } = useLocalSearchParams<{ date: string }>();
@@ -11,6 +19,8 @@ export default function DayScreen() {
   const [logs, setLogs] = useState<DayLog[]>([]);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(valid);
+  const [parts, setParts] = useState<BodyPart[]>([]);
+  const [partsError, setPartsError] = useState<string | null>(null);
 
   useEffect(() => {
     if (!valid || !date) return;
@@ -26,6 +36,18 @@ export default function DayScreen() {
     };
   }, [date, valid]);
 
+  useEffect(() => {
+    let cancelled = false;
+    void listBodyParts().then((result) => {
+      if (cancelled) return;
+      setParts(result.parts);
+      setPartsError(result.error);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
   if (!valid) {
     return (
       <View style={styles.screen}>
@@ -35,7 +57,7 @@ export default function DayScreen() {
   }
 
   return (
-    <View style={styles.screen}>
+    <ScrollView contentContainerStyle={styles.screen}>
       <Text style={styles.title}>{date}</Text>
       {loading ? <ActivityIndicator color="#F2C14E" /> : null}
       {error ? <Text style={styles.error}>{error}</Text> : null}
@@ -54,7 +76,23 @@ export default function DayScreen() {
           </Text>
         </View>
       ))}
-    </View>
+      <Text style={styles.section}>Body part</Text>
+      {partsError ? <Text style={styles.error}>{partsError}</Text> : null}
+      <View style={styles.grid}>
+        {parts.map((part) => (
+          <Pressable
+            key={part.id}
+            accessibilityRole="button"
+            style={styles.card}
+            onPress={() => {
+              router.push(`/train/${part.id}?date=${date}`);
+            }}
+          >
+            <Text style={styles.cardLabel}>{labelPart(part.name)}</Text>
+          </Pressable>
+        ))}
+      </View>
+    </ScrollView>
   );
 }
 
@@ -90,5 +128,30 @@ const styles = StyleSheet.create({
   },
   detail: {
     color: "#E7D7B8",
+  },
+  section: {
+    color: "#F7F1E8",
+    fontSize: 20,
+    fontWeight: "700",
+    marginTop: 12,
+  },
+  grid: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    gap: 12,
+  },
+  card: {
+    width: "47%",
+    backgroundColor: "#221C16",
+    borderRadius: 12,
+    minHeight: 88,
+    alignItems: "center",
+    justifyContent: "center",
+    padding: 12,
+  },
+  cardLabel: {
+    color: "#F2C14E",
+    fontSize: 18,
+    fontWeight: "700",
   },
 });
