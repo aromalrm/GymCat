@@ -18,7 +18,7 @@ If those variables are empty, the auth screens still open and keep a session on 
 
 After sign-in, onboarding asks for height (cm), weight (kg), age, gender, and goal (cut, maintain, or bulk). The calorie target uses Mifflin–St Jeor with a sedentary factor of 1.2, then −500 kcal for cut, no change for maintain, or +300 kcal for bulk. Edit the number before saving. A finished profile is skipped on later launches. It is written to `public.users` when Supabase is configured, and to on-device storage otherwise.
 
-A finished profile opens the monthly calendar. Days with `workout_logs` for the signed-in user show a dot. Tap a date to see that day's exercises. Logging, the body-part picker, and the video player are not built yet, so a new account shows an empty day.
+A finished profile opens the monthly calendar. Days with `workout_logs` for the signed-in user show a dot. Tap a date to see that day's logged exercises (empty until logging exists) and six body-part cards. A card opens about five exercises, then a detail screen with instructions and the demo. Seeded video URLs are the X post, not a video file, so the detail screen says so and opens the post in the browser. An `mp4` (or similar) URL plays with expo-video. Without Supabase, the same seeded catalog is bundled in the app. Set logging is not built yet.
 
 ## Database
 
