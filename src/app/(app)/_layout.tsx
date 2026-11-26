@@ -4,7 +4,7 @@ import { ActivityIndicator, StyleSheet, View } from "react-native";
 import { useAuth } from "@/providers/auth-provider";
 
 export default function AppLayout() {
-  const { ready, email } = useAuth();
+  const { ready, email, profile } = useAuth();
 
   if (!ready) {
     return (
@@ -16,6 +16,10 @@ export default function AppLayout() {
 
   if (!email) {
     return <Redirect href="/sign-in" />;
+  }
+
+  if (!profile) {
+    return <Redirect href="/(onboarding)" />;
   }
 
   return (

@@ -4,7 +4,7 @@ import { ActivityIndicator, StyleSheet, View } from "react-native";
 import { useAuth } from "@/providers/auth-provider";
 
 export default function Index() {
-  const { ready, email } = useAuth();
+  const { ready, email, profile } = useAuth();
 
   if (!ready) {
     return (
@@ -15,7 +15,7 @@ export default function Index() {
   }
 
   if (email) {
-    return <Redirect href="/(app)" />;
+    return <Redirect href={profile ? "/(app)" : "/(onboarding)"} />;
   }
 
   return <Redirect href="/sign-in" />;
