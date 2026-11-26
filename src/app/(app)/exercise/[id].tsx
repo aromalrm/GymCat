@@ -12,6 +12,7 @@ import {
 import { PressableScale } from "@/components/pressable-scale";
 
 import { ExerciseDemo } from "@/components/exercise-demo";
+import { colors, type as fonts } from "@/constants/theme";
 import { getExercise, labelPart, type Exercise } from "@/lib/catalog";
 import { addWorkout, isIsoDate, logsForDate, type DayLog } from "@/lib/workout-logs";
 import { useAuth } from "@/providers/auth-provider";
@@ -109,11 +110,16 @@ export default function ExerciseDetailScreen() {
 
   return (
     <ScrollView contentContainerStyle={styles.screen}>
+      <Text style={styles.kicker}>KINETIC NODE  ·  {labelPart(exercise.bodyPartName).toUpperCase()}</Text>
       <Text style={styles.title}>{exercise.name}</Text>
-      <Text style={styles.muscle}>{labelPart(exercise.bodyPartName)}</Text>
+      <View style={styles.viewport}>
+        <View style={styles.figureHead} />
+        <View style={styles.figureTorso} />
+        <Text style={styles.viewportNote}>Static form guide. Swap in a video file to play it here.</Text>
+      </View>
       <ExerciseDemo url={exercise.videoUrl} />
       <Text style={styles.instructions}>{exercise.instructions}</Text>
-      <Text style={styles.section}>Log for {date}</Text>
+      <Text style={styles.section}>Log set  ·  {date}</Text>
       {mode === "local" ? (
         <Text style={styles.hint}>Saved on this device only.</Text>
       ) : null}
@@ -149,7 +155,7 @@ export default function ExerciseDetailScreen() {
           void saveLog();
         }}
       >
-        <Text style={styles.buttonLabel}>Save set</Text>
+        <Text style={styles.buttonLabel}>SAVE SET</Text>
       </PressableScale>
       {logs.length === 0 ? (
         <Text style={styles.hint}>Nothing logged for this exercise on this date.</Text>
@@ -173,59 +179,96 @@ const styles = StyleSheet.create({
   screen: {
     padding: 24,
     gap: 12,
-    backgroundColor: "#0A0A0A",
+    backgroundColor: colors.canvas,
+  },
+  kicker: {
+    color: colors.volt,
+    fontFamily: fonts.headline,
+    fontSize: 11,
+    letterSpacing: 1.2,
   },
   title: {
-    color: "#FFFFFF",
-    fontSize: 40,
-    fontWeight: "800",
-    letterSpacing: -1.2,
+    color: colors.text,
+    fontFamily: fonts.display,
+    fontSize: 34,
+    letterSpacing: -0.6,
   },
-  muscle: {
-    color: "#A3A3A3",
-    fontSize: 16,
+  viewport: {
+    minHeight: 200,
+    borderRadius: 16,
+    backgroundColor: colors.surface,
+    borderWidth: 1,
+    borderColor: colors.line,
+    alignItems: "center",
+    justifyContent: "center",
+    gap: 8,
   },
+  figureHead: {
+    width: 36,
+    height: 36,
+    borderRadius: 18,
+    borderWidth: 2,
+    borderColor: colors.cyan,
+  },
+  figureTorso: {
+    width: 90,
+    height: 70,
+    borderWidth: 2,
+    borderColor: colors.volt,
+    borderRadius: 24,
+  },
+  viewportNote: { color: colors.muted, fontFamily: fonts.body, fontSize: 12 },
   instructions: {
-    color: "#FFFFFF",
+    color: colors.text,
+    fontFamily: fonts.body,
     lineHeight: 22,
   },
   error: {
-    color: "#FFFFFF",
+    color: colors.error,
+    fontFamily: fonts.body,
   },
   section: {
-    color: "#FFFFFF",
-    fontSize: 20,
-    fontWeight: "700",
+    color: colors.text,
+    fontFamily: fonts.display,
+    fontSize: 22,
     marginTop: 8,
   },
   hint: {
-    color: "#A3A3A3",
+    color: colors.muted,
+    fontFamily: fonts.body,
   },
   input: {
-    backgroundColor: "#141414",
-    color: "#FFFFFF",
-    borderRadius: 999,
-    paddingHorizontal: 18,
+    backgroundColor: "#070A10",
+    color: colors.text,
+    fontFamily: fonts.body,
+    borderRadius: 8,
+    borderWidth: 1,
+    borderColor: "rgba(255,255,255,0.12)",
+    paddingHorizontal: 14,
     paddingVertical: 14,
     fontSize: 16,
   },
   button: {
-    backgroundColor: "#FFFFFF",
+    backgroundColor: colors.volt,
     borderRadius: 999,
     minHeight: 52,
     alignItems: "center",
     justifyContent: "center",
   },
   buttonLabel: {
-    color: "#0A0A0A",
-    fontWeight: "700",
+    color: colors.ink,
+    fontFamily: fonts.headline,
+    letterSpacing: 1,
   },
   log: {
-    backgroundColor: "#141414",
-    borderRadius: 12,
+    backgroundColor: colors.surface,
+    borderRadius: 8,
+    borderWidth: 1,
+    borderColor: colors.line,
     padding: 14,
   },
   logText: {
-    color: "#FFFFFF",
+    color: colors.text,
+    fontFamily: fonts.body,
   },
 });

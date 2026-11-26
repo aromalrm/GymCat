@@ -4,6 +4,7 @@ import { StyleSheet, Text, View } from "react-native";
 
 import { PressableScale } from "@/components/pressable-scale";
 
+import { colors, type as fonts } from "@/constants/theme";
 import { isVideoFileUrl } from "@/lib/catalog";
 
 export function ExerciseDemo({ url }: { url: string }) {
@@ -47,24 +48,28 @@ function VideoFile({ url }: { url: string }) {
 
 const styles = StyleSheet.create({
   box: {
-    backgroundColor: "#141414",
+    backgroundColor: colors.surface,
+    borderWidth: 1,
+    borderColor: colors.line,
     borderRadius: 12,
     padding: 14,
     gap: 12,
   },
   copy: {
-    color: "#A3A3A3",
+    color: colors.muted,
+    fontFamily: fonts.body,
     lineHeight: 22,
   },
   button: {
     alignSelf: "flex-start",
-    backgroundColor: "#FFFFFF",
+    backgroundColor: colors.volt,
     borderRadius: 999,
     paddingHorizontal: 16,
     paddingVertical: 10,
   },
   buttonLabel: {
-    color: "#0A0A0A",
+    color: colors.ink,
+    fontFamily: fonts.headline,
     fontWeight: "700",
   },
   video: {

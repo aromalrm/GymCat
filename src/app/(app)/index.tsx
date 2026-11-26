@@ -5,10 +5,11 @@ import { StyleSheet, Text, View } from "react-native";
 import Animated, { FadeInDown } from "react-native-reanimated";
 
 import { PressableScale } from "@/components/pressable-scale";
+import { colors, type as fonts } from "@/constants/theme";
 import { workoutDatesInMonth } from "@/lib/workout-logs";
 import { useAuth } from "@/providers/auth-provider";
 
-const GOLD = "#FFFFFF";
+const GOLD = colors.volt;
 
 export default function HomeScreen() {
   const { email, profile, mode, signOut } = useAuth();
@@ -38,8 +39,8 @@ export default function HomeScreen() {
   return (
     <View style={styles.screen}>
       <Animated.View entering={FadeInDown.duration(420)} style={styles.header}>
-        <Text style={styles.kicker}>{email}</Text>
-        <Text style={styles.headline}>Train</Text>
+        <Text style={styles.kicker}>TELEMETRY SYNCHRONIZATION  ·  {email}</Text>
+        <Text style={styles.headline}>Calendar & weekly split</Text>
         {profile ? (
           <Text style={styles.meta}>{profile.calorieTarget} kcal target</Text>
         ) : null}
@@ -92,16 +93,19 @@ export default function HomeScreen() {
           if (month) void loadMonth(month.year, month.month);
         }}
         theme={{
-          calendarBackground: "#0A0A0A",
-          backgroundColor: "#0A0A0A",
-          dayTextColor: "#FFFFFF",
-          monthTextColor: "#FFFFFF",
+          calendarBackground: colors.canvas,
+          backgroundColor: colors.canvas,
+          dayTextColor: colors.text,
+          monthTextColor: colors.text,
           textDisabledColor: "#3A3A3A",
-          textSectionTitleColor: "#A3A3A3",
-          arrowColor: GOLD,
-          todayTextColor: GOLD,
-          selectedDayBackgroundColor: GOLD,
-          selectedDayTextColor: "#0A0A0A",
+          textSectionTitleColor: colors.muted,
+          textDayFontFamily: fonts.body,
+          textMonthFontFamily: fonts.display,
+          textDayHeaderFontFamily: fonts.headline,
+          arrowColor: colors.volt,
+          todayTextColor: colors.volt,
+          selectedDayBackgroundColor: colors.volt,
+          selectedDayTextColor: colors.ink,
         }}
       />
       </Animated.View>
@@ -112,7 +116,7 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
-    backgroundColor: "#0A0A0A",
+    backgroundColor: colors.canvas,
   },
   header: {
     paddingHorizontal: 20,
@@ -121,19 +125,21 @@ const styles = StyleSheet.create({
     gap: 6,
   },
   kicker: {
-    color: "#A3A3A3",
-    fontSize: 13,
-    fontWeight: "600",
+    color: colors.volt,
+    fontFamily: fonts.headline,
+    fontSize: 11,
+    letterSpacing: 1.2,
   },
   headline: {
-    color: "#FFFFFF",
-    fontSize: 48,
-    fontWeight: "800",
-    letterSpacing: -1.6,
-    lineHeight: 50,
+    color: colors.text,
+    fontFamily: fonts.display,
+    fontSize: 36,
+    letterSpacing: -0.8,
+    lineHeight: 42,
   },
   meta: {
-    color: "#A3A3A3",
+    color: colors.muted,
+    fontFamily: fonts.body,
   },
   actions: {
     flexDirection: "row",
@@ -142,33 +148,34 @@ const styles = StyleSheet.create({
     marginTop: 8,
   },
   pill: {
-    backgroundColor: "#FFFFFF",
+    backgroundColor: colors.volt,
     borderRadius: 999,
     paddingHorizontal: 14,
     paddingVertical: 8,
   },
   pillLabel: {
-    color: "#0A0A0A",
+    color: colors.ink,
     fontWeight: "700",
   },
   pillGhost: {
     borderRadius: 999,
     borderWidth: 1,
-    borderColor: "#FFFFFF",
+    borderColor: colors.cyan,
     paddingHorizontal: 14,
     paddingVertical: 8,
   },
   pillGhostLabel: {
-    color: "#FFFFFF",
-    fontWeight: "700",
+    color: colors.cyan,
+    fontFamily: fonts.headline,
   },
   note: {
-    color: "#A3A3A3",
+    color: colors.muted,
+    fontFamily: fonts.body,
     paddingHorizontal: 16,
     paddingBottom: 8,
   },
   error: {
-    color: "#FFFFFF",
+    color: colors.error,
     paddingHorizontal: 16,
     paddingBottom: 8,
   },

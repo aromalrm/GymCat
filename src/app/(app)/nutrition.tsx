@@ -5,6 +5,7 @@ import Animated, { FadeInDown } from "react-native-reanimated";
 
 import { PressableScale } from "@/components/pressable-scale";
 
+import { colors, type as fonts } from "@/constants/theme";
 import { addMeal, mealsForDate, type MealLog } from "@/lib/meal-logs";
 import { isIsoDate } from "@/lib/workout-logs";
 import { useAuth } from "@/providers/auth-provider";
@@ -79,7 +80,8 @@ export default function NutritionScreen() {
 
   return (
     <ScrollView contentContainerStyle={styles.screen} keyboardShouldPersistTaps="handled">
-      <Text style={styles.headline}>Nutrition</Text>
+      <Text style={styles.kicker}>HYPERTROPHY FUELING PROTOCOL</Text>
+      <Text style={styles.headline}>Nutrition & fuel matrix</Text>
       <Text style={styles.lead}>
         Total calories for a day. Protein, carbs, and fat are optional grams.
         {mode === "local" ? " Saved on this device only." : ""}
@@ -97,7 +99,7 @@ export default function NutritionScreen() {
           void save();
         }}
       >
-        <Text style={styles.buttonLabel}>Save intake</Text>
+        <Text style={styles.buttonLabel}>LOG FUEL INTAKE</Text>
       </PressableScale>
       <Text style={styles.total}>{isIsoDate(date) ? `${total} kcal on ${date}` : "Invalid date"}</Text>
       {meals.map((meal, index) => (
@@ -145,65 +147,82 @@ const styles = StyleSheet.create({
   screen: {
     padding: 24,
     gap: 12,
-    backgroundColor: "#0A0A0A",
+    backgroundColor: colors.canvas,
+  },
+  kicker: {
+    color: colors.volt,
+    fontFamily: fonts.headline,
+    fontSize: 11,
+    letterSpacing: 1.2,
   },
   headline: {
-    color: "#FFFFFF",
-    fontSize: 44,
-    fontWeight: "800",
-    letterSpacing: -1.4,
+    color: colors.text,
+    fontFamily: fonts.display,
+    fontSize: 36,
+    letterSpacing: -0.8,
   },
   lead: {
-    color: "#A3A3A3",
+    color: colors.muted,
+    fontFamily: fonts.body,
     lineHeight: 22,
   },
   field: {
     gap: 6,
   },
   label: {
-    color: "#FFFFFF",
-    fontWeight: "600",
+    color: colors.muted,
+    fontFamily: fonts.headline,
+    fontSize: 12,
+    letterSpacing: 0.6,
   },
   input: {
-    backgroundColor: "#141414",
-    color: "#FFFFFF",
+    backgroundColor: "#070A10",
+    color: colors.text,
+    fontFamily: fonts.body,
+    borderWidth: 1,
+    borderColor: "rgba(255,255,255,0.12)",
     borderRadius: 999,
     paddingHorizontal: 18,
     paddingVertical: 14,
     fontSize: 16,
   },
   message: {
-    color: "#FFFFFF",
+    color: colors.emerald,
+    fontFamily: fonts.body,
   },
   button: {
-    backgroundColor: "#FFFFFF",
+    backgroundColor: colors.volt,
     borderRadius: 999,
     minHeight: 52,
     alignItems: "center",
     justifyContent: "center",
   },
   buttonLabel: {
-    color: "#0A0A0A",
-    fontWeight: "700",
-    fontSize: 16,
+    color: colors.ink,
+    fontFamily: fonts.headline,
+    letterSpacing: 1,
+    fontSize: 14,
   },
   total: {
-    color: "#FFFFFF",
-    fontSize: 18,
-    fontWeight: "700",
+    color: colors.volt,
+    fontFamily: fonts.display,
+    fontSize: 36,
     marginTop: 8,
   },
   row: {
-    backgroundColor: "#141414",
+    backgroundColor: colors.surface,
+    borderWidth: 1,
+    borderColor: colors.line,
     borderRadius: 12,
     padding: 14,
     gap: 4,
   },
   rowTitle: {
-    color: "#FFFFFF",
-    fontWeight: "600",
+    color: colors.text,
+    fontFamily: fonts.headline,
   },
   rowMeta: {
-    color: "#A3A3A3",
+    color: colors.cyan,
+    fontFamily: fonts.body,
   },
 });

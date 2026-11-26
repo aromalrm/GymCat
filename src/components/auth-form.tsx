@@ -10,6 +10,7 @@ import {
 import Animated, { FadeInDown } from "react-native-reanimated";
 
 import { PressableScale } from "@/components/pressable-scale";
+import { colors, type as fonts } from "@/constants/theme";
 import { useAuth } from "@/providers/auth-provider";
 
 type Props = {
@@ -39,7 +40,7 @@ export function AuthForm({ mode }: Props) {
   return (
     <View style={styles.screen}>
       <Animated.View entering={FadeInDown.duration(500)}>
-        <Text style={styles.brand}>GYMCAT</Text>
+        <Text style={styles.brand}>KINETIX</Text>
         <Text style={styles.title}>{title}</Text>
       </Animated.View>
       {auth.mode === "local" ? (
@@ -103,44 +104,49 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     padding: 24,
-    backgroundColor: "#0A0A0A",
+    backgroundColor: colors.canvas,
     gap: 12,
   },
   brand: {
-    color: "#FFFFFF",
-    fontSize: 14,
-    fontWeight: "700",
+    color: colors.volt,
+    fontFamily: fonts.headline,
+    fontSize: 12,
     letterSpacing: 1,
     textTransform: "uppercase",
   },
   title: {
-    color: "#FFFFFF",
-    fontSize: 56,
-    fontWeight: "800",
+    color: colors.text,
+    fontFamily: fonts.display,
+    fontSize: 48,
     letterSpacing: -1.5,
     lineHeight: 58,
     marginBottom: 8,
   },
   banner: {
-    color: "#A3A3A3",
-    backgroundColor: "#141414",
+    color: colors.muted,
+    fontFamily: fonts.body,
+    backgroundColor: colors.surface,
     padding: 12,
     borderRadius: 12,
     lineHeight: 20,
   },
   input: {
-    backgroundColor: "#141414",
-    color: "#FFFFFF",
+    backgroundColor: "#070A10",
+    color: colors.text,
+    fontFamily: fonts.body,
+    borderWidth: 1,
+    borderColor: "rgba(255,255,255,0.12)",
     borderRadius: 999,
     paddingHorizontal: 18,
     paddingVertical: 14,
     fontSize: 16,
   },
   message: {
-    color: "#FFFFFF",
+    color: colors.error,
+    fontFamily: fonts.body,
   },
   button: {
-    backgroundColor: "#FFFFFF",
+    backgroundColor: colors.volt,
     borderRadius: 999,
     minHeight: 52,
     alignItems: "center",
@@ -148,12 +154,14 @@ const styles = StyleSheet.create({
     marginTop: 4,
   },
   buttonLabel: {
-    color: "#0A0A0A",
+    color: colors.ink,
+    fontFamily: fonts.headline,
     fontSize: 16,
     fontWeight: "700",
   },
   link: {
-    color: "#FFFFFF",
+    color: colors.cyan,
+    fontFamily: fonts.body,
     textAlign: "center",
     marginTop: 8,
   },

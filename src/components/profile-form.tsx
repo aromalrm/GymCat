@@ -14,6 +14,7 @@ import Animated, { FadeInDown } from "react-native-reanimated";
 
 import { PressableScale } from "@/components/pressable-scale";
 
+import { colors, type as fonts } from "@/constants/theme";
 import { calorieTarget } from "@/lib/calories";
 import { profileSchema, type Gender, type Goal, type Profile } from "@/lib/profile";
 import { useAuth } from "@/providers/auth-provider";
@@ -91,6 +92,7 @@ export function ProfileForm({
   return (
     <ScrollView contentContainerStyle={styles.screen} keyboardShouldPersistTaps="handled">
       <Animated.View entering={FadeInDown.duration(420)}>
+        <Text style={styles.kicker}>BIOMETRIC CALIBRATION</Text>
         <Text style={styles.headline}>Your body</Text>
         <Text style={styles.lead}>{lead}</Text>
       </Animated.View>
@@ -207,7 +209,7 @@ export function ProfileForm({
         {busy ? (
           <ActivityIndicator color="#0A0A0A" />
         ) : (
-          <Text style={styles.buttonLabel}>{submitLabel}</Text>
+          <Text style={styles.buttonLabel}>{submitLabel.toUpperCase()}</Text>
         )}
       </PressableScale>
     </ScrollView>
@@ -269,31 +271,42 @@ const styles = StyleSheet.create({
   screen: {
     padding: 24,
     gap: 14,
-    backgroundColor: "#0A0A0A",
+    backgroundColor: colors.canvas,
+  },
+  kicker: {
+    color: colors.volt,
+    fontFamily: fonts.headline,
+    fontSize: 11,
+    letterSpacing: 1.4,
   },
   headline: {
-    color: "#FFFFFF",
-    fontSize: 44,
-    fontWeight: "800",
-    letterSpacing: -1.4,
+    color: colors.text,
+    fontFamily: fonts.display,
+    fontSize: 36,
+    letterSpacing: -0.8,
     marginBottom: 8,
   },
   lead: {
-    color: "#A3A3A3",
+    color: colors.muted,
+    fontFamily: fonts.body,
     lineHeight: 22,
   },
   banner: {
-    color: "#A3A3A3",
-    backgroundColor: "#141414",
+    color: colors.muted,
+    fontFamily: fonts.body,
+    backgroundColor: colors.surface,
     padding: 12,
     borderRadius: 12,
   },
   field: { gap: 6 },
-  label: { color: "#FFFFFF", fontWeight: "600" },
+  label: { color: colors.muted, fontFamily: fonts.headline, fontSize: 12, letterSpacing: 0.8 },
   input: {
-    backgroundColor: "#141414",
-    color: "#FFFFFF",
-    borderRadius: 999,
+    backgroundColor: "#070A10",
+    color: colors.text,
+    fontFamily: fonts.body,
+    borderWidth: 1,
+    borderColor: "rgba(255,255,255,0.12)",
+    borderRadius: 8,
     paddingHorizontal: 18,
     paddingVertical: 14,
     fontSize: 16,
@@ -303,21 +316,23 @@ const styles = StyleSheet.create({
     borderRadius: 999,
     paddingHorizontal: 14,
     paddingVertical: 10,
-    backgroundColor: "#141414",
+    backgroundColor: colors.surface,
+    borderWidth: 1,
+    borderColor: colors.line,
   },
-  choiceSelected: { backgroundColor: "#FFFFFF" },
-  choiceLabel: { color: "#FFFFFF", fontWeight: "600" },
-  choiceLabelSelected: { color: "#0A0A0A" },
-  error: { color: "#FFFFFF" },
-  saved: { color: "#FFFFFF" },
-  link: { color: "#FFFFFF" },
+  choiceSelected: { backgroundColor: colors.volt, borderColor: colors.volt },
+  choiceLabel: { color: colors.text, fontFamily: fonts.headline },
+  choiceLabelSelected: { color: colors.ink },
+  error: { color: colors.error, fontFamily: fonts.body },
+  saved: { color: colors.emerald, fontFamily: fonts.body },
+  link: { color: colors.cyan, fontFamily: fonts.body },
   button: {
-    backgroundColor: "#FFFFFF",
+    backgroundColor: colors.volt,
     borderRadius: 999,
     minHeight: 52,
     alignItems: "center",
     justifyContent: "center",
     marginTop: 8,
   },
-  buttonLabel: { color: "#0A0A0A", fontSize: 16, fontWeight: "700" },
+  buttonLabel: { color: colors.ink, fontFamily: fonts.headline, fontSize: 14, letterSpacing: 1 },
 });

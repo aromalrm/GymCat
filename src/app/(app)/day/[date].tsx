@@ -10,6 +10,7 @@ import {
 import Animated, { FadeInDown } from "react-native-reanimated";
 
 import { PressableScale } from "@/components/pressable-scale";
+import { colors, type as fonts } from "@/constants/theme";
 
 import { labelPart, listBodyParts, type BodyPart } from "@/lib/catalog";
 import { isIsoDate, logsForDate, type DayLog } from "@/lib/workout-logs";
@@ -63,7 +64,14 @@ export default function DayScreen() {
 
   return (
     <ScrollView contentContainerStyle={styles.screen}>
-      <Text style={styles.title}>{date}</Text>
+      <Text style={styles.kicker}>KINETIX BIO-SPATIAL</Text>
+      <Text style={styles.title}>Muscle target map</Text>
+      <Text style={styles.dateLine}>{date}</Text>
+      <View style={styles.figure}>
+        <View style={styles.figureHead} />
+        <View style={styles.figureBody} />
+        <Text style={styles.figureCaption}>Static silhouette. Not a live 3D model.</Text>
+      </View>
       {loading ? <ActivityIndicator color="#FFFFFF" /> : null}
       {error ? <Text style={styles.error}>{error}</Text> : null}
       {!loading && !error && logs.length === 0 ? (
@@ -81,7 +89,7 @@ export default function DayScreen() {
           </Text>
         </Animated.View>
       ))}
-      <Text style={styles.section}>Body part</Text>
+      <Text style={styles.section}>Targets</Text>
       {partsError ? <Text style={styles.error}>{partsError}</Text> : null}
       <View style={styles.grid}>
         {parts.map((part, index) => (
@@ -110,42 +118,78 @@ export default function DayScreen() {
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
-    backgroundColor: "#0A0A0A",
+    backgroundColor: colors.canvas,
     padding: 24,
     gap: 12,
   },
-  title: {
-    color: "#FFFFFF",
-    fontSize: 44,
-    fontWeight: "800",
-    letterSpacing: -1.4,
+  kicker: {
+    color: colors.volt,
+    fontFamily: fonts.headline,
+    fontSize: 11,
+    letterSpacing: 1.4,
   },
+  title: {
+    color: colors.text,
+    fontFamily: fonts.display,
+    fontSize: 36,
+    letterSpacing: -0.8,
+  },
+  dateLine: { color: colors.muted, fontFamily: fonts.body },
+  figure: {
+    height: 180,
+    borderRadius: 16,
+    borderWidth: 1,
+    borderColor: colors.line,
+    backgroundColor: colors.surface,
+    alignItems: "center",
+    justifyContent: "center",
+    gap: 8,
+  },
+  figureHead: {
+    width: 28,
+    height: 28,
+    borderRadius: 14,
+    borderWidth: 2,
+    borderColor: colors.cyan,
+  },
+  figureBody: {
+    width: 72,
+    height: 88,
+    borderWidth: 2,
+    borderColor: colors.volt,
+    borderRadius: 28,
+  },
+  figureCaption: { color: colors.muted, fontFamily: fonts.body, fontSize: 12 },
   empty: {
-    color: "#A3A3A3",
+    color: colors.muted,
+    fontFamily: fonts.body,
     lineHeight: 22,
   },
   error: {
-    color: "#FFFFFF",
+    color: colors.error,
+    fontFamily: fonts.body,
   },
   row: {
-    backgroundColor: "#141414",
-    borderRadius: 12,
+    backgroundColor: colors.surface,
+    borderRadius: 8,
+    borderWidth: 1,
+    borderColor: colors.line,
     padding: 14,
     gap: 4,
   },
   name: {
-    color: "#FFFFFF",
+    color: colors.text,
+    fontFamily: fonts.headline,
     fontSize: 16,
-    fontWeight: "600",
   },
   detail: {
-    color: "#A3A3A3",
+    color: colors.muted,
+    fontFamily: fonts.body,
   },
   section: {
-    color: "#FFFFFF",
-    fontSize: 28,
-    fontWeight: "800",
-    letterSpacing: -0.8,
+    color: colors.text,
+    fontFamily: fonts.display,
+    fontSize: 24,
     marginTop: 16,
   },
   grid: {
@@ -155,21 +199,24 @@ const styles = StyleSheet.create({
     width: "100%",
   },
   card: {
-    backgroundColor: "#141414",
-    borderRadius: 20,
+    backgroundColor: colors.surface,
+    borderRadius: 16,
+    borderWidth: 1,
+    borderColor: colors.line,
     minHeight: 112,
     justifyContent: "flex-end",
     padding: 18,
     gap: 4,
   },
   cardIndex: {
-    color: "#A3A3A3",
-    fontWeight: "700",
+    color: colors.cyan,
+    fontFamily: fonts.headline,
+    fontSize: 11,
+    letterSpacing: 1,
   },
   cardLabel: {
-    color: "#FFFFFF",
-    fontSize: 32,
-    fontWeight: "800",
-    letterSpacing: -1,
+    color: colors.text,
+    fontFamily: fonts.display,
+    fontSize: 28,
   },
 });

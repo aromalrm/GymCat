@@ -6,6 +6,7 @@ import Animated, { FadeInDown } from "react-native-reanimated";
 
 import { PressableScale } from "@/components/pressable-scale";
 
+import { colors, type as fonts } from "@/constants/theme";
 import { labelPart, listExercises, type Exercise } from "@/lib/catalog";
 
 export default function ExerciseListScreen() {
@@ -32,6 +33,7 @@ export default function ExerciseListScreen() {
 
   return (
     <ScrollView contentContainerStyle={styles.screen}>
+      <Text style={styles.kicker}>BIOMECHANICAL TRAJECTORY CATALOG</Text>
       <Text style={styles.title}>{title}</Text>
       {typeof date === "string" ? (
         <Text style={styles.meta}>For {date}</Text>
@@ -64,7 +66,8 @@ export default function ExerciseListScreen() {
           )}
           <View style={styles.copy}>
             <Text style={styles.name}>{exercise.name}</Text>
-            <Text style={styles.muscle}>{labelPart(exercise.bodyPartName)}</Text>
+            <Text style={styles.muscle}>{labelPart(exercise.bodyPartName).toUpperCase()}</Text>
+            <Text style={styles.open}>OPEN</Text>
           </View>
         </PressableScale>
         </Animated.View>
@@ -77,26 +80,36 @@ const styles = StyleSheet.create({
   screen: {
     padding: 24,
     gap: 12,
-    backgroundColor: "#0A0A0A",
+    backgroundColor: colors.canvas,
+  },
+  kicker: {
+    color: colors.volt,
+    fontFamily: fonts.headline,
+    fontSize: 11,
+    letterSpacing: 1.4,
   },
   title: {
-    color: "#FFFFFF",
-    fontSize: 44,
-    fontWeight: "800",
-    letterSpacing: -1.4,
+    color: colors.text,
+    fontFamily: fonts.display,
+    fontSize: 36,
+    letterSpacing: -0.8,
   },
   meta: {
-    color: "#A3A3A3",
+    color: colors.muted,
+    fontFamily: fonts.body,
   },
   error: {
-    color: "#FFFFFF",
+    color: colors.error,
+    fontFamily: fonts.body,
   },
   card: {
     flexDirection: "row",
     gap: 12,
     alignItems: "center",
-    backgroundColor: "#141414",
-    borderRadius: 12,
+    backgroundColor: colors.surface,
+    borderRadius: 16,
+    borderWidth: 1,
+    borderColor: colors.line,
     padding: 12,
   },
   thumb: {
@@ -108,20 +121,36 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   thumbLetter: {
-    color: "#FFFFFF",
+    color: colors.volt,
+    fontFamily: fonts.display,
     fontSize: 22,
-    fontWeight: "700",
   },
   copy: {
     flex: 1,
     gap: 4,
   },
   name: {
-    color: "#FFFFFF",
-    fontSize: 16,
-    fontWeight: "600",
+    color: colors.text,
+    fontFamily: fonts.headline,
+    fontSize: 18,
   },
   muscle: {
-    color: "#A3A3A3",
+    color: colors.cyan,
+    fontFamily: fonts.headline,
+    fontSize: 11,
+    letterSpacing: 1,
+  },
+  open: {
+    alignSelf: "flex-start",
+    marginTop: 6,
+    backgroundColor: colors.volt,
+    color: colors.ink,
+    fontFamily: fonts.headline,
+    fontSize: 11,
+    letterSpacing: 0.8,
+    overflow: "hidden",
+    borderRadius: 999,
+    paddingHorizontal: 10,
+    paddingVertical: 4,
   },
 });

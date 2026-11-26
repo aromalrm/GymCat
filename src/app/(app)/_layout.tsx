@@ -1,7 +1,8 @@
 import { Redirect, Stack } from "expo-router";
 import { ActivityIndicator, StyleSheet, View } from "react-native";
 
-import { stackOptions } from "@/constants/theme";
+import { AppShell } from "@/components/app-shell";
+import { colors, stackOptions } from "@/constants/theme";
 import { useAuth } from "@/providers/auth-provider";
 
 export default function AppLayout() {
@@ -10,7 +11,7 @@ export default function AppLayout() {
   if (!ready) {
     return (
       <View style={styles.screen}>
-        <ActivityIndicator color="#FFFFFF" />
+        <ActivityIndicator color={colors.volt} />
       </View>
     );
   }
@@ -24,10 +25,12 @@ export default function AppLayout() {
   }
 
   return (
-      <Stack screenOptions={stackOptions}>
-      <Stack.Screen name="index" options={{ title: "Calendar" }} />
-      <Stack.Screen name="day/[date]" options={{ title: "Day" }} />
-    </Stack>
+    <AppShell>
+      <Stack screenOptions={{ ...stackOptions, headerShown: false }}>
+        <Stack.Screen name="index" />
+        <Stack.Screen name="day/[date]" />
+      </Stack>
+    </AppShell>
   );
 }
 
@@ -36,6 +39,6 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "#0A0A0A",
+    backgroundColor: colors.canvas,
   },
 });
