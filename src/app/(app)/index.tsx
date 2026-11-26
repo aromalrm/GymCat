@@ -1,12 +1,14 @@
 import { Calendar, type DateData } from "react-native-calendars";
 import { useCallback, useState } from "react";
 import { router, useFocusEffect } from "expo-router";
-import { Pressable, StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
+import Animated, { FadeInDown } from "react-native-reanimated";
 
+import { PressableScale } from "@/components/pressable-scale";
 import { workoutDatesInMonth } from "@/lib/workout-logs";
 import { useAuth } from "@/providers/auth-provider";
 
-const GOLD = "#F2C14E";
+const GOLD = "#FFFFFF";
 
 export default function HomeScreen() {
   const { email, profile, mode, signOut } = useAuth();
@@ -35,44 +37,47 @@ export default function HomeScreen() {
 
   return (
     <View style={styles.screen}>
-      <View style={styles.header}>
-        <View style={styles.headerText}>
-          <Text style={styles.email}>{email}</Text>
-          {profile ? (
-            <Text style={styles.meta}>{profile.calorieTarget} kcal</Text>
-          ) : null}
-        </View>
+      <Animated.View entering={FadeInDown.duration(420)} style={styles.header}>
+        <Text style={styles.kicker}>{email}</Text>
+        <Text style={styles.headline}>Train</Text>
+        {profile ? (
+          <Text style={styles.meta}>{profile.calorieTarget} kcal target</Text>
+        ) : null}
         <View style={styles.actions}>
-          <Pressable
+          <PressableScale
             accessibilityRole="button"
+            style={styles.pill}
             onPress={() => {
               router.push("/profile");
             }}
           >
-            <Text style={styles.logout}>Profile</Text>
-          </Pressable>
-          <Pressable
+            <Text style={styles.pillLabel}>Profile</Text>
+          </PressableScale>
+          <PressableScale
             accessibilityRole="button"
+            style={styles.pill}
             onPress={() => {
               router.push("/nutrition");
             }}
           >
-            <Text style={styles.logout}>Nutrition</Text>
-          </Pressable>
-          <Pressable
+            <Text style={styles.pillLabel}>Nutrition</Text>
+          </PressableScale>
+          <PressableScale
             accessibilityRole="button"
+            style={styles.pillGhost}
             onPress={() => {
               void signOut();
             }}
           >
-            <Text style={styles.logout}>Log out</Text>
-          </Pressable>
+            <Text style={styles.pillGhostLabel}>Log out</Text>
+          </PressableScale>
         </View>
-      </View>
+      </Animated.View>
       {mode === "local" ? (
         <Text style={styles.note}>Workout and meal logs stay on this device.</Text>
       ) : null}
       {error ? <Text style={styles.error}>{error}</Text> : null}
+      <Animated.View entering={FadeInDown.delay(80).duration(480)}>
       <Calendar
         current={today}
         markedDates={marks}
@@ -87,18 +92,19 @@ export default function HomeScreen() {
           if (month) void loadMonth(month.year, month.month);
         }}
         theme={{
-          calendarBackground: "#14110E",
-          backgroundColor: "#14110E",
-          dayTextColor: "#F7F1E8",
-          monthTextColor: "#F7F1E8",
-          textDisabledColor: "#5C5348",
-          textSectionTitleColor: "#B7AA9A",
+          calendarBackground: "#0A0A0A",
+          backgroundColor: "#0A0A0A",
+          dayTextColor: "#FFFFFF",
+          monthTextColor: "#FFFFFF",
+          textDisabledColor: "#3A3A3A",
+          textSectionTitleColor: "#A3A3A3",
           arrowColor: GOLD,
           todayTextColor: GOLD,
           selectedDayBackgroundColor: GOLD,
-          selectedDayTextColor: "#1A140C",
+          selectedDayTextColor: "#0A0A0A",
         }}
       />
+      </Animated.View>
     </View>
   );
 }
@@ -106,40 +112,63 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
-    backgroundColor: "#14110E",
+    backgroundColor: "#0A0A0A",
   },
   header: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-    paddingHorizontal: 16,
-    paddingVertical: 12,
+    paddingHorizontal: 20,
+    paddingTop: 8,
+    paddingBottom: 4,
+    gap: 6,
   },
-  headerText: {
-    gap: 2,
-  },
-  email: {
-    color: "#F7F1E8",
+  kicker: {
+    color: "#A3A3A3",
+    fontSize: 13,
     fontWeight: "600",
   },
+  headline: {
+    color: "#FFFFFF",
+    fontSize: 48,
+    fontWeight: "800",
+    letterSpacing: -1.6,
+    lineHeight: 50,
+  },
   meta: {
-    color: "#E7D7B8",
+    color: "#A3A3A3",
   },
   actions: {
     flexDirection: "row",
-    gap: 16,
+    flexWrap: "wrap",
+    gap: 8,
+    marginTop: 8,
   },
-  logout: {
-    color: "#F2C14E",
-    fontWeight: "600",
+  pill: {
+    backgroundColor: "#FFFFFF",
+    borderRadius: 999,
+    paddingHorizontal: 14,
+    paddingVertical: 8,
+  },
+  pillLabel: {
+    color: "#0A0A0A",
+    fontWeight: "700",
+  },
+  pillGhost: {
+    borderRadius: 999,
+    borderWidth: 1,
+    borderColor: "#FFFFFF",
+    paddingHorizontal: 14,
+    paddingVertical: 8,
+  },
+  pillGhostLabel: {
+    color: "#FFFFFF",
+    fontWeight: "700",
   },
   note: {
-    color: "#B7AA9A",
+    color: "#A3A3A3",
     paddingHorizontal: 16,
     paddingBottom: 8,
   },
   error: {
-    color: "#F0A07A",
+    color: "#FFFFFF",
     paddingHorizontal: 16,
     paddingBottom: 8,
   },

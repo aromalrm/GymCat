@@ -1,13 +1,9 @@
 import { useCallback, useState } from "react";
 import { useFocusEffect } from "expo-router";
-import {
-  Pressable,
-  ScrollView,
-  StyleSheet,
-  Text,
-  TextInput,
-  View,
-} from "react-native";
+import { ScrollView, StyleSheet, Text, TextInput, View } from "react-native";
+import Animated, { FadeInDown } from "react-native-reanimated";
+
+import { PressableScale } from "@/components/pressable-scale";
 
 import { addMeal, mealsForDate, type MealLog } from "@/lib/meal-logs";
 import { isIsoDate } from "@/lib/workout-logs";
@@ -83,6 +79,7 @@ export default function NutritionScreen() {
 
   return (
     <ScrollView contentContainerStyle={styles.screen} keyboardShouldPersistTaps="handled">
+      <Text style={styles.headline}>Nutrition</Text>
       <Text style={styles.lead}>
         Total calories for a day. Protein, carbs, and fat are optional grams.
         {mode === "local" ? " Saved on this device only." : ""}
@@ -93,7 +90,7 @@ export default function NutritionScreen() {
       <Field label="Carbs (g)" value={carbs} onChangeText={setCarbs} keyboard="decimal-pad" />
       <Field label="Fat (g)" value={fat} onChangeText={setFat} keyboard="decimal-pad" />
       {message ? <Text style={styles.message}>{message}</Text> : null}
-      <Pressable
+      <PressableScale
         accessibilityRole="button"
         style={styles.button}
         onPress={() => {
@@ -101,15 +98,19 @@ export default function NutritionScreen() {
         }}
       >
         <Text style={styles.buttonLabel}>Save intake</Text>
-      </Pressable>
+      </PressableScale>
       <Text style={styles.total}>{isIsoDate(date) ? `${total} kcal on ${date}` : "Invalid date"}</Text>
-      {meals.map((meal) => (
-        <View key={meal.id} style={styles.row}>
+      {meals.map((meal, index) => (
+        <Animated.View
+          key={meal.id}
+          entering={FadeInDown.delay(index * 40).duration(360)}
+          style={styles.row}
+        >
           <Text style={styles.rowTitle}>{meal.calories} kcal</Text>
           <Text style={styles.rowMeta}>
             P {meal.protein ?? "–"} · C {meal.carbs ?? "–"} · F {meal.fat ?? "–"}
           </Text>
-        </View>
+        </Animated.View>
       ))}
     </ScrollView>
   );
@@ -131,7 +132,7 @@ function Field({
       <Text style={styles.label}>{label}</Text>
       <TextInput
         keyboardType={keyboard}
-        placeholderTextColor="#8A8175"
+        placeholderTextColor="#737373"
         style={styles.input}
         value={value}
         onChangeText={onChangeText}
@@ -144,59 +145,65 @@ const styles = StyleSheet.create({
   screen: {
     padding: 24,
     gap: 12,
-    backgroundColor: "#14110E",
+    backgroundColor: "#0A0A0A",
+  },
+  headline: {
+    color: "#FFFFFF",
+    fontSize: 44,
+    fontWeight: "800",
+    letterSpacing: -1.4,
   },
   lead: {
-    color: "#E7D7B8",
+    color: "#A3A3A3",
     lineHeight: 22,
   },
   field: {
     gap: 6,
   },
   label: {
-    color: "#F7F1E8",
+    color: "#FFFFFF",
     fontWeight: "600",
   },
   input: {
-    backgroundColor: "#221C16",
-    color: "#F7F1E8",
-    borderRadius: 12,
-    paddingHorizontal: 14,
+    backgroundColor: "#141414",
+    color: "#FFFFFF",
+    borderRadius: 999,
+    paddingHorizontal: 18,
     paddingVertical: 14,
     fontSize: 16,
   },
   message: {
-    color: "#F2C14E",
+    color: "#FFFFFF",
   },
   button: {
-    backgroundColor: "#F2C14E",
-    borderRadius: 12,
-    minHeight: 48,
+    backgroundColor: "#FFFFFF",
+    borderRadius: 999,
+    minHeight: 52,
     alignItems: "center",
     justifyContent: "center",
   },
   buttonLabel: {
-    color: "#1A140C",
+    color: "#0A0A0A",
     fontWeight: "700",
     fontSize: 16,
   },
   total: {
-    color: "#F7F1E8",
+    color: "#FFFFFF",
     fontSize: 18,
     fontWeight: "700",
     marginTop: 8,
   },
   row: {
-    backgroundColor: "#221C16",
+    backgroundColor: "#141414",
     borderRadius: 12,
     padding: 14,
     gap: 4,
   },
   rowTitle: {
-    color: "#F7F1E8",
+    color: "#FFFFFF",
     fontWeight: "600",
   },
   rowMeta: {
-    color: "#E7D7B8",
+    color: "#A3A3A3",
   },
 });

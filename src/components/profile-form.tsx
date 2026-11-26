@@ -10,6 +10,9 @@ import {
   TextInput,
   View,
 } from "react-native";
+import Animated, { FadeInDown } from "react-native-reanimated";
+
+import { PressableScale } from "@/components/pressable-scale";
 
 import { calorieTarget } from "@/lib/calories";
 import { profileSchema, type Gender, type Goal, type Profile } from "@/lib/profile";
@@ -87,7 +90,10 @@ export function ProfileForm({
 
   return (
     <ScrollView contentContainerStyle={styles.screen} keyboardShouldPersistTaps="handled">
-      <Text style={styles.lead}>{lead}</Text>
+      <Animated.View entering={FadeInDown.duration(420)}>
+        <Text style={styles.headline}>Your body</Text>
+        <Text style={styles.lead}>{lead}</Text>
+      </Animated.View>
       {mode === "local" ? (
         <Text style={styles.banner}>
           Saved on this device only until Supabase is configured.
@@ -101,7 +107,7 @@ export function ProfileForm({
             <TextInput
               keyboardType="decimal-pad"
               placeholder="170"
-              placeholderTextColor="#8A8175"
+              placeholderTextColor="#737373"
               style={styles.input}
               value={field.value == null ? "" : String(field.value)}
               onChangeText={field.onChange}
@@ -117,7 +123,7 @@ export function ProfileForm({
             <TextInput
               keyboardType="decimal-pad"
               placeholder="70"
-              placeholderTextColor="#8A8175"
+              placeholderTextColor="#737373"
               style={styles.input}
               value={field.value == null ? "" : String(field.value)}
               onChangeText={field.onChange}
@@ -133,7 +139,7 @@ export function ProfileForm({
             <TextInput
               keyboardType="number-pad"
               placeholder="28"
-              placeholderTextColor="#8A8175"
+              placeholderTextColor="#737373"
               style={styles.input}
               value={field.value == null ? "" : String(field.value)}
               onChangeText={field.onChange}
@@ -167,7 +173,7 @@ export function ProfileForm({
             <TextInput
               keyboardType="number-pad"
               placeholder={stats.success ? "Calculated" : "Fill in your stats"}
-              placeholderTextColor="#8A8175"
+              placeholderTextColor="#737373"
               style={styles.input}
               value={field.value == null ? "" : String(field.value)}
               onChangeText={(text) => {
@@ -190,7 +196,7 @@ export function ProfileForm({
       ) : null}
       {saveError ? <Text style={styles.error}>{saveError}</Text> : null}
       {saved ? <Text style={styles.saved}>Saved.</Text> : null}
-      <Pressable
+      <PressableScale
         accessibilityRole="button"
         disabled={busy}
         style={styles.button}
@@ -199,11 +205,11 @@ export function ProfileForm({
         }}
       >
         {busy ? (
-          <ActivityIndicator color="#1A140C" />
+          <ActivityIndicator color="#0A0A0A" />
         ) : (
           <Text style={styles.buttonLabel}>{submitLabel}</Text>
         )}
-      </Pressable>
+      </PressableScale>
     </ScrollView>
   );
 }
@@ -263,48 +269,55 @@ const styles = StyleSheet.create({
   screen: {
     padding: 24,
     gap: 14,
-    backgroundColor: "#14110E",
+    backgroundColor: "#0A0A0A",
+  },
+  headline: {
+    color: "#FFFFFF",
+    fontSize: 44,
+    fontWeight: "800",
+    letterSpacing: -1.4,
+    marginBottom: 8,
   },
   lead: {
-    color: "#E7D7B8",
+    color: "#A3A3A3",
     lineHeight: 22,
   },
   banner: {
-    color: "#E7D7B8",
-    backgroundColor: "#2A241C",
+    color: "#A3A3A3",
+    backgroundColor: "#141414",
     padding: 12,
     borderRadius: 12,
   },
   field: { gap: 6 },
-  label: { color: "#F7F1E8", fontWeight: "600" },
+  label: { color: "#FFFFFF", fontWeight: "600" },
   input: {
-    backgroundColor: "#221C16",
-    color: "#F7F1E8",
-    borderRadius: 12,
-    paddingHorizontal: 14,
+    backgroundColor: "#141414",
+    color: "#FFFFFF",
+    borderRadius: 999,
+    paddingHorizontal: 18,
     paddingVertical: 14,
     fontSize: 16,
   },
   choices: { flexDirection: "row", flexWrap: "wrap", gap: 8 },
   choice: {
-    borderRadius: 12,
+    borderRadius: 999,
     paddingHorizontal: 14,
     paddingVertical: 10,
-    backgroundColor: "#221C16",
+    backgroundColor: "#141414",
   },
-  choiceSelected: { backgroundColor: "#F2C14E" },
-  choiceLabel: { color: "#F7F1E8", fontWeight: "600" },
-  choiceLabelSelected: { color: "#1A140C" },
-  error: { color: "#F0A07A" },
-  saved: { color: "#F2C14E" },
-  link: { color: "#F2C14E" },
+  choiceSelected: { backgroundColor: "#FFFFFF" },
+  choiceLabel: { color: "#FFFFFF", fontWeight: "600" },
+  choiceLabelSelected: { color: "#0A0A0A" },
+  error: { color: "#FFFFFF" },
+  saved: { color: "#FFFFFF" },
+  link: { color: "#FFFFFF" },
   button: {
-    backgroundColor: "#F2C14E",
-    borderRadius: 12,
-    minHeight: 48,
+    backgroundColor: "#FFFFFF",
+    borderRadius: 999,
+    minHeight: 52,
     alignItems: "center",
     justifyContent: "center",
     marginTop: 8,
   },
-  buttonLabel: { color: "#1A140C", fontSize: 16, fontWeight: "700" },
+  buttonLabel: { color: "#0A0A0A", fontSize: 16, fontWeight: "700" },
 });

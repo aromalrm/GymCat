@@ -2,13 +2,14 @@ import { Link } from "expo-router";
 import { useState } from "react";
 import {
   ActivityIndicator,
-  Pressable,
   StyleSheet,
   Text,
   TextInput,
   View,
 } from "react-native";
+import Animated, { FadeInDown } from "react-native-reanimated";
 
+import { PressableScale } from "@/components/pressable-scale";
 import { useAuth } from "@/providers/auth-provider";
 
 type Props = {
@@ -37,8 +38,10 @@ export function AuthForm({ mode }: Props) {
 
   return (
     <View style={styles.screen}>
-      <Text style={styles.brand}>GymCat</Text>
-      <Text style={styles.title}>{title}</Text>
+      <Animated.View entering={FadeInDown.duration(500)}>
+        <Text style={styles.brand}>GYMCAT</Text>
+        <Text style={styles.title}>{title}</Text>
+      </Animated.View>
       {auth.mode === "local" ? (
         <Text style={styles.banner}>
           Supabase is not configured. Copy .env.example to .env and set
@@ -52,7 +55,7 @@ export function AuthForm({ mode }: Props) {
         autoComplete="email"
         keyboardType="email-address"
         placeholder="Email"
-        placeholderTextColor="#8A8175"
+        placeholderTextColor="#737373"
         style={styles.input}
         value={email}
         onChangeText={setEmail}
@@ -61,14 +64,14 @@ export function AuthForm({ mode }: Props) {
         autoCapitalize="none"
         autoComplete="password"
         placeholder="Password"
-        placeholderTextColor="#8A8175"
+        placeholderTextColor="#737373"
         secureTextEntry
         style={styles.input}
         value={password}
         onChangeText={setPassword}
       />
       {message ? <Text style={styles.message}>{message}</Text> : null}
-      <Pressable
+      <PressableScale
         accessibilityRole="button"
         disabled={busy}
         style={styles.button}
@@ -77,11 +80,11 @@ export function AuthForm({ mode }: Props) {
         }}
       >
         {busy ? (
-          <ActivityIndicator color="#1A140C" />
+          <ActivityIndicator color="#0A0A0A" />
         ) : (
           <Text style={styles.buttonLabel}>{title}</Text>
         )}
-      </Pressable>
+      </PressableScale>
       {mode === "sign-in" ? (
         <Link href="/sign-up" style={styles.link}>
           Need an account? Sign up
@@ -100,55 +103,57 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     padding: 24,
-    backgroundColor: "#14110E",
+    backgroundColor: "#0A0A0A",
     gap: 12,
   },
   brand: {
-    color: "#F2C14E",
+    color: "#FFFFFF",
     fontSize: 14,
     fontWeight: "700",
     letterSpacing: 1,
     textTransform: "uppercase",
   },
   title: {
-    color: "#F7F1E8",
-    fontSize: 32,
-    fontWeight: "700",
+    color: "#FFFFFF",
+    fontSize: 56,
+    fontWeight: "800",
+    letterSpacing: -1.5,
+    lineHeight: 58,
     marginBottom: 8,
   },
   banner: {
-    color: "#E7D7B8",
-    backgroundColor: "#2A241C",
+    color: "#A3A3A3",
+    backgroundColor: "#141414",
     padding: 12,
     borderRadius: 12,
     lineHeight: 20,
   },
   input: {
-    backgroundColor: "#221C16",
-    color: "#F7F1E8",
-    borderRadius: 12,
-    paddingHorizontal: 14,
+    backgroundColor: "#141414",
+    color: "#FFFFFF",
+    borderRadius: 999,
+    paddingHorizontal: 18,
     paddingVertical: 14,
     fontSize: 16,
   },
   message: {
-    color: "#F0A07A",
+    color: "#FFFFFF",
   },
   button: {
-    backgroundColor: "#F2C14E",
-    borderRadius: 12,
-    minHeight: 48,
+    backgroundColor: "#FFFFFF",
+    borderRadius: 999,
+    minHeight: 52,
     alignItems: "center",
     justifyContent: "center",
     marginTop: 4,
   },
   buttonLabel: {
-    color: "#1A140C",
+    color: "#0A0A0A",
     fontSize: 16,
     fontWeight: "700",
   },
   link: {
-    color: "#F2C14E",
+    color: "#FFFFFF",
     textAlign: "center",
     marginTop: 8,
   },

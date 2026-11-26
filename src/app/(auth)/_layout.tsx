@@ -9,7 +9,7 @@ export default function AuthLayout() {
   if (!ready) {
     return (
       <View style={styles.screen}>
-        <ActivityIndicator color="#F2C14E" />
+        <ActivityIndicator color="#FFFFFF" />
       </View>
     );
   }
@@ -19,7 +19,7 @@ export default function AuthLayout() {
   }
 
   return (
-    <Stack screenOptions={{ headerShown: false }}>
+    <Stack screenOptions={{ headerShown: false, animation: "fade" }}>
       <Stack.Screen name="sign-in" />
       <Stack.Screen name="sign-up" />
     </Stack>
@@ -31,6 +31,6 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "#14110E",
+    backgroundColor: "#0A0A0A",
   },
 });

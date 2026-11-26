@@ -1,6 +1,7 @@
 import { Redirect, Stack } from "expo-router";
 import { ActivityIndicator, StyleSheet, View } from "react-native";
 
+import { stackOptions } from "@/constants/theme";
 import { useAuth } from "@/providers/auth-provider";
 
 export default function OnboardingLayout() {
@@ -9,7 +10,7 @@ export default function OnboardingLayout() {
   if (!ready) {
     return (
       <View style={styles.screen}>
-        <ActivityIndicator color="#F2C14E" />
+        <ActivityIndicator color="#FFFFFF" />
       </View>
     );
   }
@@ -18,14 +19,7 @@ export default function OnboardingLayout() {
   if (profile) return <Redirect href="/(app)" />;
 
   return (
-    <Stack
-      screenOptions={{
-        title: "Your stats",
-        headerStyle: { backgroundColor: "#14110E" },
-        headerTintColor: "#F7F1E8",
-        contentStyle: { backgroundColor: "#14110E" },
-      }}
-    />
+      <Stack screenOptions={{ ...stackOptions, title: "Your stats" }} />
   );
 }
 
@@ -34,6 +28,6 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "#14110E",
+    backgroundColor: "#0A0A0A",
   },
 });

@@ -1,6 +1,8 @@
 import { useVideoPlayer, VideoView } from "expo-video";
 import * as WebBrowser from "expo-web-browser";
-import { Pressable, StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
+
+import { PressableScale } from "@/components/pressable-scale";
 
 import { isVideoFileUrl } from "@/lib/catalog";
 
@@ -15,7 +17,7 @@ export function ExerciseDemo({ url }: { url: string }) {
         This demo is a post, not a video file, so it plays in the browser. Swap
         the exercise video URL for an mp4 when you have one.
       </Text>
-      <Pressable
+      <PressableScale
         accessibilityRole="button"
         style={styles.button}
         onPress={() => {
@@ -23,7 +25,7 @@ export function ExerciseDemo({ url }: { url: string }) {
         }}
       >
         <Text style={styles.buttonLabel}>Open demo post</Text>
-      </Pressable>
+      </PressableScale>
     </View>
   );
 }
@@ -45,24 +47,24 @@ function VideoFile({ url }: { url: string }) {
 
 const styles = StyleSheet.create({
   box: {
-    backgroundColor: "#221C16",
+    backgroundColor: "#141414",
     borderRadius: 12,
     padding: 14,
     gap: 12,
   },
   copy: {
-    color: "#E7D7B8",
+    color: "#A3A3A3",
     lineHeight: 22,
   },
   button: {
     alignSelf: "flex-start",
-    backgroundColor: "#F2C14E",
-    borderRadius: 12,
-    paddingHorizontal: 14,
+    backgroundColor: "#FFFFFF",
+    borderRadius: 999,
+    paddingHorizontal: 16,
     paddingVertical: 10,
   },
   buttonLabel: {
-    color: "#1A140C",
+    color: "#0A0A0A",
     fontWeight: "700",
   },
   video: {

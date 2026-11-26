@@ -2,13 +2,14 @@ import { useFocusEffect, useLocalSearchParams } from "expo-router";
 import { useCallback, useEffect, useState } from "react";
 import {
   ActivityIndicator,
-  Pressable,
   ScrollView,
   StyleSheet,
   Text,
   TextInput,
   View,
 } from "react-native";
+
+import { PressableScale } from "@/components/pressable-scale";
 
 import { ExerciseDemo } from "@/components/exercise-demo";
 import { getExercise, labelPart, type Exercise } from "@/lib/catalog";
@@ -95,7 +96,7 @@ export default function ExerciseDetailScreen() {
   }
 
   if (loading) {
-    return <ActivityIndicator color="#F2C14E" style={styles.loader} />;
+    return <ActivityIndicator color="#FFFFFF" style={styles.loader} />;
   }
 
   if (error || !exercise) {
@@ -119,7 +120,7 @@ export default function ExerciseDetailScreen() {
       <TextInput
         keyboardType="number-pad"
         placeholder="Sets"
-        placeholderTextColor="#8A8175"
+        placeholderTextColor="#737373"
         style={styles.input}
         value={sets}
         onChangeText={setSets}
@@ -127,7 +128,7 @@ export default function ExerciseDetailScreen() {
       <TextInput
         keyboardType="number-pad"
         placeholder="Reps"
-        placeholderTextColor="#8A8175"
+        placeholderTextColor="#737373"
         style={styles.input}
         value={reps}
         onChangeText={setReps}
@@ -135,13 +136,13 @@ export default function ExerciseDetailScreen() {
       <TextInput
         keyboardType="decimal-pad"
         placeholder="Weight (kg)"
-        placeholderTextColor="#8A8175"
+        placeholderTextColor="#737373"
         style={styles.input}
         value={weight}
         onChangeText={setWeight}
       />
       {logMessage ? <Text style={styles.hint}>{logMessage}</Text> : null}
-      <Pressable
+      <PressableScale
         accessibilityRole="button"
         style={styles.button}
         onPress={() => {
@@ -149,7 +150,7 @@ export default function ExerciseDetailScreen() {
         }}
       >
         <Text style={styles.buttonLabel}>Save set</Text>
-      </Pressable>
+      </PressableScale>
       {logs.length === 0 ? (
         <Text style={styles.hint}>Nothing logged for this exercise on this date.</Text>
       ) : (
@@ -172,58 +173,59 @@ const styles = StyleSheet.create({
   screen: {
     padding: 24,
     gap: 12,
-    backgroundColor: "#14110E",
+    backgroundColor: "#0A0A0A",
   },
   title: {
-    color: "#F7F1E8",
-    fontSize: 28,
-    fontWeight: "700",
+    color: "#FFFFFF",
+    fontSize: 40,
+    fontWeight: "800",
+    letterSpacing: -1.2,
   },
   muscle: {
-    color: "#E7D7B8",
+    color: "#A3A3A3",
     fontSize: 16,
   },
   instructions: {
-    color: "#F7F1E8",
+    color: "#FFFFFF",
     lineHeight: 22,
   },
   error: {
-    color: "#F0A07A",
+    color: "#FFFFFF",
   },
   section: {
-    color: "#F7F1E8",
+    color: "#FFFFFF",
     fontSize: 20,
     fontWeight: "700",
     marginTop: 8,
   },
   hint: {
-    color: "#E7D7B8",
+    color: "#A3A3A3",
   },
   input: {
-    backgroundColor: "#221C16",
-    color: "#F7F1E8",
-    borderRadius: 12,
-    paddingHorizontal: 14,
+    backgroundColor: "#141414",
+    color: "#FFFFFF",
+    borderRadius: 999,
+    paddingHorizontal: 18,
     paddingVertical: 14,
     fontSize: 16,
   },
   button: {
-    backgroundColor: "#F2C14E",
-    borderRadius: 12,
-    minHeight: 48,
+    backgroundColor: "#FFFFFF",
+    borderRadius: 999,
+    minHeight: 52,
     alignItems: "center",
     justifyContent: "center",
   },
   buttonLabel: {
-    color: "#1A140C",
+    color: "#0A0A0A",
     fontWeight: "700",
   },
   log: {
-    backgroundColor: "#221C16",
+    backgroundColor: "#141414",
     borderRadius: 12,
     padding: 14,
   },
   logText: {
-    color: "#F7F1E8",
+    color: "#FFFFFF",
   },
 });

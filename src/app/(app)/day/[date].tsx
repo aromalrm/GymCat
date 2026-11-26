@@ -2,12 +2,14 @@ import { router, useFocusEffect, useLocalSearchParams } from "expo-router";
 import { useCallback, useEffect, useState } from "react";
 import {
   ActivityIndicator,
-  Pressable,
   ScrollView,
   StyleSheet,
   Text,
   View,
 } from "react-native";
+import Animated, { FadeInDown } from "react-native-reanimated";
+
+import { PressableScale } from "@/components/pressable-scale";
 
 import { labelPart, listBodyParts, type BodyPart } from "@/lib/catalog";
 import { isIsoDate, logsForDate, type DayLog } from "@/lib/workout-logs";
@@ -62,33 +64,43 @@ export default function DayScreen() {
   return (
     <ScrollView contentContainerStyle={styles.screen}>
       <Text style={styles.title}>{date}</Text>
-      {loading ? <ActivityIndicator color="#F2C14E" /> : null}
+      {loading ? <ActivityIndicator color="#FFFFFF" /> : null}
       {error ? <Text style={styles.error}>{error}</Text> : null}
       {!loading && !error && logs.length === 0 ? (
         <Text style={styles.empty}>Nothing logged this day.</Text>
       ) : null}
-      {logs.map((log) => (
-        <View key={log.id} style={styles.row}>
+      {logs.map((log, index) => (
+        <Animated.View
+          key={log.id}
+          entering={FadeInDown.delay(index * 40).duration(380)}
+          style={styles.row}
+        >
           <Text style={styles.name}>{log.name}</Text>
           <Text style={styles.detail}>
             {log.sets} sets · {log.reps} reps · {log.weightKg} kg
           </Text>
-        </View>
+        </Animated.View>
       ))}
       <Text style={styles.section}>Body part</Text>
       {partsError ? <Text style={styles.error}>{partsError}</Text> : null}
       <View style={styles.grid}>
-        {parts.map((part) => (
-          <Pressable
+        {parts.map((part, index) => (
+          <Animated.View
             key={part.id}
-            accessibilityRole="button"
-            style={styles.card}
-            onPress={() => {
-              router.push(`/train/${part.id}?date=${date}`);
-            }}
+            entering={FadeInDown.delay(80 + index * 50).duration(420)}
+            style={styles.cardWrap}
           >
-            <Text style={styles.cardLabel}>{labelPart(part.name)}</Text>
-          </Pressable>
+            <PressableScale
+              accessibilityRole="button"
+              style={styles.card}
+              onPress={() => {
+                router.push(`/train/${part.id}?date=${date}`);
+              }}
+            >
+              <Text style={styles.cardIndex}>0{index + 1}</Text>
+              <Text style={styles.cardLabel}>{labelPart(part.name)}</Text>
+            </PressableScale>
+          </Animated.View>
         ))}
       </View>
     </ScrollView>
@@ -98,59 +110,66 @@ export default function DayScreen() {
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
-    backgroundColor: "#14110E",
+    backgroundColor: "#0A0A0A",
     padding: 24,
     gap: 12,
   },
   title: {
-    color: "#F7F1E8",
-    fontSize: 28,
-    fontWeight: "700",
+    color: "#FFFFFF",
+    fontSize: 44,
+    fontWeight: "800",
+    letterSpacing: -1.4,
   },
   empty: {
-    color: "#B7AA9A",
+    color: "#A3A3A3",
     lineHeight: 22,
   },
   error: {
-    color: "#F0A07A",
+    color: "#FFFFFF",
   },
   row: {
-    backgroundColor: "#221C16",
+    backgroundColor: "#141414",
     borderRadius: 12,
     padding: 14,
     gap: 4,
   },
   name: {
-    color: "#F7F1E8",
+    color: "#FFFFFF",
     fontSize: 16,
     fontWeight: "600",
   },
   detail: {
-    color: "#E7D7B8",
+    color: "#A3A3A3",
   },
   section: {
-    color: "#F7F1E8",
-    fontSize: 20,
-    fontWeight: "700",
-    marginTop: 12,
+    color: "#FFFFFF",
+    fontSize: 28,
+    fontWeight: "800",
+    letterSpacing: -0.8,
+    marginTop: 16,
   },
   grid: {
-    flexDirection: "row",
-    flexWrap: "wrap",
-    gap: 12,
+    gap: 10,
+  },
+  cardWrap: {
+    width: "100%",
   },
   card: {
-    width: "47%",
-    backgroundColor: "#221C16",
-    borderRadius: 12,
-    minHeight: 88,
-    alignItems: "center",
-    justifyContent: "center",
-    padding: 12,
+    backgroundColor: "#141414",
+    borderRadius: 20,
+    minHeight: 112,
+    justifyContent: "flex-end",
+    padding: 18,
+    gap: 4,
+  },
+  cardIndex: {
+    color: "#A3A3A3",
+    fontWeight: "700",
   },
   cardLabel: {
-    color: "#F2C14E",
-    fontSize: 18,
-    fontWeight: "700",
+    color: "#FFFFFF",
+    fontSize: 32,
+    fontWeight: "800",
+    letterSpacing: -1,
   },
 });
