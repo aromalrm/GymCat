@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@100..900&family=Space+Grotesk:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"tertiary-container":"#6ffbbe","surface-container-low":"#181c24","outline-variant":"#444933","on-error":"#690005","on-error-container":"#ffdad6","on-primary-container":"#556d00","on-secondary-container":"#00424e","primary":"#ffffff","outline":"#8e9379","surface-container-highest":"#31353e","secondary-fixed":"#acedff","on-secondary-fixed-variant":"#004e5c","tertiary-fixed-dim":"#4edea3","surface":"#0f131c","on-background":"#dfe2ee","inverse-on-surface":"#2c3039","error":"#ffb4ab","on-secondary-fixed":"#001f26","surface-container-high":"#262a33","primary-fixed":"#c3f400","surface-tint":"#abd600","surface-dim":"#0f131c","on-primary":"#283500","secondary":"#4cd7f6","secondary-fixed-dim":"#4cd7f6","on-tertiary":"#003824","inverse-surface":"#dfe2ee","error-container":"#93000a","surface-container":"#1c2028","surface-variant":"#31353e","tertiary":"#ffffff","background":"#0f131c","primary-fixed-dim":"#abd600","on-surface-variant":"#c4c9ac","on-tertiary-fixed":"#002113","on-primary-fixed":"#161e00","tertiary-fixed":"#6ffbbe","surface-container-lowest":"#0a0e16","on-primary-fixed-variant":"#3c4d00","primary-container":"#c3f400","on-tertiary-fixed-variant":"#005236","on-secondary":"#003640","on-surface":"#dfe2ee","secondary-container":"#03b5d3","inverse-primary":"#506600","surface-bright":"#353942","on-tertiary-container":"#00734e"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-xs":"0.25rem","margin-tablet":"1.5rem","margin":"1rem","margin-desktop":"2.5rem","space-xl":"2.25rem","space-lg":"1.5rem","space-sm":"0.5rem","gutter":"1.25rem","gutter-desktop":"1.75rem","space-md":"1rem"},"fontFamily":{"body-sm":["Manrope"],"headline-lg":["Space Grotesk"],"body-lg":["Manrope"],"label-md":["Space Grotesk"],"display-xl-mobile":["Space Grotesk"],"label-sm":["Space Grotesk"],"label-lg":["Space Grotesk"],"headline-sm":["Space Grotesk"],"display-xl":["Space Grotesk"],"body-md":["Manrope"],"metric-display":["Space Grotesk"],"headline-md":["Space Grotesk"],"headline-lg-mobile":["Space Grotesk"]},"fontSize":{"body-sm":["13px",{"lineHeight":"20px","letterSpacing":"0.01em","fontWeight":"400"}],"headline-lg":["36px",{"lineHeight":"44px","letterSpacing":"-0.02em","fontWeight":"700"}],"body-lg":["18px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"400"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.06em","fontWeight":"600"}],"display-xl-mobile":["36px",{"lineHeight":"44px","letterSpacing":"-0.02em","fontWeight":"700"}],"label-sm":["10px",{"lineHeight":"14px","letterSpacing":"0.08em","fontWeight":"700"}],"label-lg":["14px",{"lineHeight":"20px","letterSpacing":"0.05em","fontWeight":"600"}],"headline-sm":["20px",{"lineHeight":"28px","letterSpacing":"0em","fontWeight":"600"}],"display-xl":["56px",{"lineHeight":"64px","letterSpacing":"-0.03em","fontWeight":"700"}],"body-md":["15px",{"lineHeight":"24px","letterSpacing":"0em","fontWeight":"400"}],"metric-display":["44px",{"lineHeight":"48px","letterSpacing":"-0.04em","fontWeight":"700"}],"headline-md":["24px",{"lineHeight":"32px","letterSpacing":"-0.01em","fontWeight":"600"}],"headline-lg-mobile":["28px",{"lineHeight":"36px","letterSpacing":"-0.01em","fontWeight":"600"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container min-h-screen"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-lowest/90 backdrop-blur-2xl z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.4)]"><div class="flex flex-col"><div class="h-20 px-space-lg flex items-center gap-space-sm"><img alt="KINETIX 3D Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrD4azO_1FWvmyEDaboq2NAQDulTTZOCBwgTp5Uv44S7DVM62ymDnh9KhmS7gQ2RZT8YGEfhI5O2nYBjunnv0raWQ8RxWdMpv2qmDraTai83WjESAgecN1Gd2tSXZ4oiBQzGbqLAyVADJnApdvUEN4jVeocnjBhTXobNvhzgp-2VkaIrlZ2tcty7ZP1TXrnKBu5jjCGMuGBkSDSKu2yFSfjHLo0F_TaM0DZzyaHJC5tc"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm uppercase tracking-wider text-primary font-bold leading-none">KINETIX <span class="text-primary-container">3D</span></span><span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">Biomechanical HUD</span></div></div><div class="px-space-md py-space-sm"><div class="px-space-md py-space-xs mb-space-sm"><span class="font-label-sm text-label-sm uppercase tracking-widest text-outline">Training Architecture</span></div><nav class="space-y-1" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm font-semibold shadow-[0_0_24px_-4px_rgba(195,244,0,0.35)]"><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all duration-200" data-path="weekly-split" href="#"><span class="material-symbols-outlined text-[20px]">calendar_view_week</span><span class="font-label-lg text-label-lg">Weekly Split</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all duration-200" data-path="3d-anatomy-muscle-map" href="#"><span class="material-symbols-outlined text-[20px]">accessibility_new</span><span class="font-label-lg text-label-lg">3D Anatomy & Muscle Map</span></a><a aria-current="page" class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg transition-all duration-200 bg-primary-container text-on-primary-container font-headline-sm font-semibold shadow-[0_0_24px_-4px_rgba(195,244,0,0.35)]" data-path="workout-execution-player" href="#"><span class="material-symbols-outlined text-[20px]">play_circle</span><span class="font-label-lg text-label-lg">Workout Execution Player</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all duration-200" data-path="exercise-library" href="#"><span class="material-symbols-outlined text-[20px]">fitness_center</span><span class="font-label-lg text-label-lg">Exercise Library</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all duration-200" data-path="progress-metrics" href="#"><span class="material-symbols-outlined text-[20px]">monitoring</span><span class="font-label-lg text-label-lg">Progress & Metrics</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all duration-200" data-path="settings" href="#"><span class="material-symbols-outlined text-[20px]">tune</span><span class="font-label-lg text-label-lg">Settings</span></a></nav></div></div><div class="p-space-md"><div class="bg-surface-container-low rounded-xl p-space-md space-y-space-xs"><div class="flex items-center justify-between"><span class="font-label-sm text-label-sm uppercase text-secondary tracking-widest">Telemetry Stream</span><span class="w-2 h-2 rounded-full bg-secondary-container animate-ping"></span></div><div class="flex items-baseline justify-between pt-space-xs"><span class="font-body-sm text-body-sm text-on-surface-variant">Core Sync</span><span class="font-label-sm text-label-sm text-primary font-bold">120 FPS // 4K</span></div><div class="w-full bg-surface-container-highest h-1 rounded-full overflow-hidden mt-space-xs"><div class="bg-primary-container h-full w-[84%]"></div></div></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-20 bg-surface-container-lowest/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.5)] z-40 flex items-center justify-between px-space-xl"><div class="flex items-center gap-space-lg"><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-space-md text-on-surface-variant text-[18px]">search</span><input class="w-80 h-10 pl-10 pr-space-md bg-surface-container rounded-lg font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-secondary transition-all" placeholder="Search exercises, muscle targets, biometric cues..." type="text"/></div><div class="hidden xl:flex items-center gap-space-xs px-space-md py-1.5 bg-surface-container-high rounded-full cursor-pointer hover:bg-surface-container-highest transition-colors"><span class="material-symbols-outlined text-secondary text-[16px]">calendar_today</span><span class="font-label-sm text-label-sm text-on-surface uppercase tracking-wider">Today • Oct 24</span><span class="material-symbols-outlined text-on-surface-variant text-[14px]">expand_more</span></div></div><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-xs bg-surface-container-high px-space-md py-1.5 rounded-full"><span class="material-symbols-outlined text-primary-container text-[18px]">local_fire_department</span><span class="font-label-sm text-label-sm uppercase font-bold text-primary tracking-wider">5 Day Streak</span></div><div class="flex items-center gap-space-xs bg-surface-container-high px-space-md py-1.5 rounded-full"><span class="material-symbols-outlined text-secondary text-[18px] animate-pulse">timer</span><span class="font-label-sm text-label-sm font-headline-sm text-primary tracking-widest">42:18</span><span class="font-label-sm text-label-sm uppercase text-outline">Active</span></div><button aria-label="Notifications" class="relative p-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-primary-container"></span></button><div class="flex items-center gap-space-sm pl-space-xs cursor-pointer"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-2 ring-primary-container/30" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_8dYWNrzIWFM7qEVkHFUE4hsZTlGy8ChrAm_2wVluX38HrRTcn9MlP_HL3RqBWMHll4IS13Hvd_fbsfY7OVeZ6w_0L8WfhOl8BnuMUlQ5qjUCNpRZl_7B8X2dPWi73qWeOKAzp8URrKawEQ9iO2VV-iwtv2t63mJ9yd3MSUWMMgoZjwStocJ-UF1L8q1dmVV9xkGNXvygino80jpeAaqzUxM09ZfcpUyA5IBpQNw"/><div class="hidden 2xl:flex flex-col"><span class="font-label-sm text-label-sm text-primary font-bold leading-none">Alex Vance</span><span class="font-label-sm text-label-sm text-secondary tracking-widest uppercase">Elite Pro</span></div></div></div></header><main class="w-full pt-20 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<div class="px-space-md lg:px-space-xl py-space-md space-y-space-md max-w-[1600px] mx-auto w-full">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md bg-surface-container-low rounded-xl p-space-md shadow-xl">
+<div class="flex items-center gap-space-md flex-wrap">
+<div class="flex items-center gap-space-xs bg-surface-container-highest px-space-md py-1.5 rounded-full">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-container animate-pulse"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary font-bold">BIO-TELEMETRY SYNCED</span>
+</div>
+<div class="h-4 w-px bg-surface-container-highest hidden sm:block"></div>
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Split Program:</span>
+<span class="font-label-md text-label-md text-secondary uppercase font-bold tracking-wide">Monday Hypertrophy Push A</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs overflow-x-auto pb-1 lg:pb-0">
+<span class="font-label-sm text-label-sm uppercase text-outline tracking-wider mr-space-xs">Target Focus:</span>
+<button class="px-space-md py-1 rounded-full font-label-sm text-label-sm uppercase tracking-wider bg-primary-container text-on-primary-container font-bold shadow-[0_0_16px_rgba(195,244,0,0.3)] transition-all">
+          Chest (Pecs)
+        </button>
+<button class="px-space-md py-1 rounded-full font-label-sm text-label-sm uppercase tracking-wider bg-surface-container-high hover:bg-surface-container-highest text-on-surface-variant hover:text-on-surface transition-all">
+          Anterior Delts
+        </button>
+<button class="px-space-md py-1 rounded-full font-label-sm text-label-sm uppercase tracking-wider bg-surface-container-high hover:bg-surface-container-highest text-on-surface-variant hover:text-on-surface transition-all">
+          Triceps Lockout
+        </button>
+</div>
+</div>
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-lg">
+<div class="xl:col-span-8 flex flex-col space-y-space-md">
+<div class="relative w-full rounded-2xl bg-surface-container-lowest overflow-hidden shadow-2xl flex flex-col">
+<div class="relative w-full aspect-[16/10] sm:aspect-[16/9] bg-surface-container-lowest overflow-hidden group">
+<img class="w-full h-full object-cover opacity-90 transition-transform duration-700 ease-out group-hover:scale-102" data-alt="Dark obsidian futuristic sports science laboratory HUD viewport rendering a high-contrast 3D glowing neon wireframe human male athlete model performing an incline dumbbell bench press at 30 degrees. Volumetric laser cyan trajectories trace dumbbell path, clavicular pectoralis major glows electric volt lime green highlighting intense peak activation. Tactical telemetry coordinate lines, floating micro metric overlays, dark cyberpunk athletic aesthetic with pitch black background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBR7MZxsD9IvkoRHqMeuzgkv01nAgfs1ZxXCI-0TjoD1xm8ZDwkSCqapx67P-jzUoWvTzre4L2lRJWuxBeFoZai0PpN2Ufkj8vINM_pxEijPHdHX6S0ysK0bPIiyooyyTSAQY4FII5smr3zzzqK2osvkfdeJ1e6Th861aT1bjoqlB6sOWbMGlQaGP9s6358SSnHjWXPXS1D6pTKVOBkPnM4-931AEZe-QzMlqkiV7U"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-surface-container-lowest/60 pointer-events-none"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-surface-container-lowest/80 via-transparent to-surface-container-lowest/80 pointer-events-none"></div>
+<div class="absolute top-space-md left-space-md flex flex-col gap-1 z-20">
+<div class="flex items-center gap-space-xs bg-surface-container-lowest/85 backdrop-blur-md px-space-md py-1.5 rounded-lg shadow-lg">
+<span class="material-symbols-outlined text-primary-container text-[18px]">view_in_ar</span>
+<span class="font-headline-sm text-headline-sm text-primary tracking-wide leading-none">INCLINE DUMBBELL PRESS</span>
+<span class="font-label-sm text-label-sm text-secondary bg-surface-container-high px-1.5 py-0.5 rounded font-mono">30° BENCH</span>
+</div>
+<div class="flex items-center gap-space-xs pl-1">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-outline">KINETIC VECTOR ANALYSIS:</span>
+<span class="font-label-sm text-label-sm font-bold text-primary-container tracking-wider">CONVERGING ARC // SCAPULAR RETRACTED</span>
+</div>
+</div>
+<div class="absolute top-space-md right-space-md flex flex-col items-end gap-space-xs z-20">
+<div class="flex items-center gap-2 bg-surface-container-lowest/85 backdrop-blur-md px-space-md py-1.5 rounded-lg shadow-lg">
+<span class="w-2 h-2 rounded-full bg-secondary animate-ping"></span>
+<span class="font-label-sm text-label-sm font-mono text-primary font-bold">120 FPS FORM SCAN</span>
+<span class="bg-surface-container-highest px-1.5 py-0.5 rounded font-label-sm text-label-sm text-primary-container font-mono">LIVE</span>
+</div>
+<div class="bg-surface-container-lowest/80 backdrop-blur-md px-space-sm py-1 rounded text-right">
+<p class="font-label-sm text-label-sm text-on-surface-variant font-mono">FORCE: <span class="text-primary font-bold">428 N</span> | VELOCITY: <span class="text-secondary font-bold">0.42 m/s</span></p>
+</div>
+</div>
+<div class="absolute top-1/2 left-8 -translate-y-1/2 hidden md:flex flex-col gap-space-sm z-20">
+<div class="bg-surface-container-lowest/80 backdrop-blur-md p-space-sm rounded-lg flex items-center gap-space-sm shadow-xl">
+<div class="w-2.5 h-10 rounded-full bg-surface-container-high overflow-hidden flex flex-col justify-end">
+<div class="w-full bg-primary-container rounded-full" style="height: 82%;"></div>
+</div>
+<div>
+<div class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Tension Angle</div>
+<div class="font-headline-sm text-headline-sm text-primary leading-none">48.2°</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest/80 backdrop-blur-md p-space-sm rounded-lg flex items-center gap-space-sm shadow-xl">
+<div class="w-2.5 h-10 rounded-full bg-surface-container-high overflow-hidden flex flex-col justify-end">
+<div class="w-full bg-secondary rounded-full" style="height: 94%;"></div>
+</div>
+<div>
+<div class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Symmetry Rate</div>
+<div class="font-headline-sm text-headline-sm text-secondary leading-none">99.1%</div>
+</div>
+</div>
+</div>
+<div class="absolute bottom-4 left-1/2 -translate-x-1/2 z-30 flex items-center gap-1.5 bg-surface-container-lowest/90 backdrop-blur-xl p-1.5 rounded-full shadow-2xl max-w-[94%] overflow-x-auto">
+<button class="camera-btn px-space-md py-1.5 rounded-full font-label-sm text-label-sm uppercase tracking-wider text-on-primary-container bg-primary-container font-bold flex items-center gap-1 transition-all" data-view="orbit">
+<span class="material-symbols-outlined text-[16px]">360</span>
+<span>Rotate 360°</span>
+</button>
+<button class="camera-btn px-space-md py-1.5 rounded-full font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant hover:text-primary hover:bg-surface-container-high font-medium flex items-center gap-1 transition-all" data-view="sagittal">
+<span class="material-symbols-outlined text-[16px]">side_navigation</span>
+<span>Sagittal / Side</span>
+</button>
+<button class="camera-btn px-space-md py-1.5 rounded-full font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant hover:text-primary hover:bg-surface-container-high font-medium flex items-center gap-1 transition-all" data-view="frontal">
+<span class="material-symbols-outlined text-[16px]">crop_portrait</span>
+<span>Frontal Plane</span>
+</button>
+<button class="camera-btn px-space-md py-1.5 rounded-full font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant hover:text-primary hover:bg-surface-container-high font-medium flex items-center gap-1 transition-all" data-view="path">
+<span class="material-symbols-outlined text-[16px]">insights</span>
+<span>Dumbbell Arc</span>
+</button>
+<div class="h-4 w-px bg-surface-container-highest"></div>
+<button class="px-space-md py-1.5 rounded-full font-label-sm text-label-sm uppercase tracking-wider text-secondary bg-surface-container-high hover:bg-surface-container-highest font-bold flex items-center gap-1.5 transition-all" id="toggleXray">
+<span class="material-symbols-outlined text-[16px]">radiology</span>
+<span>X-Ray Muscle Map</span>
+</button>
+</div>
+</div>
+<div class="p-space-md sm:p-space-lg bg-surface-container-low space-y-space-md">
+<div class="space-y-space-xs">
+<div class="flex items-center justify-between text-outline font-label-sm text-label-sm uppercase tracking-wider font-mono">
+<div class="flex items-center gap-2">
+<span class="text-primary-container font-bold" id="playheadTime">00:18</span>
+<span>/</span>
+<span>00:45</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface text-label-sm">Rep 4 of 8</span>
+</div>
+<div class="flex items-center gap-space-md">
+<span class="text-secondary font-semibold">Phase: Dynamic Eccentric Descent</span>
+<span class="text-outline">TUT Target: 40s</span>
+</div>
+</div>
+<div class="relative w-full h-7 flex items-center cursor-pointer group select-none" id="scrubberContainer">
+<div class="relative w-full h-2 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="absolute inset-y-0 left-0 bg-primary-container w-[40%] rounded-full shadow-[0_0_12px_rgba(195,244,0,0.5)] transition-all duration-100" id="scrubberProgress"></div>
+</div>
+<div class="absolute inset-y-0 left-0 w-full flex pointer-events-none justify-between px-1">
+<div class="flex flex-col items-center justify-center" style="left: 0%; position: absolute;">
+<span class="w-1.5 h-3 bg-secondary rounded-full"></span>
+</div>
+<div class="flex flex-col items-center justify-center" style="left: 35%; position: absolute;">
+<span class="w-1.5 h-3 bg-primary-container rounded-full"></span>
+</div>
+<div class="flex flex-col items-center justify-center" style="left: 65%; position: absolute;">
+<span class="w-1.5 h-3 bg-secondary rounded-full"></span>
+</div>
+<div class="flex flex-col items-center justify-center" style="left: 88%; position: absolute;">
+<span class="w-1.5 h-3 bg-error rounded-full"></span>
+</div>
+</div>
+<div class="absolute left-[40%] -translate-x-1/2 w-4 h-4 bg-primary rounded-full shadow-[0_0_10px_rgba(255,255,255,0.8)] pointer-events-none group-hover:scale-125 transition-transform" id="scrubberThumb"></div>
+</div>
+<div class="grid grid-cols-3 gap-2 pt-1">
+<div class="bg-surface-container p-2 rounded-lg text-center">
+<span class="block font-label-sm text-label-sm uppercase tracking-wider text-outline">Phase 1: Eccentric Lowering</span>
+<span class="font-headline-sm text-headline-sm text-secondary font-bold">3.0s</span>
+<span class="block font-label-sm text-label-sm text-on-surface-variant">Deep stretch, flared elbows safe</span>
+</div>
+<div class="bg-surface-container p-2 rounded-lg text-center">
+<span class="block font-label-sm text-label-sm uppercase tracking-wider text-outline">Phase 2: Pause & Pre-Stretch</span>
+<span class="font-headline-sm text-headline-sm text-primary-container font-bold">1.0s</span>
+<span class="block font-label-sm text-label-sm text-on-surface-variant">Eliminate elastic recoil momentum</span>
+</div>
+<div class="bg-surface-container p-2 rounded-lg text-center">
+<span class="block font-label-sm text-label-sm uppercase tracking-wider text-outline">Phase 3: Concentric Drive</span>
+<span class="font-headline-sm text-headline-sm text-primary font-bold">1.2s</span>
+<span class="block font-label-sm text-label-sm text-on-surface-variant">Converging apex drive, pecs squeeze</span>
+</div>
+</div>
+</div>
+<div class="flex flex-wrap items-center justify-between gap-space-md pt-space-xs">
+<div class="flex items-center gap-space-xs">
+<button class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:bg-surface-container-high transition-colors" id="stepBackBtn" title="Previous Rep Frame">
+<span class="material-symbols-outlined text-[20px]">skip_previous</span>
+</button>
+<button class="w-12 h-12 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center hover:scale-105 shadow-[0_0_20px_rgba(195,244,0,0.4)] transition-all font-bold" id="playPauseBtn" title="Play / Pause Timeline">
+<span class="material-symbols-outlined text-[26px]" id="playIcon">play_arrow</span>
+</button>
+<button class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:bg-surface-container-high transition-colors" id="stepForwardBtn" title="Next Rep Frame">
+<span class="material-symbols-outlined text-[20px]">skip_next</span>
+</button>
+<div class="h-6 w-px bg-surface-container-highest mx-1"></div>
+<button class="px-space-md py-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-sm text-label-sm uppercase tracking-wider font-semibold transition-all" id="slowMoBtn">
+                  0.5x Slow-Mo
+                </button>
+<button class="w-10 h-10 rounded-lg bg-surface-container hover:bg-surface-container-high text-primary-container flex items-center justify-center transition-all" id="loopBtn" title="Loop Exercise Phase">
+<span class="material-symbols-outlined text-[20px]">repeat</span>
+</button>
+</div>
+<div class="flex items-center gap-space-sm bg-surface-container px-space-md py-1.5 rounded-lg">
+<span class="material-symbols-outlined text-secondary text-[20px]">ecg_heart</span>
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline block leading-none">Biometric Heart Rate</span>
+<span class="font-headline-sm text-headline-sm text-primary font-bold leading-none">148 <span class="text-label-sm text-outline font-normal">BPM</span></span>
+</div>
+<span class="ml-2 px-2 py-0.5 rounded font-label-sm text-label-sm bg-secondary/15 text-secondary font-bold">ZONE 4</span>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-xl p-space-md sm:p-space-lg shadow-xl space-y-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container text-[22px]">vital_signs</span>
+<h3 class="font-headline-sm text-headline-sm text-primary uppercase tracking-wide">Real-Time Muscle Activation Heatmap</h3>
+</div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-mono">EMG Sensor Telemetry</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<div class="bg-surface-container p-space-md rounded-xl space-y-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Primary Motor Unit</span>
+<span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-primary-container/20 text-primary-container font-bold">PEAK LOAD</span>
+</div>
+<div>
+<span class="font-headline-sm text-headline-sm text-primary block leading-tight">Clavicular Head</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Pectoralis Major (Upper)</span>
+</div>
+<div class="flex items-end justify-between pt-space-xs">
+<span class="font-metric-display text-metric-display text-primary-container font-headline-lg leading-none">96%</span>
+<span class="font-label-sm text-label-sm text-outline font-mono">+14% vs Flat Bench</span>
+</div>
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full rounded-full shadow-[0_0_12px_rgba(195,244,0,0.6)]" style="width: 96%;"></div>
+</div>
+</div>
+<div class="bg-surface-container p-space-md rounded-xl space-y-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Anterior Stabilizer</span>
+<span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-secondary/20 text-secondary font-bold">SECONDARY</span>
+</div>
+<div>
+<span class="font-headline-sm text-headline-sm text-primary block leading-tight">Anterior Deltoid</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Front Shoulder Capsular</span>
+</div>
+<div class="flex items-end justify-between pt-space-xs">
+<span class="font-metric-display text-metric-display text-secondary font-headline-lg leading-none">48%</span>
+<span class="font-label-sm text-label-sm text-outline font-mono">Controlled Arc</span>
+</div>
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full shadow-[0_0_10px_rgba(76,215,246,0.5)]" style="width: 48%;"></div>
+</div>
+</div>
+<div class="bg-surface-container p-space-md rounded-xl space-y-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Lockout Extension</span>
+<span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-surface-container-high text-on-surface font-semibold">SYNERGIST</span>
+</div>
+<div>
+<span class="font-headline-sm text-headline-sm text-primary block leading-tight">Triceps Brachii</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Medial & Lateral Heads</span>
+</div>
+<div class="flex items-end justify-between pt-space-xs">
+<span class="font-metric-display text-metric-display text-primary font-headline-lg leading-none">35%</span>
+<span class="font-label-sm text-label-sm text-outline font-mono">Terminal Lockout Only</span>
+</div>
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden">
+<div class="bg-primary/70 h-full rounded-full" style="width: 35%;"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="xl:col-span-4 flex flex-col space-y-space-md">
+<div class="bg-surface-container-low rounded-xl p-space-md sm:p-space-lg shadow-xl space-y-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[22px]">timer</span>
+<h3 class="font-headline-sm text-headline-sm text-primary uppercase">Rest Countdown</h3>
+</div>
+<button class="px-space-md py-1 rounded bg-secondary-container hover:bg-secondary text-on-secondary font-label-sm text-label-sm uppercase tracking-wider font-bold transition-colors" id="toggleRestTimer">
+              Reset 60s
+            </button>
+</div>
+<div class="flex items-baseline justify-between bg-surface-container p-space-md rounded-xl">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline block">Next Set Ready In</span>
+<span class="font-metric-display text-metric-display font-headline-lg text-primary tracking-tight" id="restTimerDisplay">00:46</span>
+</div>
+<div class="text-right">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline block">Auto-Sync</span>
+<span class="font-label-md text-label-md text-primary-container font-mono font-bold">READY STATE</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-xl p-space-md sm:p-space-lg shadow-xl space-y-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary-container text-[22px]">format_list_numbered</span>
+<h3 class="font-headline-sm text-headline-sm text-primary uppercase">Live Set Execution</h3>
+</div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Target: 4 Sets</span>
+</div>
+<div class="space-y-space-xs">
+<div class="bg-surface-container p-space-md rounded-xl flex items-center justify-between opacity-80">
+<div class="flex items-center gap-space-md">
+<div class="w-7 h-7 rounded-full bg-primary-container/20 text-primary-container flex items-center justify-center font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline block leading-none">SET 01</span>
+<span class="font-label-lg text-label-lg font-bold text-primary">80 lbs <span class="text-on-surface-variant font-normal">× 10 reps</span></span>
+</div>
+</div>
+<div class="text-right">
+<span class="font-label-sm text-label-sm text-primary-container uppercase font-mono font-bold block">COMPLETED</span>
+<span class="font-label-sm text-label-sm text-outline font-mono">RPE 8.0</span>
+</div>
+</div>
+<div class="bg-surface-container-high p-space-md rounded-xl flex items-center justify-between shadow-[0_0_20px_rgba(195,244,0,0.15)]">
+<div class="flex items-center gap-space-md">
+<div class="w-7 h-7 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-label-sm text-label-sm font-bold">
+                  2
+                </div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary-container font-bold leading-none">CURRENT SET</span>
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container animate-ping"></span>
+</div>
+<span class="font-headline-sm text-headline-sm font-bold text-primary">85 lbs <span class="text-on-surface-variant font-normal text-body-md">× 8 reps</span></span>
+</div>
+</div>
+<div class="text-right">
+<span class="font-label-sm text-label-sm text-secondary uppercase font-mono font-bold block">LOGGED @ RPE 8.5</span>
+<button class="mt-1 px-space-sm py-0.5 rounded bg-primary-container text-on-primary-container font-label-sm text-label-sm uppercase font-bold hover:scale-105 transition-all">
+                  Finish Set
+                </button>
+</div>
+</div>
+<div class="bg-surface-container p-space-md rounded-xl flex items-center justify-between opacity-60">
+<div class="flex items-center gap-space-md">
+<div class="w-7 h-7 rounded-full bg-surface-container-highest text-outline flex items-center justify-center font-label-sm text-label-sm font-bold">
+                  3
+                </div>
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline block leading-none">SET 03</span>
+<span class="font-label-lg text-label-lg font-bold text-primary">85 lbs <span class="text-on-surface-variant font-normal">× 8 reps</span></span>
+</div>
+</div>
+<div class="text-right">
+<span class="font-label-sm text-label-sm text-outline uppercase font-mono block">UPCOMING</span>
+<span class="font-label-sm text-label-sm text-outline font-mono">Target RPE 9.0</span>
+</div>
+</div>
+<div class="bg-surface-container p-space-md rounded-xl flex items-center justify-between opacity-40">
+<div class="flex items-center gap-space-md">
+<div class="w-7 h-7 rounded-full bg-surface-container-highest text-outline flex items-center justify-center font-label-sm text-label-sm font-bold">
+                  4
+                </div>
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline block leading-none">SET 04 (DROPSET OPTIONAL)</span>
+<span class="font-label-lg text-label-lg font-bold text-primary">85 lbs <span class="text-on-surface-variant font-normal">× AMRAP</span></span>
+</div>
+</div>
+<div class="text-right">
+<span class="font-label-sm text-label-sm text-outline uppercase font-mono block">QUEUED</span>
+<span class="font-label-sm text-label-sm text-outline font-mono">Target RPE 10</span>
+</div>
+</div>
+</div>
+<div class="pt-space-xs flex items-center justify-between bg-surface-container p-space-sm rounded-lg">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Session Volume:</span>
+<span class="font-label-lg text-label-lg text-primary font-bold font-mono">1,480 LBS <span class="text-on-surface-variant font-normal text-label-sm">(Chest Only)</span></span>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-xl p-space-md sm:p-space-lg shadow-xl space-y-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-error text-[22px]">warning</span>
+<h3 class="font-headline-sm text-headline-sm text-primary uppercase">Biomechanical Form Cues</h3>
+</div>
+<span class="px-2 py-0.5 rounded font-label-sm text-label-sm bg-primary-container/20 text-primary-container font-mono font-bold">98% COMPLIANCE</span>
+</div>
+<div class="space-y-space-sm">
+<div class="p-space-sm rounded-lg bg-surface-container space-y-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-bold text-primary flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+                  Avoid Elbow Flare > 75°
+                </span>
+<span class="font-label-sm text-label-sm text-primary-container uppercase font-mono font-bold">PASS (45°-60°)</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                Tuck elbows into scapular plane to transfer maximal force into upper clavicular pec fibers while protecting anterior rotator cuffs.
+              </p>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container space-y-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-bold text-primary flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+                  Excessive Lumbar Arch
+                </span>
+<span class="font-label-sm text-label-sm text-primary-container uppercase font-mono font-bold">OPTIMAL</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                Keep glutes pressed tight into bench pad. Excessive arch shifts the vector into a flat press, negating incline clavicular target.
+              </p>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container space-y-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-bold text-primary flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                  Converging Apex Path
+                </span>
+<span class="font-label-sm text-label-sm text-secondary uppercase font-mono font-bold">ARC DETECTED</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                Press dumbbells in a controlled inwards arc toward chin level without clanking bells together at top lockout.
+              </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  (function() {
+    let isPlaying = false;
+    let playheadSeconds = 18;
+    const maxSeconds = 45;
+    const playheadTimeEl = document.getElementById('playheadTime');
+    const scrubberProgressEl = document.getElementById('scrubberProgress');
+    const scrubberThumbEl = document.getElementById('scrubberThumb');
+    const playPauseBtn = document.getElementById('playPauseBtn');
+    const playIcon = document.getElementById('playIcon');
+    const scrubberContainer = document.getElementById('scrubberContainer');
+
+    function updateScrubberDisplay() {
+      const pct = (playheadSeconds / maxSeconds) * 100;
+      if (scrubberProgressEl) scrubberProgressEl.style.width = pct + '%';
+      if (scrubberThumbEl) scrubberThumbEl.style.left = pct + '%';
+      if (playheadTimeEl) {
+        const mins = Math.floor(playheadSeconds / 60).toString().padStart(2, '0');
+        const secs = Math.floor(playheadSeconds % 60).toString().padStart(2, '0');
+        playheadTimeEl.textContent = mins + ':' + secs;
+      }
+    }
+
+    let intervalId = null;
+    if (playPauseBtn) {
+      playPauseBtn.addEventListener('click', () => {
+        isPlaying = !isPlaying;
+        if (isPlaying) {
+          playIcon.textContent = 'pause';
+          intervalId = setInterval(() => {
+            playheadSeconds += 0.5;
+            if (playheadSeconds > maxSeconds) playheadSeconds = 0;
+            updateScrubberDisplay();
+          }, 500);
+        } else {
+          playIcon.textContent = 'play_arrow';
+          clearInterval(intervalId);
+        }
+      });
+    }
+
+    if (scrubberContainer) {
+      scrubberContainer.addEventListener('click', (e) => {
+        const rect = scrubberContainer.getBoundingClientRect();
+        const clickX = e.clientX - rect.left;
+        const width = rect.width;
+        let clamped = Math.max(0, Math.min(1, clickX / width));
+        playheadSeconds = clamped * maxSeconds;
+        updateScrubberDisplay();
+      });
+    }
+
+    const stepBackBtn = document.getElementById('stepBackBtn');
+    const stepForwardBtn = document.getElementById('stepForwardBtn');
+    if (stepBackBtn) {
+      stepBackBtn.addEventListener('click', () => {
+        playheadSeconds = Math.max(0, playheadSeconds - 3);
+        updateScrubberDisplay();
+      });
+    }
+    if (stepForwardBtn) {
+      stepForwardBtn.addEventListener('click', () => {
+        playheadSeconds = Math.min(maxSeconds, playheadSeconds + 3);
+        updateScrubberDisplay();
+      });
+    }
+
+    const cameraBtns = document.querySelectorAll('.camera-btn');
+    cameraBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        cameraBtns.forEach(b => {
+          b.classList.remove('bg-primary-container', 'text-on-primary-container', 'font-bold');
+          b.classList.add('text-on-surface-variant', 'font-medium');
+        });
+        btn.classList.add('bg-primary-container', 'text-on-primary-container', 'font-bold');
+        btn.classList.remove('text-on-surface-variant', 'font-medium');
+      });
+    });
+
+    let restTime = 46;
+    const restTimerDisplay = document.getElementById('restTimerDisplay');
+    const toggleRestTimer = document.getElementById('toggleRestTimer');
+    let restTimerInterval = setInterval(() => {
+      if (restTime > 0) {
+        restTime--;
+        const s = restTime.toString().padStart(2, '0');
+        if (restTimerDisplay) restTimerDisplay.textContent = '00:' + s;
+      }
+    }, 1000);
+
+    if (toggleRestTimer) {
+      toggleRestTimer.addEventListener('click', () => {
+        restTime = 60;
+        if (restTimerDisplay) restTimerDisplay.textContent = '01:00';
+      });
+    }
+
+    const toggleXray = document.getElementById('toggleXray');
+    let xrayActive = false;
+    if (toggleXray) {
+      toggleXray.addEventListener('click', () => {
+        xrayActive = !xrayActive;
+        if (xrayActive) {
+          toggleXray.classList.remove('text-secondary', 'bg-surface-container-high');
+          toggleXray.classList.add('bg-secondary', 'text-on-secondary');
+        } else {
+          toggleXray.classList.remove('bg-secondary', 'text-on-secondary');
+          toggleXray.classList.add('text-secondary', 'bg-surface-container-high');
+        }
+      });
+    }
+  })();
+</script></main></div>
+<script>
+(function () {
+  var routes = [
+    ["continue to calendar architecture", "/calendar"],
+    ["3d anatomy & muscle target explorer", "/anatomy"],
+    ["exercise library & biomechanics", "/library"],
+    ["3d interactive execution & form", "/execute"],
+    ["nutrition & fuel matrix", "/nutrition"],
+    ["user profile & biometrics", "/profile"],
+    ["calendar & weekly split", "/calendar"],
+    ["3d anatomy & muscle map", "/muscle-map"],
+    ["workout execution player", "/execute"],
+    ["launch today's session player", "/execute"],
+    ["launch session", "/execute"],
+    ["launch live 3d holographic player", "/execute"],
+    ["launch 3d muscle rig", "/muscle-map"],
+    ["start 3d form simulation", "/execute"],
+    ["open 3d form studio", "/execute"],
+    ["open 3d biomechanics", "/exercise"],
+    ["queue to monday", "/week"],
+    ["queue latissimus", "/week"],
+    ["weekly split", "/week"],
+    ["exercise library", "/guides"],
+    ["progress & metrics", "/calendar"],
+    ["settings", "/profile"]
+  ];
+  document.addEventListener("click", function (event) {
+    var el = event.target.closest("a,button");
+    if (!el) return;
+    var text = (el.innerText || "").replace(/\s+/g, " ").trim().toLowerCase();
+    for (var i = 0; i < routes.length; i++) {
+      if (text.indexOf(routes[i][0]) !== -1) {
+        event.preventDefault();
+        window.top.location.assign(routes[i][1]);
+        return;
+      }
+    }
+  });
+})();
+</script>
+
+</body></html>

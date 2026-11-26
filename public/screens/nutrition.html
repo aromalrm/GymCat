@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@100..900&amp;family=Space+Grotesk:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"on-background":"#dfe2ee","on-tertiary-container":"#00734e","on-primary-fixed-variant":"#3c4d00","inverse-surface":"#dfe2ee","on-primary-container":"#556d00","on-error":"#690005","tertiary":"#ffffff","primary-fixed-dim":"#abd600","surface-bright":"#353942","secondary":"#4cd7f6","surface-variant":"#31353e","primary-fixed":"#c3f400","on-primary":"#283500","on-secondary-fixed-variant":"#004e5c","secondary-fixed-dim":"#4cd7f6","surface":"#0f131c","on-secondary-container":"#00424e","surface-container-highest":"#31353e","on-tertiary-fixed-variant":"#005236","primary":"#ffffff","error":"#ffb4ab","surface-container-high":"#262a33","on-tertiary":"#003824","inverse-on-surface":"#2c3039","background":"#0f131c","tertiary-container":"#6ffbbe","outline":"#8e9379","outline-variant":"#444933","surface-container-lowest":"#0a0e16","secondary-container":"#03b5d3","surface-tint":"#abd600","tertiary-fixed":"#6ffbbe","surface-dim":"#0f131c","tertiary-fixed-dim":"#4edea3","on-primary-fixed":"#161e00","primary-container":"#c3f400","surface-container":"#1c2028","on-secondary-fixed":"#001f26","on-surface":"#dfe2ee","on-secondary":"#003640","on-surface-variant":"#c4c9ac","surface-container-low":"#181c24","secondary-fixed":"#acedff","inverse-primary":"#506600","error-container":"#93000a","on-error-container":"#ffdad6","on-tertiary-fixed":"#002113"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"gutter-desktop":"1.75rem","space-sm":"0.5rem","margin-tablet":"1.5rem","space-xl":"2.25rem","space-xs":"0.25rem","space-md":"1rem","space-lg":"1.5rem","margin-desktop":"2.5rem","gutter":"1.25rem","margin":"1rem"},"fontFamily":{"display-xl-mobile":["Space Grotesk"],"headline-md":["Space Grotesk"],"headline-lg":["Space Grotesk"],"headline-sm":["Space Grotesk"],"label-md":["Space Grotesk"],"body-lg":["Manrope"],"body-sm":["Manrope"],"label-lg":["Space Grotesk"],"label-sm":["Space Grotesk"],"body-md":["Manrope"],"headline-lg-mobile":["Space Grotesk"],"display-xl":["Space Grotesk"],"metric-display":["Space Grotesk"]},"fontSize":{"display-xl-mobile":["36px",{"lineHeight":"44px","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-md":["24px",{"lineHeight":"32px","letterSpacing":"-0.01em","fontWeight":"600"}],"headline-lg":["36px",{"lineHeight":"44px","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-sm":["20px",{"lineHeight":"28px","letterSpacing":"0em","fontWeight":"600"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.06em","fontWeight":"600"}],"body-lg":["18px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"400"}],"body-sm":["13px",{"lineHeight":"20px","letterSpacing":"0.01em","fontWeight":"400"}],"label-lg":["14px",{"lineHeight":"20px","letterSpacing":"0.05em","fontWeight":"600"}],"label-sm":["10px",{"lineHeight":"14px","letterSpacing":"0.08em","fontWeight":"700"}],"body-md":["15px",{"lineHeight":"24px","letterSpacing":"0em","fontWeight":"400"}],"headline-lg-mobile":["28px",{"lineHeight":"36px","letterSpacing":"-0.01em","fontWeight":"600"}],"display-xl":["56px",{"lineHeight":"64px","letterSpacing":"-0.03em","fontWeight":"700"}],"metric-display":["44px",{"lineHeight":"48px","letterSpacing":"-0.04em","fontWeight":"700"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container min-h-screen"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-lowest/95 backdrop-blur-2xl z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.4)] overflow-y-auto"><div class="flex flex-col"><div class="h-20 px-space-lg flex items-center gap-space-sm"><img alt="KINETIX 3D Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrD4azO_1FWvmyEDaboq2NAQDulTTZOCBwgTp5Uv44S7DVM62ymDnh9KhmS7gQ2RZT8YGEfhI5O2nYBjunnv0raWQ8RxWdMpv2qmDraTai83WjESAgecN1Gd2tSXZ4oiBQzGbqLAyVADJnApdvUEN4jVeocnjBhTXobNvhzgp-2VkaIrlZ2tcty7ZP1TXrnKBu5jjCGMuGBkSDSKu2yFSfjHLo0F_TaM0DZzyaHJC5tc"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm uppercase tracking-wider text-primary font-bold leading-none">KINETIX <span class="text-primary-container">3D</span></span><span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">Biomechanical HUD</span></div></div><div class="px-space-md py-space-sm"><div class="px-space-md py-space-xs mb-space-sm"><span class="font-label-sm text-label-sm uppercase tracking-widest text-outline">Training Architecture</span></div><nav class="space-y-1" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm font-semibold shadow-[0_0_24px_-4px_rgba(195,244,0,0.35)]"><a class="flex items-center px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all duration-200" data-path="calendar-home" href="#"><span class="font-label-lg text-label-lg">Calendar &amp; Weekly Split</span></a><a class="flex items-center px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all duration-200" data-path="body-part-picker" href="#"><span class="font-label-lg text-label-lg">3D Anatomy &amp; Muscle Target Explorer</span></a><a class="flex items-center px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all duration-200" data-path="exercise-list" href="#"><span class="font-label-lg text-label-lg">Exercise Library &amp; Biomechanics</span></a><a class="flex items-center px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all duration-200" data-path="exercise-detail" href="#"><span class="font-label-lg text-label-lg">3D Interactive Execution &amp; Form</span></a><a aria-current="page" class="flex items-center px-space-md py-space-sm rounded-lg transition-all duration-200 bg-primary-container text-on-primary-container font-headline-sm font-semibold shadow-[0_0_24px_-4px_rgba(195,244,0,0.35)]" data-path="nutrition-fuel-matrix" href="#"><span class="font-label-lg text-label-lg">Nutrition &amp; Fuel Matrix</span></a><a class="flex items-center px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all duration-200" data-path="user-profile-settings" href="#"><span class="font-label-lg text-label-lg">User Profile &amp; Biometrics</span></a></nav></div></div><div class="p-space-md"><div class="bg-surface-container-low rounded-xl p-space-md space-y-space-xs"><div class="flex items-center justify-between"><span class="font-label-sm text-label-sm uppercase text-secondary tracking-widest">Telemetry Stream</span><span class="w-2 h-2 rounded-full bg-secondary-container animate-ping"></span></div><div class="flex items-baseline justify-between pt-space-xs"><span class="font-body-sm text-body-sm text-on-surface-variant">Core Sync</span><span class="font-label-sm text-label-sm text-primary font-bold">120 FPS // 4K</span></div><div class="w-full bg-surface-container-highest h-1 rounded-full overflow-hidden mt-space-xs"><div class="bg-primary-container h-full w-[84%]"></div></div></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-20 bg-surface-container-lowest/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.5)] z-40 flex items-center justify-between px-space-xl"><div class="flex items-center gap-space-lg"><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-space-md text-on-surface-variant text-[18px]">search</span><input class="w-80 h-10 pl-10 pr-space-md bg-surface-container rounded-lg font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-secondary transition-all" placeholder="Search exercises, muscle targets, biometric cues..." type="text"/></div><div class="hidden xl:flex items-center gap-space-xs px-space-md py-1.5 bg-surface-container-high rounded-full cursor-pointer hover:bg-surface-container-highest transition-colors"><span class="material-symbols-outlined text-secondary text-[16px]">calendar_today</span><span class="font-label-sm text-label-sm text-on-surface uppercase tracking-wider">Today • Oct 24</span><span class="material-symbols-outlined text-on-surface-variant text-[14px]">expand_more</span></div></div><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-xs bg-surface-container-high px-space-md py-1.5 rounded-full"><span class="material-symbols-outlined text-primary-container text-[18px]">local_fire_department</span><span class="font-label-sm text-label-sm uppercase font-bold text-primary tracking-wider">5 Day Streak</span></div><div class="flex items-center gap-space-xs bg-surface-container-high px-space-md py-1.5 rounded-full"><span class="material-symbols-outlined text-secondary text-[18px] animate-pulse">timer</span><span class="font-label-sm text-label-sm font-headline-sm text-primary tracking-widest">42:18</span><span class="font-label-sm text-label-sm uppercase text-outline">Active</span></div><button aria-label="Notifications" class="relative p-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-primary-container"></span></button><div class="flex items-center gap-space-sm pl-space-xs cursor-pointer"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-2 ring-primary-container/30" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_8dYWNrzIWFM7qEVkHFUE4hsZTlGy8ChrAm_2wVluX38HrRTcn9MlP_HL3RqBWMHll4IS13Hvd_fbsfY7OVeZ6w_0L8WfhOl8BnuMUlQ5qjUCNpRZl_7B8X2dPWi73qWeOKAzp8URrKawEQ9iO2VV-iwtv2t63mJ9yd3MSUWMMgoZjwStocJ-UF1L8q1dmVV9xkGNXvygino80jpeAaqzUxM09ZfcpUyA5IBpQNw"/><div class="hidden 2xl:flex flex-col"><span class="font-label-sm text-label-sm text-primary font-bold leading-none">Alex Vance</span><span class="font-label-sm text-label-sm text-secondary tracking-widest uppercase">Elite Pro</span></div></div></div></header><main class="w-full pt-20 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<div class="p-space-lg xl:p-space-xl space-y-space-xl max-w-[1520px] mx-auto w-full">
+<!-- Top Status Bar & Quick Actions -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<div class="space-y-space-xs">
+<div class="flex items-center gap-space-sm">
+<span class="inline-flex items-center gap-1.5 px-space-sm py-0.5 rounded-full bg-surface-container-high text-secondary font-label-sm text-label-sm uppercase tracking-wider">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+            Metabolic Sync Live
+          </span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant font-medium">Session #488-P</span>
+</div>
+<div class="flex items-baseline gap-space-md flex-wrap">
+<span class="font-headline-lg text-headline-lg text-primary tracking-tight">Nutrition &amp; Fuel Matrix</span>
+<span class="font-label-lg text-label-lg text-primary-container font-semibold uppercase tracking-wider">Hypertrophy Fueling Protocol</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-2xl">
+          Biomechanical caloric surplus targeted for optimal myofibrillar recovery. Glycogen synthesis rate: <span class="text-secondary font-semibold">14.2 g/hr</span> with active insulin sensitivity window.
+        </p>
+</div>
+<div class="flex items-center gap-space-sm flex-wrap">
+<button class="group flex items-center gap-space-sm px-space-md py-2.5 rounded-lg bg-surface-container-high hover:bg-surface-container-highest transition-all duration-200" type="button">
+<span class="material-symbols-outlined text-secondary text-[20px] group-hover:rotate-12 transition-transform">qr_code_scanner</span>
+<span class="font-label-md text-label-md uppercase tracking-wider text-on-surface">Barcode Scan</span>
+</button>
+<button class="flex items-center gap-space-sm px-space-lg py-2.5 rounded-lg bg-primary-container text-on-primary-container hover:shadow-[0_0_24px_-4px_rgba(195,244,0,0.5)] transition-all duration-200 active:scale-95" type="button">
+<span class="material-symbols-outlined text-[20px] font-bold">add_circle</span>
+<span class="font-headline-sm text-headline-sm font-bold uppercase tracking-wider">Log Fuel Intake</span>
+</button>
+</div>
+</div>
+<!-- Daily Caloric & Macronutrient Telemetry Ribbon -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-md">
+<!-- Main Caloric HUD -->
+<div class="xl:col-span-4 bg-surface-container-lowest/90 backdrop-blur-xl rounded-xl p-space-lg relative overflow-hidden flex flex-col justify-between shadow-xl">
+<div class="absolute -right-16 -top-16 w-56 h-56 bg-primary-container/10 rounded-full blur-3xl pointer-events-none"></div>
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-outline">Energy Reservoir</span>
+<span class="px-2 py-0.5 rounded bg-primary-container/15 text-primary-container font-label-sm text-label-sm font-semibold uppercase tracking-wider">77% Reached</span>
+</div>
+<div class="flex items-baseline gap-space-xs">
+<span class="font-display-xl text-display-xl text-primary font-bold">2,420</span>
+<span class="font-headline-md text-headline-md text-outline font-normal">/ 3,150</span>
+<span class="font-label-md text-label-md text-on-surface-variant uppercase ml-1">kcal</span>
+</div>
+<div class="mt-space-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container text-[18px]">bolt</span>
+<span class="font-body-sm text-body-sm text-on-surface">
+<strong class="text-primary-container font-semibold">730 kcal remaining</strong> to fuel today's Push Hypertrophy session.
+            </span>
+</div>
+</div>
+<div class="space-y-space-sm pt-space-lg">
+<div class="w-full bg-surface-container-highest h-3 rounded-full overflow-hidden p-[2px]">
+<div class="bg-gradient-to-r from-secondary-container via-primary-container to-primary-container h-full rounded-full transition-all duration-700" style="width: 76.8%"></div>
+</div>
+<div class="flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>BMR Basal: 1,840 kcal</span>
+<span>Expenditure Delta: +1,310 kcal</span>
+</div>
+</div>
+</div>
+<!-- Macro Arcs HUD -->
+<div class="xl:col-span-5 bg-surface-container-low/90 backdrop-blur-xl rounded-xl p-space-lg flex flex-col justify-between shadow-lg">
+<div class="flex items-center justify-between pb-space-sm">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-outline">Macronutrient Dynamic Allocations</span>
+<span class="font-label-sm text-label-sm text-secondary uppercase font-semibold">Target Adaptive: On</span>
+</div>
+<div class="grid grid-cols-3 gap-space-md py-space-xs">
+<!-- Protein Metric -->
+<div class="flex flex-col items-center text-center p-space-sm rounded-lg bg-surface-container">
+<div class="relative w-20 h-20 mb-space-xs flex items-center justify-center">
+<svg class="w-full h-full -rotate-90" viewbox="0 0 36 36">
+<path class="text-surface-variant" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3.5"></path>
+<path class="text-primary-container stroke-current transition-all duration-500" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke-dasharray="87, 100" stroke-linecap="round" stroke-width="3.5"></path>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="font-headline-sm text-headline-sm font-bold text-primary">182</span>
+<span class="font-label-sm text-label-sm text-outline">g</span>
+</div>
+</div>
+<span class="font-label-md text-label-md uppercase font-bold text-primary">Protein</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">210g Goal</span>
+<span class="font-label-sm text-label-sm text-primary-container mt-1 font-semibold">87% Target</span>
+</div>
+<!-- Carbs Metric -->
+<div class="flex flex-col items-center text-center p-space-sm rounded-lg bg-surface-container">
+<div class="relative w-20 h-20 mb-space-xs flex items-center justify-center">
+<svg class="w-full h-full -rotate-90" viewbox="0 0 36 36">
+<path class="text-surface-variant" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3.5"></path>
+<path class="text-secondary stroke-current transition-all duration-500" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke-dasharray="78, 100" stroke-linecap="round" stroke-width="3.5"></path>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="font-headline-sm text-headline-sm font-bold text-primary">295</span>
+<span class="font-label-sm text-label-sm text-outline">g</span>
+</div>
+</div>
+<span class="font-label-md text-label-md uppercase font-bold text-primary">Carbohydrate</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">380g Goal</span>
+<span class="font-label-sm text-label-sm text-secondary mt-1 font-semibold">Glycogen Primed</span>
+</div>
+<!-- Fats Metric -->
+<div class="flex flex-col items-center text-center p-space-sm rounded-lg bg-surface-container">
+<div class="relative w-20 h-20 mb-space-xs flex items-center justify-center">
+<svg class="w-full h-full -rotate-90" viewbox="0 0 36 36">
+<path class="text-surface-variant" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3.5"></path>
+<path class="text-tertiary-fixed-dim stroke-current transition-all duration-500" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke-dasharray="77, 100" stroke-linecap="round" stroke-width="3.5"></path>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="font-headline-sm text-headline-sm font-bold text-primary">58</span>
+<span class="font-label-sm text-label-sm text-outline">g</span>
+</div>
+</div>
+<span class="font-label-md text-label-md uppercase font-bold text-primary">Fats</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">75g Goal</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1 font-semibold">77% Balanced</span>
+</div>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm text-outline pt-space-xs">
+<span>Target Ratio: 45C / 30P / 25F</span>
+<span class="text-secondary">MPS Trigger: Optimal (&gt;3.2g Leucine)</span>
+</div>
+</div>
+<!-- Hydration & Electrolytes -->
+<div class="xl:col-span-3 bg-surface-container-low/90 backdrop-blur-xl rounded-xl p-space-lg flex flex-col justify-between shadow-lg">
+<div>
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-outline">Fluid &amp; Conductivity</span>
+<span class="material-symbols-outlined text-secondary text-[18px]">water_drop</span>
+</div>
+<div class="flex items-baseline gap-space-xs">
+<span class="font-metric-display text-metric-display text-primary font-bold">3.8</span>
+<span class="font-headline-md text-headline-md text-outline">/ 4.5</span>
+<span class="font-label-md text-label-md text-secondary font-bold uppercase ml-1">Liters</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Intracellular hydration within target threshold</span>
+</div>
+<div class="space-y-space-sm pt-space-md">
+<div class="space-y-1">
+<div class="flex justify-between font-label-sm text-label-sm">
+<span class="text-on-surface">Sodium (Na+)</span>
+<span class="text-primary font-semibold">2,240 / 2,600 mg</span>
+</div>
+<div class="w-full bg-surface-container-highest h-1.5 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 86%"></div>
+</div>
+</div>
+<div class="space-y-1">
+<div class="flex justify-between font-label-sm text-label-sm">
+<span class="text-on-surface">Potassium (K+)</span>
+<span class="text-primary font-semibold">3,120 / 3,800 mg</span>
+</div>
+<div class="w-full bg-surface-container-highest h-1.5 rounded-full overflow-hidden">
+<div class="bg-secondary-fixed h-full rounded-full" style="width: 82%"></div>
+</div>
+</div>
+<div class="space-y-1">
+<div class="flex justify-between font-label-sm text-label-sm">
+<span class="text-on-surface">Magnesium (Mg2+)</span>
+<span class="text-primary-container font-semibold">410 / 420 mg</span>
+</div>
+<div class="w-full bg-surface-container-highest h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full rounded-full" style="width: 97%"></div>
+</div>
+</div>
+</div>
+<div class="mt-space-sm pt-space-xs flex items-center justify-between font-label-sm text-label-sm text-secondary">
+<span>Neuromuscular Index</span>
+<span class="font-bold">99.2% OPTIMAL</span>
+</div>
+</div>
+</div>
+<!-- Peri-Workout Nutrition Matrix -->
+<div class="space-y-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary-container text-[24px]">network_ping</span>
+<h2 class="font-headline-md text-headline-md text-primary tracking-tight">Peri-Workout Nutrient Timing Protocol</h2>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest hidden sm:inline-block">Biomechanical Window Coordination</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<!-- Pre-Workout Card -->
+<div class="bg-surface-container-low rounded-xl p-space-lg flex flex-col justify-between relative overflow-hidden shadow-md">
+<div class="absolute top-0 left-0 w-1.5 h-full bg-primary-container"></div>
+<div>
+<div class="flex items-center justify-between pb-space-sm">
+<span class="font-label-sm text-label-sm uppercase font-bold tracking-wider text-outline">Phase 01 // T - 90 Min</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-primary-container/20 text-primary-container font-label-sm text-label-sm font-semibold uppercase">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                Consumed
+              </span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-space-xs">Pre-Kinetic Activation Stack</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+              Fast-acting complex carbohydrate base with rapid hydrolysate bioavailability to maximize glycogen availability and vasodilation.
+            </p>
+<div class="space-y-space-xs font-body-sm text-body-sm">
+<div class="flex items-center justify-between p-2 rounded bg-surface-container">
+<span class="text-on-surface">Oat Flour &amp; Cream of Rice</span>
+<span class="text-secondary font-headline-sm text-[13px]">65g Carbs</span>
+</div>
+<div class="flex items-center justify-between p-2 rounded bg-surface-container">
+<span class="text-on-surface">Whey Protein Hydrolysate</span>
+<span class="text-primary-container font-headline-sm text-[13px]">35g Protein</span>
+</div>
+<div class="flex items-center justify-between p-2 rounded bg-surface-container">
+<span class="text-on-surface">L-Citrulline Malate + Beta-Alanine</span>
+<span class="text-primary font-headline-sm text-[13px]">8g / 3.2g</span>
+</div>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Bioavailability: Complete</span>
+<span class="text-primary-container font-semibold">12:30 PM (Logged)</span>
+</div>
+</div>
+<!-- Intra-Workout Card -->
+<div class="bg-surface-container-low rounded-xl p-space-lg flex flex-col justify-between relative overflow-hidden shadow-md">
+<div class="absolute top-0 left-0 w-1.5 h-full bg-secondary"></div>
+<div>
+<div class="flex items-center justify-between pb-space-sm">
+<span class="font-label-sm text-label-sm uppercase font-bold tracking-wider text-outline">Phase 02 // Live Window</span>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-secondary/20 text-secondary font-label-sm text-label-sm font-semibold uppercase animate-pulse">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                Active Flow
+              </span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-space-xs">Intra-Set Osmotic Hydration</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+              Sustained cyclic dextrin and free-form essential amino acids protecting muscle catabolism under peak tension and heavy loads.
+            </p>
+<div class="space-y-space-xs font-body-sm text-body-sm">
+<div class="flex items-center justify-between p-2 rounded bg-surface-container">
+<span class="text-on-surface">Highly Branched Cyclic Dextrin</span>
+<span class="text-secondary font-headline-sm text-[13px]">30g Carbs</span>
+</div>
+<div class="flex items-center justify-between p-2 rounded bg-surface-container">
+<span class="text-on-surface">Essential Amino Acids (EAA Matrix)</span>
+<span class="text-primary-container font-headline-sm text-[13px]">12g EAA</span>
+</div>
+<div class="flex items-center justify-between p-2 rounded bg-surface-container">
+<span class="text-on-surface">Pink Himalayan Salts + Aquamin Mg</span>
+<span class="text-primary font-headline-sm text-[13px]">1,200mg</span>
+</div>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Sip Rate: 150ml / set</span>
+<span class="text-secondary font-semibold">650ml Drank</span>
+</div>
+</div>
+<!-- Post-Workout Card -->
+<div class="bg-surface-container-low rounded-xl p-space-lg flex flex-col justify-between relative overflow-hidden shadow-md">
+<div class="absolute top-0 left-0 w-1.5 h-full bg-tertiary-fixed-dim"></div>
+<div>
+<div class="flex items-center justify-between pb-space-sm">
+<span class="font-label-sm text-label-sm uppercase font-bold tracking-wider text-outline">Phase 03 // T + 45 Min</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm font-semibold uppercase">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+                Scheduled
+              </span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-space-xs">Anabolic Resynthesis Window</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+              High glycemic insulin spike paired with rapid leucine infusion to maximize satellite cell activation and reverse exercise-induced depletion.
+            </p>
+<div class="space-y-space-xs font-body-sm text-body-sm">
+<div class="flex items-center justify-between p-2 rounded bg-surface-container">
+<span class="text-on-surface">Dextrose &amp; Maltodextrin Pure</span>
+<span class="text-secondary font-headline-sm text-[13px]">80g High Glycemic</span>
+</div>
+<div class="flex items-center justify-between p-2 rounded bg-surface-container">
+<span class="text-on-surface">Whey Protein Isolate 90%</span>
+<span class="text-primary-container font-headline-sm text-[13px]">45g Isolate</span>
+</div>
+<div class="flex items-center justify-between p-2 rounded bg-surface-container">
+<span class="text-on-surface">Creapure® Micronized Creatine</span>
+<span class="text-primary font-headline-sm text-[13px]">5g</span>
+</div>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Countdown Window</span>
+<span class="text-tertiary-fixed-dim font-bold tracking-wider">T - 38:20 Remaining</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Meal Log & Metabolic Correlation Grid -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-lg">
+<!-- Meal Schedule & Food Micro-Log -->
+<div class="xl:col-span-7 space-y-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[24px]">restaurant_menu</span>
+<h3 class="font-headline-md text-headline-md text-primary tracking-tight">Fuel Log &amp; Biomarkers</h3>
+</div>
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">4 of 5 Meals Registered</span>
+</div>
+<div class="space-y-space-sm">
+<!-- Meal 1 -->
+<div class="flex flex-col sm:flex-row items-start sm:items-center justify-between p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors gap-space-md shadow-sm">
+<div class="flex items-center gap-space-md">
+<img class="w-16 h-16 rounded-lg object-cover flex-shrink-0" data-alt="High protein breakfast with fluffy scrambled eggs, organic sourdough avocado toast, and a high-contrast dark aesthetic aesthetic styling with moody ambient gym telemetry lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1Yr1dOmzBERC6LOxTzlOLYNgvFNX_V7xvx-xiEOhzggisP0LVUXUcy5F3XlG6fZUvWQcH24zkKwhwSe69t4xDP5As6AY1Q2xQbSpUKR-Y0uLQsk8AwmZpDcSmY-iGH1hXCDAJjyYqr31gVZ7nD15GLBDzjzIKA-V0qcPCNkE9pyqZRhp1YIfeKfEXYCDMUgxGyUQOVVndt84RSg-nEuoRt_Sud5-tYciMwY2lP2k"/>
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">07:45 AM • Meal 01</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-container-high text-primary-container text-[10px] font-label-sm uppercase font-semibold">Breakfast</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-primary">Free-Range Eggs, Oats &amp; Blueberries</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">5 Whole eggs, 90g rolled oats, 100g organic blueberries, raw honey</p>
+</div>
+</div>
+<div class="flex sm:flex-col items-end justify-between w-full sm:w-auto text-right gap-1">
+<span class="font-headline-sm text-headline-sm font-bold text-primary">680 <span class="font-label-sm text-label-sm text-outline font-normal">kcal</span></span>
+<div class="flex items-center gap-space-xs font-label-sm text-label-sm">
+<span class="text-primary-container">42g P</span>
+<span class="text-outline">•</span>
+<span class="text-secondary">72g C</span>
+<span class="text-outline">•</span>
+<span class="text-on-surface-variant">24g F</span>
+</div>
+</div>
+</div>
+<!-- Meal 2 -->
+<div class="flex flex-col sm:flex-row items-start sm:items-center justify-between p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors gap-space-md shadow-sm">
+<div class="flex items-center gap-space-md">
+<img class="w-16 h-16 rounded-lg object-cover flex-shrink-0" data-alt="Grilled chicken breast served over fluffy white jasmine rice and steamed crisp green asparagus spears in sleek black athletic meal prep container with neon accent reflection" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7yTno5kOEv1uJlSQ9ekKD2XQKBXShXs90w5cPLBwuXIkyRxUkuJSKeTEfTmL_Tchk1ZZbVRtKUaudgf2AAFKVHDAiAWl6GgEfPUCGovCtNlDJY2HinSmM0x8gsmAOPsEIYnUh_TqKxv-41eo1l_RwuKeCC7iTxcsu3mfopgkOUpjzKBOqH5fPJeQKwAocN4I2BSNpehOiAUZsUyGyN9NbJryDfXpKloSD1epxTsQ"/>
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">11:30 AM • Meal 02</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-container-high text-secondary text-[10px] font-label-sm uppercase font-semibold">Midday Load</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-primary">Seared Chicken Tenderloin &amp; Jasmine Rice</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">220g Free-range chicken breast, 250g jasmine rice, steamed asparagus</p>
+</div>
+</div>
+<div class="flex sm:flex-col items-end justify-between w-full sm:w-auto text-right gap-1">
+<span class="font-headline-sm text-headline-sm font-bold text-primary">740 <span class="font-label-sm text-label-sm text-outline font-normal">kcal</span></span>
+<div class="flex items-center gap-space-xs font-label-sm text-label-sm">
+<span class="text-primary-container">58g P</span>
+<span class="text-outline">•</span>
+<span class="text-secondary">88g C</span>
+<span class="text-outline">•</span>
+<span class="text-on-surface-variant">12g F</span>
+</div>
+</div>
+</div>
+<!-- Meal 3 (Pre-Workout) -->
+<div class="flex flex-col sm:flex-row items-start sm:items-center justify-between p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors gap-space-md shadow-sm">
+<div class="flex items-center gap-space-md">
+<img class="w-16 h-16 rounded-lg object-cover flex-shrink-0" data-alt="Dark aesthetic performance smoothie bowl with rich chocolate whey swirl, organic banana coins, and raw honey drizzle inside modern obsidian matte vessel" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAggmJRogH5zCQWvwAee4Rmbbg_sTM6m5gA-6TQ8XYg4axm7MO6KXf39qYcdnpzKimlkKz_BFMCmQtfRup5zKlwq7q_otttqADM34rB-n2A-VsBqCUzbMOAIElI_54qOjJ8mdh3a6KxgYjgDbtG5Vr9uer6D54C3KHS82SXg2Lzs877GAaL8Z68Hgyxernk6zn0hWR8GllnXL3fkAWBDZIGUoO44DjBU5XcjlhIHR8"/>
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">02:30 PM • Meal 03</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-container-high text-primary-container text-[10px] font-label-sm uppercase font-semibold">Pre-Training</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-primary">Cream of Rice &amp; Hydrolyzed Isolate</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">80g Cream of rice, 35g hydrolyzed whey, 1 medium banana, cinnamon</p>
+</div>
+</div>
+<div class="flex sm:flex-col items-end justify-between w-full sm:w-auto text-right gap-1">
+<span class="font-headline-sm text-headline-sm font-bold text-primary">520 <span class="font-label-sm text-label-sm text-outline font-normal">kcal</span></span>
+<div class="flex items-center gap-space-xs font-label-sm text-label-sm">
+<span class="text-primary-container">38g P</span>
+<span class="text-outline">•</span>
+<span class="text-secondary">75g C</span>
+<span class="text-outline">•</span>
+<span class="text-on-surface-variant">6g F</span>
+</div>
+</div>
+</div>
+<!-- Meal 4 (Intra-Workout fuel logged) -->
+<div class="flex flex-col sm:flex-row items-start sm:items-center justify-between p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors gap-space-md shadow-sm">
+<div class="flex items-center gap-space-md">
+<div class="w-16 h-16 rounded-lg bg-surface-container flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-secondary text-[32px]">science</span>
+</div>
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">04:15 PM • Meal 04</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-container-high text-secondary text-[10px] font-label-sm uppercase font-semibold">Intra-Drive</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-primary">Cyclic Dextrin Electrolyte Hydrator</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Cluster Dextrin® 35g, Essential Amino Acids 12g, Himalayan pink salt</p>
+</div>
+</div>
+<div class="flex sm:flex-col items-end justify-between w-full sm:w-auto text-right gap-1">
+<span class="font-headline-sm text-headline-sm font-bold text-primary">180 <span class="font-label-sm text-label-sm text-outline font-normal">kcal</span></span>
+<div class="flex items-center gap-space-xs font-label-sm text-label-sm">
+<span class="text-primary-container">12g P</span>
+<span class="text-outline">•</span>
+<span class="text-secondary">32g C</span>
+<span class="text-outline">•</span>
+<span class="text-on-surface-variant">0g F</span>
+</div>
+</div>
+</div>
+<!-- Pending Meal 5 -->
+<div class="flex flex-col sm:flex-row items-start sm:items-center justify-between p-space-md rounded-xl bg-surface-container-lowest/50 hover:bg-surface-container-low transition-colors gap-space-md">
+<div class="flex items-center gap-space-md">
+<div class="w-16 h-16 rounded-lg bg-surface-container-high flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-outline text-[28px]">schedule</span>
+</div>
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">07:30 PM • Meal 05 (Pending)</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-variant text-on-surface-variant text-[10px] font-label-sm uppercase font-semibold">Post-Sesh Hypertrophy</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface-variant">Grass-Fed Ribeye &amp; Sweet Potato Medallions</h4>
+<p class="font-body-sm text-body-sm text-outline">Targeting 300g sweet potato, 200g ribeye steak, olive oil drizzle</p>
+</div>
+</div>
+<button class="px-space-md py-1.5 rounded-lg bg-surface-container-high hover:bg-primary-container hover:text-on-primary-container text-on-surface font-label-sm text-label-sm uppercase tracking-wider font-semibold transition-colors" type="button">
+              Quick Confirm
+            </button>
+</div>
+</div>
+</div>
+<!-- Metabolic & Recovery Correlation Widget -->
+<div class="xl:col-span-5 space-y-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary-container text-[24px]">insights</span>
+<h3 class="font-headline-md text-headline-md text-primary tracking-tight">Metabolic &amp; Recovery Graph</h3>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-semibold uppercase">7-Day Rolling Cycle</span>
+</div>
+<div class="bg-surface-container-low rounded-xl p-space-lg space-y-space-lg shadow-lg">
+<!-- Widget Quick Summary -->
+<div class="grid grid-cols-2 gap-space-md">
+<div class="p-space-md rounded-lg bg-surface-container">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Glycogen Replenishment</span>
+<div class="flex items-baseline gap-1 mt-1">
+<span class="font-headline-lg text-headline-lg font-bold text-secondary">94%</span>
+<span class="font-label-sm text-label-sm text-primary-container font-semibold">+18% vs Yesterday</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Carb-loading efficiency peak</p>
+</div>
+<div class="p-space-md rounded-lg bg-surface-container">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Recovery Readiness</span>
+<div class="flex items-baseline gap-1 mt-1">
+<span class="font-headline-lg text-headline-lg font-bold text-primary-container">88.5</span>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">Tier 1 Elite</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">CNS Parasympathetic dominance</p>
+</div>
+</div>
+<!-- Dual Telemetry Vector Chart (Inline SVG) -->
+<div class="space-y-space-xs">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<div class="flex items-center gap-2">
+<span class="w-3 h-0.5 bg-secondary"></span>
+<span class="text-on-surface">Glycogen Replenishment %</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-3 h-0.5 bg-primary-container"></span>
+<span class="text-on-surface">Biomechanical Recovery Readiness</span>
+</div>
+</div>
+<div class="w-full h-48 bg-surface-container rounded-lg p-3 relative overflow-hidden flex flex-col justify-end">
+<!-- Gridlines -->
+<div class="absolute inset-0 flex flex-col justify-between p-3 pointer-events-none opacity-20">
+<div class="w-full h-px bg-outline"></div>
+<div class="w-full h-px bg-outline"></div>
+<div class="w-full h-px bg-outline"></div>
+<div class="w-full h-px bg-outline"></div>
+</div>
+<svg class="w-full h-full overflow-visible z-10" preserveaspectratio="none" viewbox="0 0 400 120">
+<defs>
+<lineargradient id="glycogenGrad" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#4cd7f6" stop-opacity="0.3"></stop>
+<stop offset="100%" stop-color="#4cd7f6" stop-opacity="0.0"></stop>
+</lineargradient>
+<lineargradient id="recoveryGrad" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#c3f400" stop-opacity="0.25"></stop>
+<stop offset="100%" stop-color="#c3f400" stop-opacity="0.0"></stop>
+</lineargradient>
+</defs>
+<!-- Glycogen Area -->
+<path d="M0,80 Q57,60 114,75 T228,45 T342,30 L400,20 L400,120 L0,120 Z" fill="url(#glycogenGrad)"></path>
+<!-- Glycogen Line -->
+<path d="M0,80 Q57,60 114,75 T228,45 T342,30 L400,20" fill="none" stroke="#4cd7f6" stroke-linecap="round" stroke-width="2.5"></path>
+<!-- Recovery Area -->
+<path d="M0,95 Q57,75 114,80 T228,55 T342,40 L400,28 L400,120 L0,120 Z" fill="url(#recoveryGrad)"></path>
+<!-- Recovery Line -->
+<path d="M0,95 Q57,75 114,80 T228,55 T342,40 L400,28" fill="none" stroke="#c3f400" stroke-dasharray="4 2" stroke-linecap="round" stroke-width="2.5"></path>
+<!-- Active Dot for Today -->
+<circle class="animate-ping" cx="400" cy="20" fill="#4cd7f6" r="4.5" style="transform-origin: 400px 20px;"></circle>
+<circle cx="400" cy="20" fill="#ffffff" r="4"></circle>
+<circle cx="400" cy="28" fill="#c3f400" r="4"></circle>
+</svg>
+<!-- Chart Days Timeline Axis -->
+<div class="flex justify-between text-outline font-label-sm text-label-sm pt-2 z-10">
+<span>Mon</span>
+<span>Tue</span>
+<span>Wed</span>
+<span>Thu</span>
+<span>Fri</span>
+<span>Sat</span>
+<span class="text-primary font-bold">Today</span>
+</div>
+</div>
+</div>
+<!-- Biometric Engine Insight Feed -->
+<div class="p-space-md rounded-lg bg-surface-container flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[22px] flex-shrink-0 mt-0.5">neurology</span>
+<div class="space-y-0.5">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold">Neural Engine Telemetry Assessment</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Carbohydrate utilization efficiency has spiked by <span class="text-secondary font-semibold">12%</span> following peri-workout dextrose synchronization. Hypertrophy latency window is cleared for max concentric load.
+              </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></main></div>
+<script>
+(function () {
+  var routes = [
+    ["continue to calendar architecture", "/calendar"],
+    ["3d anatomy & muscle target explorer", "/anatomy"],
+    ["exercise library & biomechanics", "/library"],
+    ["3d interactive execution & form", "/execute"],
+    ["nutrition & fuel matrix", "/nutrition"],
+    ["user profile & biometrics", "/profile"],
+    ["calendar & weekly split", "/calendar"],
+    ["3d anatomy & muscle map", "/muscle-map"],
+    ["workout execution player", "/execute"],
+    ["launch today's session player", "/execute"],
+    ["launch session", "/execute"],
+    ["launch live 3d holographic player", "/execute"],
+    ["launch 3d muscle rig", "/muscle-map"],
+    ["start 3d form simulation", "/execute"],
+    ["open 3d form studio", "/execute"],
+    ["open 3d biomechanics", "/exercise"],
+    ["queue to monday", "/week"],
+    ["queue latissimus", "/week"],
+    ["weekly split", "/week"],
+    ["exercise library", "/guides"],
+    ["progress & metrics", "/calendar"],
+    ["settings", "/profile"]
+  ];
+  document.addEventListener("click", function (event) {
+    var el = event.target.closest("a,button");
+    if (!el) return;
+    var text = (el.innerText || "").replace(/\s+/g, " ").trim().toLowerCase();
+    for (var i = 0; i < routes.length; i++) {
+      if (text.indexOf(routes[i][0]) !== -1) {
+        event.preventDefault();
+        window.top.location.assign(routes[i][1]);
+        return;
+      }
+    }
+  });
+})();
+</script>
+
+</body></html>

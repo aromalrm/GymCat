@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@100..900&family=Space+Grotesk:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"tertiary-container":"#6ffbbe","surface-container-low":"#181c24","outline-variant":"#444933","on-error":"#690005","on-error-container":"#ffdad6","on-primary-container":"#556d00","on-secondary-container":"#00424e","primary":"#ffffff","outline":"#8e9379","surface-container-highest":"#31353e","secondary-fixed":"#acedff","on-secondary-fixed-variant":"#004e5c","tertiary-fixed-dim":"#4edea3","surface":"#0f131c","on-background":"#dfe2ee","inverse-on-surface":"#2c3039","error":"#ffb4ab","on-secondary-fixed":"#001f26","surface-container-high":"#262a33","primary-fixed":"#c3f400","surface-tint":"#abd600","surface-dim":"#0f131c","on-primary":"#283500","secondary":"#4cd7f6","secondary-fixed-dim":"#4cd7f6","on-tertiary":"#003824","inverse-surface":"#dfe2ee","error-container":"#93000a","surface-container":"#1c2028","surface-variant":"#31353e","tertiary":"#ffffff","background":"#0f131c","primary-fixed-dim":"#abd600","on-surface-variant":"#c4c9ac","on-tertiary-fixed":"#002113","on-primary-fixed":"#161e00","tertiary-fixed":"#6ffbbe","surface-container-lowest":"#0a0e16","on-primary-fixed-variant":"#3c4d00","primary-container":"#c3f400","on-tertiary-fixed-variant":"#005236","on-secondary":"#003640","on-surface":"#dfe2ee","secondary-container":"#03b5d3","inverse-primary":"#506600","surface-bright":"#353942","on-tertiary-container":"#00734e"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-xs":"0.25rem","margin-tablet":"1.5rem","margin":"1rem","margin-desktop":"2.5rem","space-xl":"2.25rem","space-lg":"1.5rem","space-sm":"0.5rem","gutter":"1.25rem","gutter-desktop":"1.75rem","space-md":"1rem"},"fontFamily":{"body-sm":["Manrope"],"headline-lg":["Space Grotesk"],"body-lg":["Manrope"],"label-md":["Space Grotesk"],"display-xl-mobile":["Space Grotesk"],"label-sm":["Space Grotesk"],"label-lg":["Space Grotesk"],"headline-sm":["Space Grotesk"],"display-xl":["Space Grotesk"],"body-md":["Manrope"],"metric-display":["Space Grotesk"],"headline-md":["Space Grotesk"],"headline-lg-mobile":["Space Grotesk"]},"fontSize":{"body-sm":["13px",{"lineHeight":"20px","letterSpacing":"0.01em","fontWeight":"400"}],"headline-lg":["36px",{"lineHeight":"44px","letterSpacing":"-0.02em","fontWeight":"700"}],"body-lg":["18px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"400"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.06em","fontWeight":"600"}],"display-xl-mobile":["36px",{"lineHeight":"44px","letterSpacing":"-0.02em","fontWeight":"700"}],"label-sm":["10px",{"lineHeight":"14px","letterSpacing":"0.08em","fontWeight":"700"}],"label-lg":["14px",{"lineHeight":"20px","letterSpacing":"0.05em","fontWeight":"600"}],"headline-sm":["20px",{"lineHeight":"28px","letterSpacing":"0em","fontWeight":"600"}],"display-xl":["56px",{"lineHeight":"64px","letterSpacing":"-0.03em","fontWeight":"700"}],"body-md":["15px",{"lineHeight":"24px","letterSpacing":"0em","fontWeight":"400"}],"metric-display":["44px",{"lineHeight":"48px","letterSpacing":"-0.04em","fontWeight":"700"}],"headline-md":["24px",{"lineHeight":"32px","letterSpacing":"-0.01em","fontWeight":"600"}],"headline-lg-mobile":["28px",{"lineHeight":"36px","letterSpacing":"-0.01em","fontWeight":"600"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container min-h-screen"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-lowest/90 backdrop-blur-2xl z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.4)]"><div class="flex flex-col"><div class="h-20 px-space-lg flex items-center gap-space-sm"><img alt="KINETIX 3D Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrD4azO_1FWvmyEDaboq2NAQDulTTZOCBwgTp5Uv44S7DVM62ymDnh9KhmS7gQ2RZT8YGEfhI5O2nYBjunnv0raWQ8RxWdMpv2qmDraTai83WjESAgecN1Gd2tSXZ4oiBQzGbqLAyVADJnApdvUEN4jVeocnjBhTXobNvhzgp-2VkaIrlZ2tcty7ZP1TXrnKBu5jjCGMuGBkSDSKu2yFSfjHLo0F_TaM0DZzyaHJC5tc"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm uppercase tracking-wider text-primary font-bold leading-none">KINETIX <span class="text-primary-container">3D</span></span><span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">Biomechanical HUD</span></div></div><div class="px-space-md py-space-sm"><div class="px-space-md py-space-xs mb-space-sm"><span class="font-label-sm text-label-sm uppercase tracking-widest text-outline">Training Architecture</span></div><nav class="space-y-1" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm font-semibold shadow-[0_0_24px_-4px_rgba(195,244,0,0.35)]"><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all duration-200" data-path="weekly-split" href="#"><span class="material-symbols-outlined text-[20px]">calendar_view_week</span><span class="font-label-lg text-label-lg">Weekly Split</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all duration-200" data-path="3d-anatomy-muscle-map" href="#"><span class="material-symbols-outlined text-[20px]">accessibility_new</span><span class="font-label-lg text-label-lg">3D Anatomy & Muscle Map</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all duration-200" data-path="workout-execution-player" href="#"><span class="material-symbols-outlined text-[20px]">play_circle</span><span class="font-label-lg text-label-lg">Workout Execution Player</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all duration-200" data-path="exercise-library" href="#"><span class="material-symbols-outlined text-[20px]">fitness_center</span><span class="font-label-lg text-label-lg">Exercise Library</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all duration-200" data-path="progress-metrics" href="#"><span class="material-symbols-outlined text-[20px]">monitoring</span><span class="font-label-lg text-label-lg">Progress & Metrics</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all duration-200" data-path="settings" href="#"><span class="material-symbols-outlined text-[20px]">tune</span><span class="font-label-lg text-label-lg">Settings</span></a></nav></div></div><div class="p-space-md"><div class="bg-surface-container-low rounded-xl p-space-md space-y-space-xs"><div class="flex items-center justify-between"><span class="font-label-sm text-label-sm uppercase text-secondary tracking-widest">Telemetry Stream</span><span class="w-2 h-2 rounded-full bg-secondary-container animate-ping"></span></div><div class="flex items-baseline justify-between pt-space-xs"><span class="font-body-sm text-body-sm text-on-surface-variant">Core Sync</span><span class="font-label-sm text-label-sm text-primary font-bold">120 FPS // 4K</span></div><div class="w-full bg-surface-container-highest h-1 rounded-full overflow-hidden mt-space-xs"><div class="bg-primary-container h-full w-[84%]"></div></div></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-20 bg-surface-container-lowest/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.5)] z-40 flex items-center justify-between px-space-xl"><div class="flex items-center gap-space-lg"><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-space-md text-on-surface-variant text-[18px]">search</span><input class="w-80 h-10 pl-10 pr-space-md bg-surface-container rounded-lg font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-secondary transition-all" placeholder="Search exercises, muscle targets, biometric cues..." type="text"/></div><div class="hidden xl:flex items-center gap-space-xs px-space-md py-1.5 bg-surface-container-high rounded-full cursor-pointer hover:bg-surface-container-highest transition-colors"><span class="material-symbols-outlined text-secondary text-[16px]">calendar_today</span><span class="font-label-sm text-label-sm text-on-surface uppercase tracking-wider">Today • Oct 24</span><span class="material-symbols-outlined text-on-surface-variant text-[14px]">expand_more</span></div></div><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-xs bg-surface-container-high px-space-md py-1.5 rounded-full"><span class="material-symbols-outlined text-primary-container text-[18px]">local_fire_department</span><span class="font-label-sm text-label-sm uppercase font-bold text-primary tracking-wider">5 Day Streak</span></div><div class="flex items-center gap-space-xs bg-surface-container-high px-space-md py-1.5 rounded-full"><span class="material-symbols-outlined text-secondary text-[18px] animate-pulse">timer</span><span class="font-label-sm text-label-sm font-headline-sm text-primary tracking-widest">42:18</span><span class="font-label-sm text-label-sm uppercase text-outline">Active</span></div><button aria-label="Notifications" class="relative p-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-primary-container"></span></button><div class="flex items-center gap-space-sm pl-space-xs cursor-pointer"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-2 ring-primary-container/30" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_8dYWNrzIWFM7qEVkHFUE4hsZTlGy8ChrAm_2wVluX38HrRTcn9MlP_HL3RqBWMHll4IS13Hvd_fbsfY7OVeZ6w_0L8WfhOl8BnuMUlQ5qjUCNpRZl_7B8X2dPWi73qWeOKAzp8URrKawEQ9iO2VV-iwtv2t63mJ9yd3MSUWMMgoZjwStocJ-UF1L8q1dmVV9xkGNXvygino80jpeAaqzUxM09ZfcpUyA5IBpQNw"/><div class="hidden 2xl:flex flex-col"><span class="font-label-sm text-label-sm text-primary font-bold leading-none">Alex Vance</span><span class="font-label-sm text-label-sm text-secondary tracking-widest uppercase">Elite Pro</span></div></div></div></header><main class="w-full pt-20 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<div class="p-space-lg xl:p-space-xl flex flex-col gap-space-lg max-w-[1720px] mx-auto w-full">
+<!-- Top Biomechanical Control & Muscle Group Filter Ribbon -->
+<div class="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-space-md bg-surface-container-low/70 backdrop-blur-xl p-space-md rounded-xl shadow-lg">
+<!-- Muscle Selectors -->
+<div class="flex items-center gap-space-xs overflow-x-auto pb-1 lg:pb-0 scrollbar-none">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-outline mr-space-xs shrink-0 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-secondary">tune</span> Group:
+        </span>
+<button class="px-space-md py-1.5 rounded-lg font-label-md text-label-md uppercase tracking-wider bg-primary-container text-on-primary-container font-bold shadow-[0_0_16px_rgba(195,244,0,0.35)] transition-all shrink-0" type="button">
+          Pectorals
+        </button>
+<button class="px-space-md py-1.5 rounded-lg font-label-md text-label-md uppercase tracking-wider bg-surface-container-high text-on-surface hover:text-primary-container hover:bg-surface-container-highest transition-all shrink-0" type="button">
+          Deltoids
+        </button>
+<button class="px-space-md py-1.5 rounded-lg font-label-md text-label-md uppercase tracking-wider bg-surface-container-high text-on-surface hover:text-primary-container hover:bg-surface-container-highest transition-all shrink-0" type="button">
+          Latissimus Dorsi
+        </button>
+<button class="px-space-md py-1.5 rounded-lg font-label-md text-label-md uppercase tracking-wider bg-surface-container-high text-on-surface hover:text-primary-container hover:bg-surface-container-highest transition-all shrink-0" type="button">
+          Triceps Brachii
+        </button>
+<button class="px-space-md py-1.5 rounded-lg font-label-md text-label-md uppercase tracking-wider bg-surface-container-high text-on-surface hover:text-primary-container hover:bg-surface-container-highest transition-all shrink-0" type="button">
+          Quadriceps
+        </button>
+<button class="px-space-md py-1.5 rounded-lg font-label-md text-label-md uppercase tracking-wider bg-surface-container-high text-on-surface hover:text-primary-container hover:bg-surface-container-highest transition-all shrink-0" type="button">
+          Hamstrings
+        </button>
+</div>
+<!-- Equipment & Layer Filter Segment -->
+<div class="flex items-center gap-space-sm shrink-0 self-end lg:self-auto">
+<div class="flex items-center bg-surface-container rounded-lg p-1 gap-1">
+<button class="px-3 py-1 rounded font-label-sm text-label-sm uppercase tracking-wider text-secondary bg-surface-container-high shadow-sm" type="button">All Gear</button>
+<button class="px-3 py-1 rounded font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors" type="button">Barbell</button>
+<button class="px-3 py-1 rounded font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors" type="button">Dumbbell</button>
+<button class="px-3 py-1 rounded font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors" type="button">Cable</button>
+</div>
+<div class="h-6 w-[1px] bg-surface-container-highest hidden sm:block"></div>
+<button aria-label="Toggle X-Ray Joint Markers" class="p-2 bg-surface-container hover:bg-surface-container-high text-secondary rounded-lg transition-colors flex items-center justify-center" type="button">
+<span class="material-symbols-outlined text-[18px]">radiology</span>
+</button>
+</div>
+</div>
+<!-- Main Workspace Grid: 3D Biomechanical Viewport (Left/Center 7 cols) & Kinetic Diagnostic Drawer (Right 5 cols) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- 3D MUSCLE ENGINE CANVAS VIEWPORT (7 Cols) -->
+<div class="lg:col-span-7 xl:col-span-8 flex flex-col gap-space-md">
+<!-- Viewport Container with Futuristic HUD Overlay -->
+<div class="relative bg-surface-container-lowest rounded-xl overflow-hidden min-h-[640px] xl:min-h-[740px] flex items-center justify-center shadow-2xl shadow-surface-container-lowest/80">
+<!-- Background Telemetry Coordinate Matrix & Ambient Glow -->
+<div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_35%,rgba(195,244,0,0.12),transparent_65%)] pointer-events-none"></div>
+<div class="absolute inset-0 bg-[radial-gradient(circle_at_80%_80%,rgba(76,215,246,0.06),transparent_50%)] pointer-events-none"></div>
+<div class="absolute inset-0 opacity-[0.03] pointer-events-none bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:40px_40px]"></div>
+<!-- Top-Left HUD Telemetry Badge -->
+<div class="absolute top-space-md left-space-md flex flex-col gap-space-xs z-20">
+<div class="flex items-center gap-space-xs bg-surface-container-low/80 backdrop-blur-md px-3 py-1.5 rounded-lg shadow-sm">
+<span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary font-bold">Kinematic Model v4.8</span>
+<span class="font-label-sm text-label-sm text-outline px-1">/</span>
+<span class="font-label-sm text-label-sm uppercase text-secondary">Male Anatomical Atlas</span>
+</div>
+<div class="flex items-center gap-space-xs text-on-surface-variant pl-1">
+<span class="material-symbols-outlined text-[14px]">grid_4x4</span>
+<span class="font-label-sm text-label-sm tracking-wider uppercase">Active Mesh: 48,220 Vertices</span>
+</div>
+</div>
+<!-- Top-Right Projection Switcher (Anterior / Posterior) -->
+<div class="absolute top-space-md right-space-md flex items-center bg-surface-container-low/90 backdrop-blur-md p-1 rounded-lg z-20 shadow-md">
+<button class="px-3.5 py-1.5 rounded-md font-label-md text-label-md uppercase tracking-wider bg-primary-container text-on-primary-container font-bold shadow-sm transition-all flex items-center gap-1.5" id="view-anterior" type="button">
+<span class="material-symbols-outlined text-[16px]">visibility</span> Anterior
+            </button>
+<button class="px-3.5 py-1.5 rounded-md font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all flex items-center gap-1.5" id="view-posterior" type="button">
+<span class="material-symbols-outlined text-[16px]">flip_camera_android</span> Posterior
+            </button>
+</div>
+<!-- 3D Model Photographic Centerpiece with Biomechanical Nodes and Glow highlights -->
+<div class="relative w-full h-full flex items-center justify-center p-space-lg select-none">
+<!-- Anatomical Render Placeholder with High Realism Prompt -->
+<div class="relative max-w-[480px] w-full flex items-center justify-center">
+<img class="w-full h-auto max-h-[580px] object-contain drop-shadow-[0_10px_35px_rgba(195,244,0,0.18)]" data-alt="Hyper-detailed 3D anatomical render of a muscular male human torso against a dark biomechanical cyberspace background. The pectoralis major and minor muscles are brightly illuminated with translucent neon volt lime fiber highlights and glowing nodes, showing muscle striations, clavicular, sternal and costal heads. Glowing laser-cyan lines trace vector lines of pull and joint axes around the glenohumeral joint and clavicle. Cinematic studio telemetry rim lighting, high-contrast dark science aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSYLNp9WtSTrVga6-SInmHmpUadTB9vyAljSb4NE7UjPWKmnKeIBY_d0Im45eiaBtLZRbnka7oODcdebVrQii-gy_WTWnIEIcc_R_DA6XTeYrTiWMbSHg7WA-Q2W9vnhLZQ5VMK5Q6vMB7vsl8Pc3-k8KejIqdTyYO9D-4g0-y3vzX1yjVG4wkC9Jgr996k6dHCjb2BQcaNXPlr75PJ4GgnOvD1jRe-jA4DpWpv2g"/>
+<!-- Interactive Floating Telemetry Pin 1: Clavicular Head (Upper Chest) -->
+<div class="absolute top-[28%] left-[34%] -translate-x-1/2 -translate-y-1/2 group cursor-pointer z-30">
+<div class="relative flex items-center justify-center">
+<span class="absolute w-8 h-8 rounded-full bg-primary-container/20 animate-ping"></span>
+<span class="w-4 h-4 rounded-full bg-primary-container shadow-[0_0_12px_#c3f400] flex items-center justify-center">
+<span class="w-1.5 h-1.5 rounded-full bg-surface-container-lowest"></span>
+</span>
+</div>
+<!-- Pin Data Popover -->
+<div class="absolute left-6 -top-3 w-48 p-2.5 bg-surface-container-lowest/90 backdrop-blur-xl rounded-lg shadow-xl opacity-90 group-hover:opacity-100 transition-all pointer-events-none group-hover:pointer-events-auto">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase text-primary-container font-bold">Clavicular Head</span>
+<span class="font-label-sm text-label-sm text-secondary font-headline-sm">30° Vec</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-[11px] leading-tight mt-0.5">Origin: Medial half of clavicle</p>
+</div>
+</div>
+<!-- Interactive Floating Telemetry Pin 2: Sternal Head (Mid Chest) -->
+<div class="absolute top-[37%] left-[64%] -translate-x-1/2 -translate-y-1/2 group cursor-pointer z-30">
+<div class="relative flex items-center justify-center">
+<span class="w-3.5 h-3.5 rounded-full bg-primary-container shadow-[0_0_10px_#c3f400] flex items-center justify-center">
+<span class="w-1 rounded-full bg-surface-container-lowest"></span>
+</span>
+</div>
+<div class="absolute left-5 -top-2 w-48 p-2 bg-surface-container-lowest/90 backdrop-blur-xl rounded-lg shadow-xl hidden group-hover:block transition-all pointer-events-none">
+<span class="font-label-sm text-label-sm uppercase text-primary-container font-bold">Sternocostal Head</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-[11px] leading-tight">Primary horizontal adduction motor</p>
+</div>
+</div>
+<!-- Interactive Floating Telemetry Pin 3: Abdominal / Lower Costal Head -->
+<div class="absolute top-[46%] left-[42%] -translate-x-1/2 -translate-y-1/2 group cursor-pointer z-30">
+<div class="relative flex items-center justify-center">
+<span class="w-3 h-3 rounded-full bg-secondary shadow-[0_0_8px_#4cd7f6] flex items-center justify-center">
+<span class="w-1 h-1 rounded-full bg-surface-container-lowest"></span>
+</span>
+</div>
+<div class="absolute -right-48 -top-2 w-44 p-2 bg-surface-container-lowest/90 backdrop-blur-xl rounded-lg shadow-xl hidden group-hover:block transition-all pointer-events-none">
+<span class="font-label-sm text-label-sm uppercase text-secondary font-bold">Costal Head</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-[11px] leading-tight">Engaged via decline angles & dips</p>
+</div>
+</div>
+<!-- Biomechanical Axis Vector Arc (Inline SVG overlay) -->
+<svg class="absolute inset-0 w-full h-full pointer-events-none overflow-visible" viewbox="0 0 400 400">
+<!-- Cyan Range of Motion Vector Arc -->
+<path d="M 170 120 C 130 145, 110 180, 125 210" fill="none" opacity="0.8" stroke="#4cd7f6" stroke-dasharray="3 3" stroke-width="1.5"></path>
+<circle cx="125" cy="210" fill="#4cd7f6" r="3"></circle>
+<!-- Volt Moment Arm Vector -->
+<path d="M 230 130 L 285 160" fill="none" opacity="0.9" stroke="#c3f400" stroke-width="2"></path>
+<polygon fill="#c3f400" points="285,160 277,155 278,165"></polygon>
+<text fill="#c3f400" font-family="Space Grotesk" font-size="9" letter-spacing="1" x="215" y="115">MOMENT ARM: 14.2 CM</text>
+</svg>
+</div>
+</div>
+<!-- Bottom Spatial Layer Scrubber & Orbit Quick-Nodes (HUD Floating Deck) -->
+<div class="absolute bottom-space-md inset-x-space-md flex flex-col sm:flex-row items-center justify-between gap-space-sm bg-surface-container-low/85 backdrop-blur-2xl p-space-sm sm:px-space-md rounded-xl z-20 shadow-xl">
+<!-- Layer Depth Slider (Superficial vs Deep Fascia) -->
+<div class="flex items-center gap-space-sm w-full sm:w-auto">
+<span class="material-symbols-outlined text-secondary text-[18px]">layers</span>
+<div class="flex flex-col">
+<div class="flex justify-between items-center gap-4">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Anatomical Depth</span>
+<span class="font-label-sm text-label-sm text-primary font-bold">L1: Superficial</span>
+</div>
+<div class="w-36 lg:w-44 h-1.5 bg-surface-container-highest rounded-full relative cursor-pointer mt-1">
+<div class="bg-secondary-container h-full w-[35%] rounded-full"></div>
+<div class="absolute top-1/2 left-[35%] -translate-x-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-primary shadow-sm"></div>
+</div>
+</div>
+</div>
+<!-- View Camera Nodes -->
+<div class="flex items-center gap-1 bg-surface-container-lowest/80 p-1 rounded-lg">
+<button class="px-2.5 py-1 rounded font-label-sm text-label-sm uppercase bg-surface-container text-primary font-bold shadow-sm" type="button">Iso 45°</button>
+<button class="px-2.5 py-1 rounded font-label-sm text-label-sm uppercase text-on-surface-variant hover:text-on-surface transition-colors" type="button">Front</button>
+<button class="px-2.5 py-1 rounded font-label-sm text-label-sm uppercase text-on-surface-variant hover:text-on-surface transition-colors" type="button">Axial Top</button>
+<button class="p-1 rounded text-on-surface-variant hover:text-secondary transition-colors" title="Reset Viewport Position" type="button">
+<span class="material-symbols-outlined text-[16px]">refresh</span>
+</button>
+</div>
+<!-- Biomechanical Metric Pill -->
+<div class="hidden xl:flex items-center gap-space-xs bg-surface-container-high px-space-sm py-1 rounded-full">
+<span class="font-label-sm text-label-sm uppercase text-outline">Active Torque</span>
+<span class="font-label-sm text-label-sm text-primary-container font-bold">78.4 N·m</span>
+</div>
+</div>
+</div>
+<!-- Secondary Analytics Row: Kinetic Load Matrix & ROM Deviation -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<div class="bg-surface-container-low p-space-md rounded-xl flex flex-col justify-between shadow-sm">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Functional Range</span>
+<span class="material-symbols-outlined text-secondary text-[18px]">straighten</span>
+</div>
+<div class="my-space-xs">
+<div class="flex items-baseline gap-1">
+<span class="font-metric-display text-metric-display text-primary leading-none">118°</span>
+<span class="font-body-sm text-body-sm text-primary-container font-semibold">Optimal</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Horizontal adduction arc before anterior capsule shear strain.</p>
+</div>
+<div class="w-full bg-surface-container-highest h-1 rounded-full overflow-hidden">
+<div class="bg-secondary h-full w-[85%]"></div>
+</div>
+</div>
+<div class="bg-surface-container-low p-space-md rounded-xl flex flex-col justify-between shadow-sm">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Hypertrophic Ratio</span>
+<span class="material-symbols-outlined text-primary-container text-[18px]">bolt</span>
+</div>
+<div class="my-space-xs">
+<div class="flex items-baseline gap-1">
+<span class="font-metric-display text-metric-display text-primary-container leading-none">4.2:1</span>
+<span class="font-body-sm text-body-sm text-outline">Stimulus-to-Fatigue</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">High mechanical tension bias with stable locked scaps.</p>
+</div>
+<div class="w-full bg-surface-container-highest h-1 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full w-[92%]"></div>
+</div>
+</div>
+<div class="bg-surface-container-low p-space-md rounded-xl flex flex-col justify-between shadow-sm">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Joint Strain Index</span>
+<span class="material-symbols-outlined text-tertiary-fixed-dim text-[18px]">health_and_safety</span>
+</div>
+<div class="my-space-xs">
+<div class="flex items-baseline gap-1">
+<span class="font-metric-display text-metric-display text-tertiary-fixed-dim leading-none">LOW</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Glenohumeral safe</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Acromioclavicular impingement risk minimized under 45° abduction.</p>
+</div>
+<div class="flex items-center gap-1.5 mt-2">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim"></span>
+<span class="font-label-sm text-label-sm uppercase text-on-surface">Zero impingement flags</span>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT DETAIL DRAWER: TARGET PROFILE & EXERCISE ENGINE (5 Cols) -->
+<div class="lg:col-span-5 xl:col-span-4 flex flex-col gap-space-md">
+<!-- Selected Muscle Header Card -->
+<div class="bg-surface-container-low p-space-lg rounded-xl shadow-lg relative overflow-hidden">
+<div class="absolute -right-8 -top-8 w-32 h-32 bg-primary-container/10 rounded-full blur-2xl pointer-events-none"></div>
+<!-- Readiness & Biological Status Capsule -->
+<div class="flex items-center justify-between mb-space-sm">
+<span class="px-2.5 py-1 rounded bg-primary-container/20 text-primary-container font-label-sm text-label-sm uppercase font-bold tracking-widest flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container animate-pulse"></span> Selected Region
+            </span>
+<div class="flex items-center gap-1.5 bg-surface-container-high px-3 py-1 rounded-full">
+<span class="material-symbols-outlined text-tertiary-fixed-dim text-[16px]">battery_charging_full</span>
+<span class="font-label-sm text-label-sm text-primary font-bold">92% RECOVERED</span>
+</div>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-primary tracking-tight font-bold">
+            Pectoralis Major
+          </h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">
+            Primary superficial anterior chest wall muscle comprised of clavicular, sternocostal, and abdominal subdivisions.
+          </p>
+<!-- Kinematic Spec Grid -->
+<div class="grid grid-cols-2 gap-space-sm mt-space-md pt-space-md bg-surface-container/60 p-space-sm rounded-lg">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline block">Prime Action</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">Horizontal Adduction</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline block">Optimal Vector Angle</span>
+<span class="font-label-md text-label-md text-secondary font-semibold">30° - 45° Incline</span>
+</div>
+<div class="mt-1">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline block">Fiber Orientation</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">Convergent / Fan-like</span>
+</div>
+<div class="mt-1">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline block">Inervation</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">Medial/Lat Pectoral</span>
+</div>
+</div>
+<!-- Hypertrophy Recovery Timeline Progress -->
+<div class="mt-space-md flex flex-col gap-1">
+<div class="flex justify-between items-center">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Last Trained: 72 hrs ago</span>
+<span class="font-label-sm text-label-sm text-primary-container font-bold">Prime Anabolic Window</span>
+</div>
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden flex">
+<div class="bg-tertiary-fixed-dim h-full w-[92%] rounded-full shadow-[0_0_12px_rgba(78,222,163,0.5)]"></div>
+</div>
+</div>
+</div>
+<!-- Prescribed Compound & Isolation Lifts (Linked to 3D Demonstrations) -->
+<div class="bg-surface-container-low p-space-lg rounded-xl shadow-lg flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary-container text-[20px]">fitness_center</span>
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold">Optimal Stimulus Lifts</h3>
+</div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-outline">4 Prescribed</span>
+</div>
+<!-- Movement Card 1: Incline Dumbbell Press -->
+<div class="group bg-surface-container p-space-sm rounded-lg hover:bg-surface-container-high transition-all flex items-center justify-between cursor-pointer">
+<div class="flex items-center gap-space-sm">
+<div class="relative w-14 h-14 rounded-lg overflow-hidden bg-surface-container-highest shrink-0 flex items-center justify-center">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Athletic male performing an Incline Dumbbell Bench Press with strict biomechanical form inside a dark gym with neon cyan and lime rim lighting highlights on chest." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAF0O3vElZzRaXnRgFT18-ZeuPYgf6Wq1EzSOUXM4lcSd0AxUlECcty0L2HrHDYakb4-iQR2XjxU5kLoU6cBp1Nx1V8g6MJlyN1wjRyGr51ONtJ9xByqWCWBAIW_t6ADqHXr5XxJQXGRz3-lOr4g1zYZxseJAslbMOIj1ZHrctEZ1wKRTr5zy8YZb_BNrSnaxBvNGOCsrZcOF2OEoGepu4ZQCJWMD7RF8hgBr7ArrE"/>
+<div class="absolute inset-0 bg-surface-container-lowest/30 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-[20px] drop-shadow-md">play_arrow</span>
+</div>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-label-md text-label-md text-primary font-bold truncate">Incline DB Press</span>
+<span class="px-1.5 py-0.2 rounded bg-primary-container/20 text-primary-container font-label-sm text-[9px] uppercase font-bold">Compound</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[12px] truncate">Clavicular Head Bias (30° bench)</span>
+<div class="flex items-center gap-2 mt-0.5 text-secondary font-label-sm text-label-sm">
+<span>3-4 Sets</span>
+<span>•</span>
+<span>6-10 Reps</span>
+</div>
+</div>
+</div>
+<button aria-label="Launch 3D preview" class="p-2 text-on-surface-variant group-hover:text-primary-container transition-colors shrink-0" type="button">
+<span class="material-symbols-outlined text-[20px]">view_in_ar</span>
+</button>
+</div>
+<!-- Movement Card 2: Low-to-High Cable Crossover -->
+<div class="group bg-surface-container p-space-sm rounded-lg hover:bg-surface-container-high transition-all flex items-center justify-between cursor-pointer">
+<div class="flex items-center gap-space-sm">
+<div class="relative w-14 h-14 rounded-lg overflow-hidden bg-surface-container-highest shrink-0 flex items-center justify-center">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Athlete executing a Low-to-High Cable Crossover showing intense upper pectoral contraction with biomechanical overlay arrows and cyan cable lines." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjUGjacy9hv5Z4-cKP1grkjrT95grZsBIvq164QkgMG4nvKL3NmG41S15mW_u0O3681zqDvT8JozahlyKSazIiNgYsyQDB46ExhW4K2gVXCk_5Ar1bFwx2qAvBFK6vziP5noD2BFTJco7dfGqFyXI0vDeRDDzPuMVWFxWobiRO-7j5x7jKzggLBuQRAvu_LGXMojpi9CDYDmxvX1bnGeik1KghGeTW0OWr9gjWuuo"/>
+<div class="absolute inset-0 bg-surface-container-lowest/30 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-[20px] drop-shadow-md">play_arrow</span>
+</div>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-label-md text-label-md text-primary font-bold truncate">Low Cable Flye</span>
+<span class="px-1.5 py-0.2 rounded bg-secondary/20 text-secondary font-label-sm text-[9px] uppercase font-bold">Isolation</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[12px] truncate">Continuous tension in peak contracted state</span>
+<div class="flex items-center gap-2 mt-0.5 text-secondary font-label-sm text-label-sm">
+<span>3 Sets</span>
+<span>•</span>
+<span>12-15 Reps</span>
+</div>
+</div>
+</div>
+<button aria-label="Launch 3D preview" class="p-2 text-on-surface-variant group-hover:text-secondary transition-colors shrink-0" type="button">
+<span class="material-symbols-outlined text-[20px]">view_in_ar</span>
+</button>
+</div>
+<!-- Movement Card 3: Weighted Parallel Bar Dips -->
+<div class="group bg-surface-container p-space-sm rounded-lg hover:bg-surface-container-high transition-all flex items-center justify-between cursor-pointer">
+<div class="flex items-center gap-space-sm">
+<div class="relative w-14 h-14 rounded-lg overflow-hidden bg-surface-container-highest shrink-0 flex items-center justify-center">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Muscular male performing weighted dips on parallel bars with slight forward torso lean to recruit sternocostal and abdominal pectoral heads." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUvy9xehSzZmqcARp3VCVRDxBBbccW095-9ILL2y11oNDguIH0XHMq1dK4yH7_pZY6Btc3digHTdqVWzOAtn-yGGG5uU5KaIGMLADA9tGtPNUVPxI26gcaVnUNviiwWtjjqmxsIC3bmDLedmPxuYRSWQq9VpLCJhr94-4nPldflmSashZG3QcMO7lF9XJlSoUf62XnRMnhPG9MsyC4X0bSsmSC-xia4OX9lusyHws"/>
+<div class="absolute inset-0 bg-surface-container-lowest/30 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-[20px] drop-shadow-md">play_arrow</span>
+</div>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-label-md text-label-md text-primary font-bold truncate">Weighted Dips (Forward Lean)</span>
+<span class="px-1.5 py-0.2 rounded bg-primary-container/20 text-primary-container font-label-sm text-[9px] uppercase font-bold">Compound</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[12px] truncate">Costal & Sternal Head deep stretch overload</span>
+<div class="flex items-center gap-2 mt-0.5 text-secondary font-label-sm text-label-sm">
+<span>4 Sets</span>
+<span>•</span>
+<span>8-10 Reps</span>
+</div>
+</div>
+</div>
+<button aria-label="Launch 3D preview" class="p-2 text-on-surface-variant group-hover:text-primary-container transition-colors shrink-0" type="button">
+<span class="material-symbols-outlined text-[20px]">view_in_ar</span>
+</button>
+</div>
+<!-- Movement Card 4: Converging Chest Press Machine -->
+<div class="group bg-surface-container p-space-sm rounded-lg hover:bg-surface-container-high transition-all flex items-center justify-between cursor-pointer">
+<div class="flex items-center gap-space-sm">
+<div class="relative w-14 h-14 rounded-lg overflow-hidden bg-surface-container-highest shrink-0 flex items-center justify-center">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Modern converging chest press machine training session showing anatomical muscle recruitment lines in electric yellow on the chest and front delts." src="https://lh3.googleusercontent.com/aida-public/AB6AXuByRsCWGfYnfMMC-sevFq5MXw9PfKFlOGLjeV9CZPlXEL7M4B0q2kDEVY2UYhkOdqG2PCYkVp-tTkEb8aXMjRkyMo223WTt-4Gk4ZAqqODOeAjdkORxT1WdLiW4s0hBlnOawhnV-ozPafHC3V2cC7z5C8wEW_PfyuqHL4g3a5t9iKWRi3N9bT1p8CDuezpWow-ZRGaxvkHGX1ToEZ9BKPch0H4s8qgeeRQHIXRiPyg"/>
+<div class="absolute inset-0 bg-surface-container-lowest/30 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-[20px] drop-shadow-md">play_arrow</span>
+</div>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-label-md text-label-md text-primary font-bold truncate">Converging Machine Press</span>
+<span class="px-1.5 py-0.2 rounded bg-primary-container/20 text-primary-container font-label-sm text-[9px] uppercase font-bold">Compound</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[12px] truncate">Max stability for close-to-failure fatigue</span>
+<div class="flex items-center gap-2 mt-0.5 text-secondary font-label-sm text-label-sm">
+<span>3 Sets</span>
+<span>•</span>
+<span>10-12 Reps</span>
+</div>
+</div>
+</div>
+<button aria-label="Launch 3D preview" class="p-2 text-on-surface-variant group-hover:text-primary-container transition-colors shrink-0" type="button">
+<span class="material-symbols-outlined text-[20px]">view_in_ar</span>
+</button>
+</div>
+</div>
+<!-- Action Panel: Add to Routine & 3D Execution Launch -->
+<div class="flex flex-col sm:flex-row lg:flex-col gap-space-sm mt-auto">
+<button class="w-full py-3.5 px-space-md rounded-xl bg-primary-container text-on-primary-container font-headline-sm text-label-lg font-bold uppercase tracking-wider flex items-center justify-center gap-space-xs shadow-[0_0_24px_-4px_rgba(195,244,0,0.35)] hover:shadow-[0_0_32px_rgba(195,244,0,0.6)] hover:scale-[1.01] transition-all duration-200" id="add-to-push-btn" type="button">
+<span class="material-symbols-outlined text-[22px]">calendar_today</span>
+<span>Queue to Monday Push Split</span>
+</button>
+<button class="w-full py-3 px-space-md rounded-xl bg-surface-container-high hover:bg-surface-container-highest text-secondary font-headline-sm text-label-lg font-bold uppercase tracking-wider flex items-center justify-center gap-space-xs transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">model_training</span>
+<span>Launch Live 3D Holographic Player</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Bottom Biomechanical Safety & Injury Prevention Intelligence Bar -->
+<div class="bg-surface-container-low p-space-md xl:p-space-lg rounded-xl flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md shadow-md">
+<div class="flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-surface-container flex items-center justify-center text-primary-container shrink-0">
+<span class="material-symbols-outlined text-[28px]">shield</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">Injury Prevention & Scapular Kinematics</span>
+<span class="px-2 py-0.5 rounded bg-tertiary-container text-on-tertiary-container font-label-sm text-label-sm uppercase font-bold">Active Shield</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+            Maintain 15° to 30° scapular plane depression during all horizontal presses to prevent supraspinatus tendon subacromial friction.
+          </p>
+</div>
+</div>
+<div class="flex items-center gap-space-sm shrink-0 w-full md:w-auto justify-end">
+<div class="flex flex-col text-right">
+<span class="font-label-sm text-label-sm uppercase text-outline">Rotator Cuff Risk</span>
+<span class="font-label-md text-label-md text-tertiary-fixed-dim font-bold">0.04 (Optimal)</span>
+</div>
+<button class="px-space-md py-2 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label-md text-label-md uppercase tracking-wider transition-colors flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[16px]">stethoscope</span> Joint Diagnostics
+        </button>
+</div>
+</div>
+</div>
+<!-- Interactive State Handler Script -->
+<script>
+    (function initAnatomyExplorer() {
+      // Projection Switcher Toggles
+      const antBtn = document.getElementById('view-anterior');
+      const postBtn = document.getElementById('view-posterior');
+      
+      if (antBtn && postBtn) {
+        antBtn.addEventListener('click', () => {
+          antBtn.className = 'px-3.5 py-1.5 rounded-md font-label-md text-label-md uppercase tracking-wider bg-primary-container text-on-primary-container font-bold shadow-sm transition-all flex items-center gap-1.5';
+          postBtn.className = 'px-3.5 py-1.5 rounded-md font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all flex items-center gap-1.5';
+        });
+
+        postBtn.addEventListener('click', () => {
+          postBtn.className = 'px-3.5 py-1.5 rounded-md font-label-md text-label-md uppercase tracking-wider bg-primary-container text-on-primary-container font-bold shadow-sm transition-all flex items-center gap-1.5';
+          antBtn.className = 'px-3.5 py-1.5 rounded-md font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all flex items-center gap-1.5';
+        });
+      }
+
+      // Add to Push Plan Feedback
+      const queueBtn = document.getElementById('add-to-push-btn');
+      if (queueBtn) {
+        queueBtn.addEventListener('click', () => {
+          const originalContent = queueBtn.innerHTML;
+          queueBtn.innerHTML = '<span class="material-symbols-outlined text-[22px]">check_circle</span><span>Pectorals Queued to Push Routine</span>';
+          queueBtn.classList.remove('bg-primary-container', 'text-on-primary-container');
+          queueBtn.classList.add('bg-tertiary-fixed-dim', 'text-on-tertiary-fixed');
+          setTimeout(() => {
+            queueBtn.innerHTML = originalContent;
+            queueBtn.classList.remove('bg-tertiary-fixed-dim', 'text-on-tertiary-fixed');
+            queueBtn.classList.add('bg-primary-container', 'text-on-primary-container');
+          }, 2400);
+        });
+      }
+    })();
+  </script>
+</div></main></div>
+<script>
+(function () {
+  var routes = [
+    ["continue to calendar architecture", "/calendar"],
+    ["3d anatomy & muscle target explorer", "/anatomy"],
+    ["exercise library & biomechanics", "/library"],
+    ["3d interactive execution & form", "/execute"],
+    ["nutrition & fuel matrix", "/nutrition"],
+    ["user profile & biometrics", "/profile"],
+    ["calendar & weekly split", "/calendar"],
+    ["3d anatomy & muscle map", "/muscle-map"],
+    ["workout execution player", "/execute"],
+    ["launch today's session player", "/execute"],
+    ["launch session", "/execute"],
+    ["launch live 3d holographic player", "/execute"],
+    ["launch 3d muscle rig", "/muscle-map"],
+    ["start 3d form simulation", "/execute"],
+    ["open 3d form studio", "/execute"],
+    ["open 3d biomechanics", "/exercise"],
+    ["queue to monday", "/week"],
+    ["queue latissimus", "/week"],
+    ["weekly split", "/week"],
+    ["exercise library", "/guides"],
+    ["progress & metrics", "/calendar"],
+    ["settings", "/profile"]
+  ];
+  document.addEventListener("click", function (event) {
+    var el = event.target.closest("a,button");
+    if (!el) return;
+    var text = (el.innerText || "").replace(/\s+/g, " ").trim().toLowerCase();
+    for (var i = 0; i < routes.length; i++) {
+      if (text.indexOf(routes[i][0]) !== -1) {
+        event.preventDefault();
+        window.top.location.assign(routes[i][1]);
+        return;
+      }
+    }
+  });
+})();
+</script>
+
+</body></html>

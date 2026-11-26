@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_blank" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@100..900&amp;family=Space+Grotesk:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"on-background":"#dfe2ee","on-tertiary-container":"#00734e","on-primary-fixed-variant":"#3c4d00","inverse-surface":"#dfe2ee","on-primary-container":"#556d00","on-error":"#690005","tertiary":"#ffffff","primary-fixed-dim":"#abd600","surface-bright":"#353942","secondary":"#4cd7f6","surface-variant":"#31353e","primary-fixed":"#c3f400","on-primary":"#283500","on-secondary-fixed-variant":"#004e5c","secondary-fixed-dim":"#4cd7f6","surface":"#0f131c","on-secondary-container":"#00424e","surface-container-highest":"#31353e","on-tertiary-fixed-variant":"#005236","primary":"#ffffff","error":"#ffb4ab","surface-container-high":"#262a33","on-tertiary":"#003824","inverse-on-surface":"#2c3039","background":"#0f131c","tertiary-container":"#6ffbbe","outline":"#8e9379","outline-variant":"#444933","surface-container-lowest":"#0a0e16","secondary-container":"#03b5d3","surface-tint":"#abd600","tertiary-fixed":"#6ffbbe","surface-dim":"#0f131c","tertiary-fixed-dim":"#4edea3","on-primary-fixed":"#161e00","primary-container":"#c3f400","surface-container":"#1c2028","on-secondary-fixed":"#001f26","on-surface":"#dfe2ee","on-secondary":"#003640","on-surface-variant":"#c4c9ac","surface-container-low":"#181c24","secondary-fixed":"#acedff","inverse-primary":"#506600","error-container":"#93000a","on-error-container":"#ffdad6","on-tertiary-fixed":"#002113"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"gutter-desktop":"1.75rem","space-sm":"0.5rem","margin-tablet":"1.5rem","space-xl":"2.25rem","space-xs":"0.25rem","space-md":"1rem","space-lg":"1.5rem","margin-desktop":"2.5rem","gutter":"1.25rem","margin":"1rem"},"fontFamily":{"display-xl-mobile":["Space Grotesk"],"headline-md":["Space Grotesk"],"headline-lg":["Space Grotesk"],"headline-sm":["Space Grotesk"],"label-md":["Space Grotesk"],"body-lg":["Manrope"],"body-sm":["Manrope"],"label-lg":["Space Grotesk"],"label-sm":["Space Grotesk"],"body-md":["Manrope"],"headline-lg-mobile":["Space Grotesk"],"display-xl":["Space Grotesk"],"metric-display":["Space Grotesk"]},"fontSize":{"display-xl-mobile":["36px",{"lineHeight":"44px","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-md":["24px",{"lineHeight":"32px","letterSpacing":"-0.01em","fontWeight":"600"}],"headline-lg":["36px",{"lineHeight":"44px","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-sm":["20px",{"lineHeight":"28px","letterSpacing":"0em","fontWeight":"600"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.06em","fontWeight":"600"}],"body-lg":["18px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"400"}],"body-sm":["13px",{"lineHeight":"20px","letterSpacing":"0.01em","fontWeight":"400"}],"label-lg":["14px",{"lineHeight":"20px","letterSpacing":"0.05em","fontWeight":"600"}],"label-sm":["10px",{"lineHeight":"14px","letterSpacing":"0.08em","fontWeight":"700"}],"body-md":["15px",{"lineHeight":"24px","letterSpacing":"0em","fontWeight":"400"}],"headline-lg-mobile":["28px",{"lineHeight":"36px","letterSpacing":"-0.01em","fontWeight":"600"}],"display-xl":["56px",{"lineHeight":"64px","letterSpacing":"-0.03em","fontWeight":"700"}],"metric-display":["44px",{"lineHeight":"48px","letterSpacing":"-0.04em","fontWeight":"700"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container min-h-screen"><main class="min-h-screen w-full bg-surface"><div class="flex flex-col w-full">
+<!-- Top Global Telemetry Ticker -->
+<div class="w-full bg-surface-container-lowest px-4 py-2 flex flex-wrap items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<div class="flex items-center space-x-4">
+<span class="inline-flex items-center gap-1.5 text-primary-fixed">
+<span class="w-2 h-2 rounded-full bg-primary-fixed animate-ping"></span>
+        BIO-SYS // KIN-CORE 4.8.2 ONLINE
+      </span>
+<span class="hidden md:inline text-outline">|</span>
+<span class="hidden md:inline tracking-wider">LATENCY: 1.2ms</span>
+<span class="hidden lg:inline text-outline">|</span>
+<span class="hidden lg:inline tracking-wider">CALIB_ID: #8849-TX-ALPHA</span>
+</div>
+<div class="flex items-center space-x-3">
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-secondary text-label-sm font-label-sm">3D RIG: READY</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-variant text-on-surface text-label-sm font-label-sm">NEURAL MESH v3</span>
+</div>
+</div>
+<!-- Main Workspace Canvas -->
+<div class="w-full px-4 lg:px-8 py-6 space-y-6">
+<!-- Step Progress Ribbon -->
+<div class="w-full bg-surface-container-low rounded-xl p-5 shadow-xl">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 mb-4">
+<div>
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded bg-primary-container text-on-primary-container font-label-sm text-label-sm tracking-widest font-bold">PHASE 02 / 04</span>
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Calibration Matrix</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-primary tracking-tight mt-1">Biometric Calibration &amp; Training Architecture</h2>
+</div>
+<div class="flex items-center gap-6">
+<div class="text-right">
+<span class="block font-label-sm text-label-sm text-on-surface-variant uppercase">Biomechanical Fit</span>
+<span class="font-headline-md text-headline-md text-primary-fixed-dim">94.8% OPTIMAL</span>
+</div>
+<div class="h-10 w-px bg-surface-variant hidden sm:block"></div>
+<div class="text-right hidden sm:block">
+<span class="block font-label-sm text-label-sm text-on-surface-variant uppercase">Telemetry Delta</span>
+<span class="font-headline-md text-headline-md text-secondary">+18.4% LEVERAGE</span>
+</div>
+</div>
+</div>
+<!-- Segmented Multi-Step Visualizer -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-2 pt-2">
+<div class="bg-surface-container px-3 py-2.5 rounded-lg flex items-center justify-between">
+<div>
+<div class="font-label-sm text-label-sm text-tertiary-fixed font-bold">01 // COMPLETED</div>
+<div class="font-label-lg text-label-lg text-on-surface truncate">Anthropometrics</div>
+</div>
+<span class="material-symbols-outlined text-tertiary-fixed" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="bg-surface-bright px-3 py-2.5 rounded-lg flex items-center justify-between shadow-lg">
+<div>
+<div class="font-label-sm text-label-sm text-primary-fixed font-bold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-fixed"></span>
+              02 // ACTIVE STEP
+            </div>
+<div class="font-label-lg text-label-lg text-primary truncate font-bold">Split Archetype</div>
+</div>
+<span class="material-symbols-outlined text-primary-fixed">tune</span>
+</div>
+<div class="bg-surface-container-lowest px-3 py-2.5 rounded-lg flex items-center justify-between opacity-60">
+<div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">03 // QUEUED</div>
+<div class="font-label-lg text-label-lg text-on-surface truncate">Joint &amp; Mobility Scan</div>
+</div>
+<span class="material-symbols-outlined text-outline">lock</span>
+</div>
+<div class="bg-surface-container-lowest px-3 py-2.5 rounded-lg flex items-center justify-between opacity-60">
+<div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">04 // QUEUED</div>
+<div class="font-label-lg text-label-lg text-on-surface truncate">Target Hypertrophy</div>
+</div>
+<span class="material-symbols-outlined text-outline">lock</span>
+</div>
+</div>
+</div>
+<!-- Central Interactive Calibration Engine -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-6 items-start">
+<!-- LEFT: Dynamic Split Archetype Selector (5 Cols on XL) -->
+<div class="xl:col-span-5 space-y-4">
+<div class="flex items-center justify-between px-1">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-fixed">dataset</span>
+<span class="font-label-lg text-label-lg text-primary uppercase">Select Kinematic Split</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary bg-surface-container px-2 py-0.5 rounded">Adaptive Periodization</span>
+</div>
+<!-- Archetype Cards Container -->
+<div class="space-y-3" id="archetype-list">
+<!-- Card 1: PPL (Selected State) -->
+<div class="split-card cursor-pointer bg-surface-container p-4 rounded-xl shadow-lg transition-all duration-200" onclick="selectSplit(this, 'PPL')">
+<div class="flex items-start justify-between">
+<div>
+<span class="px-2 py-0.5 rounded text-label-sm font-label-sm bg-primary-container text-on-primary-container font-bold">HYPERTROPHY OPTIMIZED</span>
+<h3 class="font-headline-sm text-headline-sm text-primary mt-1">Push / Pull / Legs (PPL)</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">High tension isolation + mechanical vector symmetry</p>
+</div>
+<div class="status-indicator w-6 h-6 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center font-bold text-xs">
+<span class="material-symbols-outlined text-sm font-bold">done</span>
+</div>
+</div>
+<div class="grid grid-cols-3 gap-2 mt-4 pt-3 bg-surface-container-lowest/60 p-2.5 rounded-lg">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block uppercase">Frequency</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">5-6 Days / Wk</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block uppercase">Vector Focus</span>
+<span class="font-label-md text-label-md text-secondary font-semibold">Sagittal / Coronal</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block uppercase">Recovery Index</span>
+<span class="font-label-md text-label-md text-primary-fixed font-semibold">Moderate-High</span>
+</div>
+</div>
+</div>
+<!-- Card 2: Upper / Lower -->
+<div class="split-card cursor-pointer bg-surface-container-low hover:bg-surface-container p-4 rounded-xl shadow-md transition-all duration-200" onclick="selectSplit(this, 'UL')">
+<div class="flex items-start justify-between">
+<div>
+<span class="px-2 py-0.5 rounded text-label-sm font-label-sm bg-surface-variant text-on-surface-variant font-bold">CNS PRESERVATION</span>
+<h3 class="font-headline-sm text-headline-sm text-primary mt-1">Upper / Lower Kinetic Split</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Heavy axial load distribution &amp; systemic tendon recovery</p>
+</div>
+<div class="status-indicator w-6 h-6 rounded-full bg-surface-variant text-on-surface-variant flex items-center justify-center text-xs">
+<span class="material-symbols-outlined text-sm">circle</span>
+</div>
+</div>
+<div class="grid grid-cols-3 gap-2 mt-4 pt-3 bg-surface-container-lowest/60 p-2.5 rounded-lg">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block uppercase">Frequency</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">4 Days / Wk</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block uppercase">Vector Focus</span>
+<span class="font-label-md text-label-md text-secondary font-semibold">Posterior Chain</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block uppercase">Recovery Index</span>
+<span class="font-label-md text-label-md text-tertiary-fixed font-semibold">Fast (88h reset)</span>
+</div>
+</div>
+</div>
+<!-- Card 3: Full Body Athletic Engine -->
+<div class="split-card cursor-pointer bg-surface-container-low hover:bg-surface-container p-4 rounded-xl shadow-md transition-all duration-200" onclick="selectSplit(this, 'FBAE')">
+<div class="flex items-start justify-between">
+<div>
+<span class="px-2 py-0.5 rounded text-label-sm font-label-sm bg-surface-variant text-on-surface-variant font-bold">POWER &amp; PLYOMETRIC</span>
+<h3 class="font-headline-sm text-headline-sm text-primary mt-1">Full Body Athletic Engine</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Multi-planar rate of force development &amp; velocity tracking</p>
+</div>
+<div class="status-indicator w-6 h-6 rounded-full bg-surface-variant text-on-surface-variant flex items-center justify-center text-xs">
+<span class="material-symbols-outlined text-sm">circle</span>
+</div>
+</div>
+<div class="grid grid-cols-3 gap-2 mt-4 pt-3 bg-surface-container-lowest/60 p-2.5 rounded-lg">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block uppercase">Frequency</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">3-4 Days / Wk</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block uppercase">Vector Focus</span>
+<span class="font-label-md text-label-md text-secondary font-semibold">Transverse/Rotational</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block uppercase">Recovery Index</span>
+<span class="font-label-md text-label-md text-secondary font-semibold">Systemic Max</span>
+</div>
+</div>
+</div>
+<!-- Card 4: Arnold Antagonist -->
+<div class="split-card cursor-pointer bg-surface-container-low hover:bg-surface-container p-4 rounded-xl shadow-md transition-all duration-200" onclick="selectSplit(this, 'ARN')">
+<div class="flex items-start justify-between">
+<div>
+<span class="px-2 py-0.5 rounded text-label-sm font-label-sm bg-surface-variant text-on-surface-variant font-bold">PUMP &amp; OPPOSITION</span>
+<h3 class="font-headline-sm text-headline-sm text-primary mt-1">Arnold Classic Antagonist</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Agonist-antagonist supersets maximizing microvascular density</p>
+</div>
+<div class="status-indicator w-6 h-6 rounded-full bg-surface-variant text-on-surface-variant flex items-center justify-center text-xs">
+<span class="material-symbols-outlined text-sm">circle</span>
+</div>
+</div>
+<div class="grid grid-cols-3 gap-2 mt-4 pt-3 bg-surface-container-lowest/60 p-2.5 rounded-lg">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block uppercase">Frequency</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">6 Days / Wk</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block uppercase">Vector Focus</span>
+<span class="font-label-md text-label-md text-secondary font-semibold">Reciprocal Pumping</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block uppercase">Recovery Index</span>
+<span class="font-label-md text-label-md text-error font-semibold">High Strain</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT: Anthropometric Calibration & 3D Interactive Telemetry Silhouette (7 Cols on XL) -->
+<div class="xl:col-span-7 space-y-6">
+<!-- 3D Biomechanical Rig Simulation Viewport -->
+<div class="w-full bg-surface-container-lowest rounded-2xl p-5 relative overflow-hidden shadow-2xl">
+<!-- Ambient cyber grid lines in backdrop -->
+<div class="absolute inset-0 bg-gradient-to-b from-secondary/5 via-transparent to-primary-fixed/5 pointer-events-none"></div>
+<div class="flex items-center justify-between relative z-10">
+<div class="flex items-center gap-2">
+<span class="inline-block w-2.5 h-2.5 rounded-full bg-primary-fixed"></span>
+<span class="font-label-lg text-label-lg text-primary font-bold">RIG #TX-90 SILHOUETTE SIMULATOR</span>
+</div>
+<div class="flex gap-1.5 bg-surface-container-high px-2 py-1 rounded-full">
+<button class="px-2.5 py-0.5 rounded-full bg-surface-bright text-primary font-label-sm text-label-sm font-semibold">FRONT</button>
+<button class="px-2.5 py-0.5 rounded-full hover:bg-surface-variant text-on-surface-variant font-label-sm text-label-sm">SAGITTAL</button>
+<button class="px-2.5 py-0.5 rounded-full hover:bg-surface-variant text-on-surface-variant font-label-sm text-label-sm">VECTOR MAP</button>
+</div>
+</div>
+<!-- 3D Wireframe Silhouette Canvas with Joint Pivots -->
+<div class="relative w-full h-80 my-4 flex items-center justify-center">
+<!-- Dynamic Vector Graph Grid -->
+<svg class="w-full h-full max-w-md mx-auto" fill="none" viewbox="0 0 360 320" xmlns="http://www.w3.org/2000/svg">
+<!-- Radial & Orthogonal Grid Guides -->
+<circle cx="180" cy="160" r="140" stroke="#31353e" stroke-dasharray="3 3" stroke-width="1"></circle>
+<circle cx="180" cy="160" r="90" stroke="#31353e" stroke-dasharray="2 2" stroke-width="1"></circle>
+<line stroke="#262a33" stroke-width="1" x1="180" x2="180" y1="10" y2="310"></line>
+<line stroke="#262a33" stroke-width="1" x1="20" x2="340" y1="160" y2="160"></line>
+<!-- Biomechanical Wireframe Skeleton -->
+<!-- Head -->
+<circle cx="180" cy="40" fill="#0f131c" r="18" stroke="#4cd7f6" stroke-width="2"></circle>
+<!-- Cervical to Spine -->
+<line stroke="#dfe2ee" stroke-linecap="round" stroke-width="3" x1="180" x2="180" y1="58" y2="148"></line>
+<!-- Clavicle / Shoulders Vector -->
+<line stroke="#dfe2ee" stroke-linecap="round" stroke-width="3" x1="126" x2="234" y1="84" y2="84"></line>
+<!-- Left Arm (Concentric Lever) -->
+<line stroke="#4cd7f6" stroke-width="2.5" x1="126" x2="105" y1="84" y2="135"></line>
+<line stroke="#4cd7f6" stroke-width="2.5" x1="105" x2="90" y1="135" y2="182"></line>
+<!-- Right Arm -->
+<line stroke="#4cd7f6" stroke-width="2.5" x1="234" x2="255" y1="84" y2="135"></line>
+<line stroke="#4cd7f6" stroke-width="2.5" x1="255" x2="270" y1="135" y2="182"></line>
+<!-- Pelvic Axis Line -->
+<line stroke="#dfe2ee" stroke-width="3" x1="146" x2="214" y1="148" y2="148"></line>
+<!-- Left Leg (Femur + Tibia with Leverage Angle) -->
+<line id="wireframe-left-femur" stroke="#c3f400" stroke-width="3" x1="152" x2="144" y1="148" y2="225"></line>
+<line stroke="#dfe2ee" stroke-width="2.5" x1="144" x2="140" y1="225" y2="295"></line>
+<line stroke="#dfe2ee" stroke-width="3" x1="140" x2="124" y1="295" y2="295"></line>
+<!-- Right Leg (Femur + Tibia with Leverage Angle) -->
+<line id="wireframe-right-femur" stroke="#c3f400" stroke-width="3" x1="208" x2="216" y1="148" y2="225"></line>
+<line stroke="#dfe2ee" stroke-width="2.5" x1="216" x2="220" y1="225" y2="295"></line>
+<line stroke="#dfe2ee" stroke-width="3" x1="220" x2="236" y1="295" y2="295"></line>
+<!-- Interactive Calibration Pivot Nodes (Glowing Rings) -->
+<!-- Shoulder Pivot -->
+<g class="cursor-pointer" onclick="inspectJoint('Shoulder Axis', '+4° Subacromial Freedom', 'Optimal Bench Grip: 1.62x Biacromial')">
+<circle cx="126" cy="84" fill="#4cd7f6" fill-opacity="0.3" r="7"></circle>
+<circle cx="126" cy="84" fill="#4cd7f6" r="3.5"></circle>
+<circle class="animate-spin" cx="126" cy="84" r="10" stroke="#4cd7f6" stroke-dasharray="2 2" stroke-width="1" style="transform-origin: 126px 84px; animation-duration: 6s;"></circle>
+</g>
+<!-- Hip Acetabulum Pivot -->
+<g class="cursor-pointer" onclick="inspectJoint('Coxafemoral (Hip)', 'Deep Socket Anatomy', 'Recommended Squat Stance: 32° Flared Angle')">
+<circle cx="152" cy="148" fill="#c3f400" fill-opacity="0.25" r="8"></circle>
+<circle cx="152" cy="148" fill="#c3f400" r="4"></circle>
+</g>
+<!-- Knee Condyle Pivot -->
+<g class="cursor-pointer" onclick="inspectJoint('Patellofemoral (Knee)', 'Shear Vector: 14% Reduced', 'Squat Descent Depth: Below Parallel Clean')">
+<circle cx="144" cy="225" fill="#c3f400" fill-opacity="0.3" r="8"></circle>
+<circle cx="144" cy="225" fill="#c3f400" r="4"></circle>
+</g>
+</svg>
+<!-- Floating Overlay Metric HUD Pill -->
+<div class="absolute bottom-2 left-3 bg-surface-container/95 p-3 rounded-xl shadow-2xl backdrop-blur-md max-w-xs transition-all duration-300" id="pivot-hud">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-sm text-label-sm text-primary-fixed uppercase tracking-wider font-bold" id="joint-title">Hip Acetabulum Axis</span>
+<span class="font-label-sm text-label-sm text-secondary">REALTIME TELEMETRY</span>
+</div>
+<div class="font-headline-sm text-headline-sm text-primary" id="joint-metric">+14% MOMENT ARM ADVANTAGE</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant mt-0.5" id="joint-desc">Femur ratio favors deep hip hinging; lower shear stress on patellar tendon.</div>
+</div>
+<!-- Floating Ape Index Telemetry Badge -->
+<div class="absolute top-2 right-3 bg-surface-container/90 px-3 py-2 rounded-lg text-right shadow-lg backdrop-blur-sm">
+<span class="block font-label-sm text-label-sm text-on-surface-variant uppercase">Ape Index Relative</span>
+<span class="font-headline-sm text-headline-sm text-primary-fixed">+2.5 cm</span>
+<span class="block font-label-sm text-label-sm text-secondary">High Deadlift Leverage</span>
+</div>
+</div>
+<div class="w-full flex items-center justify-between pt-2 text-on-surface-variant font-label-sm text-label-sm">
+<span>AXIS RIG: CALIBRATED (3 DOF PIVOTS)</span>
+<span class="flex items-center gap-1 text-primary-fixed-dim">
+<span class="material-symbols-outlined text-sm">touch_app</span> Tap dots to inspect joint moments
+            </span>
+</div>
+</div>
+<!-- Anthropometric & Joint Profile Sliders / Toggles -->
+<div class="bg-surface-container p-5 rounded-2xl shadow-xl space-y-5">
+<div class="flex items-center justify-between">
+<h4 class="font-headline-sm text-headline-sm text-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">accessibility_new</span>
+              Anthropometric Dial &amp; Biomechanical Metrics
+            </h4>
+<span class="font-label-sm text-label-sm bg-surface-variant px-2.5 py-1 rounded text-on-surface">METRIC / IMPERIAL</span>
+</div>
+<!-- Slider 1: Stature / Height -->
+<div class="space-y-1.5 bg-surface-container-low p-3.5 rounded-xl">
+<div class="flex justify-between items-center">
+<label class="font-label-lg text-label-lg text-on-surface font-semibold" for="height-slider">Standing Stature</label>
+<div class="font-headline-sm text-headline-sm text-primary font-bold">
+<span id="height-val">184</span> <span class="font-label-md text-label-md text-on-surface-variant">cm (6'0.5")</span>
+</div>
+</div>
+<input class="w-full h-1.5 bg-surface-variant rounded-lg appearance-none cursor-pointer accent-primary-fixed" id="height-slider" max="215" min="150" oninput="updateHeight(this.value)" type="range" value="184"/>
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>150 cm (Standard Compact)</span>
+<span>180 cm (Mean)</span>
+<span>215 cm (Long Levers)</span>
+</div>
+</div>
+<!-- Slider 2: Wing Span Ape Index -->
+<div class="space-y-1.5 bg-surface-container-low p-3.5 rounded-xl">
+<div class="flex justify-between items-center">
+<div>
+<label class="font-label-lg text-label-lg text-on-surface font-semibold" for="wingspan-slider">Wingspan Ratio (Ape Index)</label>
+<span class="block font-body-sm text-body-sm text-on-surface-variant">Arm span minus standing height</span>
+</div>
+<div class="font-headline-sm text-headline-sm text-primary-fixed font-bold">
+<span id="wingspan-val">+2.5</span> <span class="font-label-md text-label-md text-on-surface-variant">cm</span>
+</div>
+</div>
+<input class="w-full h-1.5 bg-surface-variant rounded-lg appearance-none cursor-pointer accent-primary-fixed" id="wingspan-slider" max="12" min="-8" oninput="updateWingspan(this.value)" step="0.5" type="range" value="2.5"/>
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>-8.0 cm (Bench Advantage)</span>
+<span>0.0 cm (Neutral 1.0)</span>
+<span>+12.0 cm (Pull Advantage)</span>
+</div>
+</div>
+<!-- Slider 3: Femur-to-Torso Proportion Ratio -->
+<div class="space-y-1.5 bg-surface-container-low p-3.5 rounded-xl">
+<div class="flex justify-between items-center">
+<div>
+<label class="font-label-lg text-label-lg text-on-surface font-semibold" for="femur-slider">Femur-to-Torso Proportion</label>
+<span class="block font-body-sm text-body-sm text-on-surface-variant">Segment length ratio calculating squat mechanics</span>
+</div>
+<div class="font-headline-sm text-headline-sm text-secondary font-bold">
+<span id="femur-val">1.18</span> <span class="font-label-md text-label-md text-on-surface-variant">ratio</span>
+</div>
+</div>
+<input class="w-full h-1.5 bg-surface-variant rounded-lg appearance-none cursor-pointer accent-secondary" id="femur-slider" max="1.45" min="0.85" oninput="updateFemur(this.value)" step="0.01" type="range" value="1.18"/>
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>0.85 (Short Thigh / Upright)</span>
+<span>1.05 (Balanced)</span>
+<span>1.45 (Long Femur / Hinge Bias)</span>
+</div>
+</div>
+<!-- Mobility Flags & Orthopedic Compensations -->
+<div class="pt-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider block mb-2 font-bold">Orthopedic Constraints &amp; Mobility Offsets</span>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+<label class="flex items-center justify-between p-3 rounded-xl bg-surface-container-low cursor-pointer hover:bg-surface-bright transition">
+<div class="flex items-center space-x-2.5">
+<span class="material-symbols-outlined text-secondary text-lg">medical_information</span>
+<div>
+<span class="font-label-md text-label-md text-primary block">Subacromial Impingement</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Neutral-grip bench modification</span>
+</div>
+</div>
+<input checked="" class="w-4 h-4 rounded bg-surface-variant text-primary-fixed focus:ring-0 cursor-pointer accent-primary-fixed" type="checkbox"/>
+</label>
+<label class="flex items-center justify-between p-3 rounded-xl bg-surface-container-low cursor-pointer hover:bg-surface-bright transition">
+<div class="flex items-center space-x-2.5">
+<span class="material-symbols-outlined text-secondary text-lg">straighten</span>
+<div>
+<span class="font-label-md text-label-md text-primary block">Lumbar Lordosis Offset</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Restricts extreme axial spinal load</span>
+</div>
+</div>
+<input class="w-4 h-4 rounded bg-surface-variant text-primary-fixed focus:ring-0 cursor-pointer accent-primary-fixed" type="checkbox"/>
+</label>
+<label class="flex items-center justify-between p-3 rounded-xl bg-surface-container-low cursor-pointer hover:bg-surface-bright transition">
+<div class="flex items-center space-x-2.5">
+<span class="material-symbols-outlined text-secondary text-lg">nordic_walking</span>
+<div>
+<span class="font-label-md text-label-md text-primary block">Limited Ankle Dorsiflexion</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Elevated heel squat cueing</span>
+</div>
+</div>
+<input checked="" class="w-4 h-4 rounded bg-surface-variant text-primary-fixed focus:ring-0 cursor-pointer accent-primary-fixed" type="checkbox"/>
+</label>
+<label class="flex items-center justify-between p-3 rounded-xl bg-surface-container-low cursor-pointer hover:bg-surface-bright transition">
+<div class="flex items-center space-x-2.5">
+<span class="material-symbols-outlined text-secondary text-lg">wrist</span>
+<div>
+<span class="font-label-md text-label-md text-primary block">Distal Wrist Hyperextension</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Auto-recommends Swiss bar</span>
+</div>
+</div>
+<input class="w-4 h-4 rounded bg-surface-variant text-primary-fixed focus:ring-0 cursor-pointer accent-primary-fixed" type="checkbox"/>
+</label>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Visual Biomechanical Advantage Highlight Banner -->
+<div class="w-full bg-surface-container-low rounded-xl p-4 flex flex-col md:flex-row items-center justify-between gap-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-bold">
+<span class="material-symbols-outlined">auto_graph</span>
+</div>
+<div>
+<span class="font-label-md text-label-md text-primary font-bold">KINETIX HYPERTROPHY ENGINE CALCULATION</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Based on your +2.5cm Ape Index and 1.18 Femur ratio: Romanian Deadlifts and Semi-Sumo Pulls will yield 23% greater motor unit recruitment with 38% less spinal shear than conventional variations.</p>
+</div>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant">ALGORITHM CONFIDENCE:</span>
+<span class="font-headline-sm text-headline-sm text-tertiary-fixed font-bold">99.2%</span>
+</div>
+</div>
+<!-- Bottom Sticky Action Bar with Neon Glow Styling -->
+<div class="w-full bg-surface-container-lowest/90 backdrop-blur-md rounded-2xl p-4 shadow-2xl flex flex-col sm:flex-row items-center justify-between gap-4">
+<button class="w-full sm:w-auto px-5 py-3 rounded-xl bg-surface-container hover:bg-surface-variant text-on-surface font-label-lg text-label-lg font-semibold flex items-center justify-center gap-2 transition">
+<span class="material-symbols-outlined">arrow_back</span>
+        Back to 01 Anthropometrics
+      </button>
+<div class="flex flex-col sm:flex-row items-center gap-3 w-full sm:w-auto">
+<button class="w-full sm:w-auto px-5 py-3 rounded-xl bg-surface-bright hover:bg-surface-variant text-secondary font-label-lg text-label-lg font-bold flex items-center justify-center gap-2 transition" onclick="calibrateRig()">
+<span class="material-symbols-outlined">refresh</span>
+<span id="calibrate-btn-text">Save &amp; Calibrate Rig</span>
+</button>
+<button class="w-full sm:w-auto px-7 py-3 rounded-xl bg-primary-fixed hover:bg-primary-fixed-dim text-on-primary-fixed font-label-lg text-label-lg font-bold uppercase tracking-wider flex items-center justify-center gap-2 shadow-[0_0_24px_-4px_rgba(204,255,0,0.5)] hover:shadow-[0_0_32px_0px_rgba(204,255,0,0.7)] transition-all" onclick="continueFlow()">
+<span>Continue to Calendar Architecture</span>
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function selectSplit(element, code) {
+    const cards = document.querySelectorAll('.split-card');
+    cards.forEach(card => {
+      card.classList.remove('bg-surface-container');
+      card.classList.add('bg-surface-container-low');
+      const badge = card.querySelector('.status-indicator');
+      if (badge) {
+        badge.className = 'status-indicator w-6 h-6 rounded-full bg-surface-variant text-on-surface-variant flex items-center justify-center text-xs';
+        badge.innerHTML = '<span class="material-symbols-outlined text-sm">circle</span>';
+      }
+    });
+
+    element.classList.remove('bg-surface-container-low');
+    element.classList.add('bg-surface-container');
+    const badge = element.querySelector('.status-indicator');
+    if (badge) {
+      badge.className = 'status-indicator w-6 h-6 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center font-bold text-xs';
+      badge.innerHTML = '<span class="material-symbols-outlined text-sm font-bold">done</span>';
+    }
+  }
+
+  function updateHeight(val) {
+    const heightCm = document.getElementById('height-val');
+    if (heightCm) heightCm.innerText = val;
+  }
+
+  function updateWingspan(val) {
+    const span = document.getElementById('wingspan-val');
+    if (span) {
+      span.innerText = (val > 0 ? '+' : '') + val;
+    }
+  }
+
+  function updateFemur(val) {
+    const femur = document.getElementById('femur-val');
+    if (femur) femur.innerText = parseFloat(val).toFixed(2);
+    
+    // Subtly adjust SVG femur wireframe length visually
+    const leftFemur = document.getElementById('wireframe-left-femur');
+    const rightFemur = document.getElementById('wireframe-right-femur');
+    const delta = (val - 1.0) * 20;
+    if (leftFemur && rightFemur) {
+      leftFemur.setAttribute('y2', (215 + delta));
+      rightFemur.setAttribute('y2', (215 + delta));
+    }
+  }
+
+  function inspectJoint(title, metric, desc) {
+    const hud = document.getElementById('pivot-hud');
+    const t = document.getElementById('joint-title');
+    const m = document.getElementById('joint-metric');
+    const d = document.getElementById('joint-desc');
+    if (t && m && d) {
+      t.innerText = title;
+      m.innerText = metric;
+      d.innerText = desc;
+      hud.classList.add('scale-105');
+      setTimeout(() => hud.classList.remove('scale-105'), 200);
+    }
+  }
+
+  function calibrateRig() {
+    const btn = document.getElementById('calibrate-btn-text');
+    if (btn) {
+      btn.innerText = 'Synchronizing...';
+      setTimeout(() => {
+        btn.innerText = 'Rig Calibrated 100%';
+        setTimeout(() => {
+          btn.innerText = 'Save & Calibrate Rig';
+        }, 2000);
+      }, 700);
+    }
+  }
+
+  function continueFlow() {
+    alert('Biometric Rig Synced. Advancing to Step 03: Joint & Mobility Diagnostic Scan.');
+  }
+</script></main>
+<script>
+(function () {
+  var routes = [
+    ["continue to calendar architecture", "/calendar"],
+    ["3d anatomy & muscle target explorer", "/anatomy"],
+    ["exercise library & biomechanics", "/library"],
+    ["3d interactive execution & form", "/execute"],
+    ["nutrition & fuel matrix", "/nutrition"],
+    ["user profile & biometrics", "/profile"],
+    ["calendar & weekly split", "/calendar"],
+    ["3d anatomy & muscle map", "/muscle-map"],
+    ["workout execution player", "/execute"],
+    ["launch today's session player", "/execute"],
+    ["launch session", "/execute"],
+    ["launch live 3d holographic player", "/execute"],
+    ["launch 3d muscle rig", "/muscle-map"],
+    ["start 3d form simulation", "/execute"],
+    ["open 3d form studio", "/execute"],
+    ["open 3d biomechanics", "/exercise"],
+    ["queue to monday", "/week"],
+    ["queue latissimus", "/week"],
+    ["weekly split", "/week"],
+    ["exercise library", "/guides"],
+    ["progress & metrics", "/calendar"],
+    ["settings", "/profile"]
+  ];
+  document.addEventListener("click", function (event) {
+    var el = event.target.closest("a,button");
+    if (!el) return;
+    var text = (el.innerText || "").replace(/\s+/g, " ").trim().toLowerCase();
+    for (var i = 0; i < routes.length; i++) {
+      if (text.indexOf(routes[i][0]) !== -1) {
+        event.preventDefault();
+        window.top.location.assign(routes[i][1]);
+        return;
+      }
+    }
+  });
+})();
+</script>
+
+</body></html>
