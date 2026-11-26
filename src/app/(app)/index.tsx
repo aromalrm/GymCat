@@ -1,16 +1,15 @@
 import { Calendar, type DateData } from "react-native-calendars";
-import { useCallback, useEffect, useState } from "react";
-import { router } from "expo-router";
+import { useCallback, useState } from "react";
+import { router, useFocusEffect } from "expo-router";
 import { Pressable, StyleSheet, Text, View } from "react-native";
 
 import { workoutDatesInMonth } from "@/lib/workout-logs";
-import { supabase } from "@/lib/supabase";
 import { useAuth } from "@/providers/auth-provider";
 
 const GOLD = "#F2C14E";
 
 export default function HomeScreen() {
-  const { email, profile, signOut } = useAuth();
+  const { email, profile, mode, signOut } = useAuth();
   const [today] = useState(() => new Date().toISOString().slice(0, 10));
   const [marks, setMarks] = useState<Record<string, { marked: true; dotColor: string }>>(
     {},
@@ -18,19 +17,21 @@ export default function HomeScreen() {
   const [error, setError] = useState<string | null>(null);
 
   const loadMonth = useCallback(async (year: number, month: number) => {
-    const { dates, error: loadError } = await workoutDatesInMonth(year, month);
+    const { dates, error: loadError } = await workoutDatesInMonth(year, month, email);
     setError(loadError);
     const next: Record<string, { marked: true; dotColor: string }> = {};
     for (const date of dates) {
       next[date] = { marked: true, dotColor: GOLD };
     }
     setMarks(next);
-  }, []);
+  }, [email]);
 
-  useEffect(() => {
-    const [year, month] = today.split("-").map(Number);
-    if (year && month) void loadMonth(year, month);
-  }, [loadMonth, today]);
+  useFocusEffect(
+    useCallback(() => {
+      const [year, month] = today.split("-").map(Number);
+      if (year && month) void loadMonth(year, month);
+    }, [loadMonth, today]),
+  );
 
   return (
     <View style={styles.screen}>
@@ -41,19 +42,27 @@ export default function HomeScreen() {
             <Text style={styles.meta}>{profile.calorieTarget} kcal</Text>
           ) : null}
         </View>
-        <Pressable
-          accessibilityRole="button"
-          onPress={() => {
-            void signOut();
-          }}
-        >
-          <Text style={styles.logout}>Log out</Text>
-        </Pressable>
+        <View style={styles.actions}>
+          <Pressable
+            accessibilityRole="button"
+            onPress={() => {
+              router.push("/nutrition");
+            }}
+          >
+            <Text style={styles.logout}>Nutrition</Text>
+          </Pressable>
+          <Pressable
+            accessibilityRole="button"
+            onPress={() => {
+              void signOut();
+            }}
+          >
+            <Text style={styles.logout}>Log out</Text>
+          </Pressable>
+        </View>
       </View>
-      {!supabase ? (
-        <Text style={styles.note}>
-          Workout dots need Supabase. This device has no logs yet.
-        </Text>
+      {mode === "local" ? (
+        <Text style={styles.note}>Workout and meal logs stay on this device.</Text>
       ) : null}
       {error ? <Text style={styles.error}>{error}</Text> : null}
       <Calendar
@@ -107,6 +116,10 @@ const styles = StyleSheet.create({
   },
   meta: {
     color: "#E7D7B8",
+  },
+  actions: {
+    flexDirection: "row",
+    gap: 16,
   },
   logout: {
     color: "#F2C14E",

@@ -1,5 +1,5 @@
-import { router, useLocalSearchParams } from "expo-router";
-import { useEffect, useState } from "react";
+import { router, useFocusEffect, useLocalSearchParams } from "expo-router";
+import { useCallback, useEffect, useState } from "react";
 import {
   ActivityIndicator,
   Pressable,
@@ -10,11 +10,12 @@ import {
 } from "react-native";
 
 import { labelPart, listBodyParts, type BodyPart } from "@/lib/catalog";
-import { supabase } from "@/lib/supabase";
 import { isIsoDate, logsForDate, type DayLog } from "@/lib/workout-logs";
+import { useAuth } from "@/providers/auth-provider";
 
 export default function DayScreen() {
   const { date } = useLocalSearchParams<{ date: string }>();
+  const { email } = useAuth();
   const valid = typeof date === "string" && isIsoDate(date);
   const [logs, setLogs] = useState<DayLog[]>([]);
   const [error, setError] = useState<string | null>(null);
@@ -22,10 +23,10 @@ export default function DayScreen() {
   const [parts, setParts] = useState<BodyPart[]>([]);
   const [partsError, setPartsError] = useState<string | null>(null);
 
-  useEffect(() => {
-    if (!valid || !date) return;
+  const loadLogs = useCallback(() => {
+    if (!valid || typeof date !== "string") return;
     let cancelled = false;
-    void logsForDate(date).then((result) => {
+    void logsForDate(date, email).then((result) => {
       if (cancelled) return;
       setLogs(result.logs);
       setError(result.error);
@@ -34,7 +35,9 @@ export default function DayScreen() {
     return () => {
       cancelled = true;
     };
-  }, [date, valid]);
+  }, [date, email, valid]);
+
+  useFocusEffect(loadLogs);
 
   useEffect(() => {
     let cancelled = false;
@@ -62,11 +65,7 @@ export default function DayScreen() {
       {loading ? <ActivityIndicator color="#F2C14E" /> : null}
       {error ? <Text style={styles.error}>{error}</Text> : null}
       {!loading && !error && logs.length === 0 ? (
-        <Text style={styles.empty}>
-          {supabase
-            ? "Nothing logged this day."
-            : "Nothing logged this day. Logs are stored in Supabase once it is configured."}
-        </Text>
+        <Text style={styles.empty}>Nothing logged this day.</Text>
       ) : null}
       {logs.map((log) => (
         <View key={log.id} style={styles.row}>
