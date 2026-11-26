@@ -46,6 +46,14 @@ export default function HomeScreen() {
           <Pressable
             accessibilityRole="button"
             onPress={() => {
+              router.push("/profile");
+            }}
+          >
+            <Text style={styles.logout}>Profile</Text>
+          </Pressable>
+          <Pressable
+            accessibilityRole="button"
+            onPress={() => {
               router.push("/nutrition");
             }}
           >
