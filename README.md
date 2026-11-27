@@ -1,21 +1,12 @@
 # GymCat
 
-Web UI uses the Stitch layout under the GymCat name. Screens are the exported HTML, including the static figure treatment. There is no auth flow and no real-time 3D engine.
+Web UI matches the GymCat Figma frames: Today, Workout, and Progress. Expo web exports a static site (`web.output` is `static`) and `vercel.json` rewrites client routes to `index.html`.
 
 ## Routes
 
-- `/` redirects to `/onboarding`
-- `/onboarding` biometric calibration
-- `/calendar` mesocycle calendar
-- `/week` weekly split
-- `/anatomy` muscle target map
-- `/muscle-map` anatomy explorer
-- `/library` exercise catalog
-- `/guides` form guides
-- `/execute` workout execution
-- `/exercise` exercise detail
-- `/nutrition` fuel matrix
-- `/profile` biometric settings
+- `/` today
+- `/workout` workout session
+- `/progress` training record
 
 ## Run
 
