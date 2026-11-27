@@ -34,6 +34,14 @@ export function Shell({ children }: { children: ReactNode }) {
           </View>
         </View>
         <View>
+          <View style={styles.keep}>
+            <Text style={styles.keepK}>KEEP SHOWING UP</Text>
+            <Text style={styles.keepV}>2 of 3 workouts</Text>
+            <View style={styles.track}>
+              <View style={styles.bar} />
+            </View>
+            <Text style={styles.keepN}>One more. You’ve got this.</Text>
+          </View>
           <Text style={styles.club}>GYMCAT / STRENGTH CLUB</Text>
           <Text style={styles.clubLine}>A little stronger, every day.</Text>
         </View>
@@ -62,6 +70,12 @@ const styles = StyleSheet.create({
   navIconActive: { color: colors.orange },
   navLabel: { fontFamily: font, fontSize: 15, color: colors.ink, fontWeight: "500" },
   navLabelActive: { fontWeight: "600" },
+  keep: { backgroundColor: colors.card, borderRadius: 16, padding: 14, marginBottom: 18 },
+  keepK: { fontFamily: font, fontSize: 10, letterSpacing: 0.8, color: colors.faint, fontWeight: "700" },
+  keepV: { marginTop: 8, fontFamily: font, fontSize: 15, fontWeight: "700", color: colors.ink },
+  track: { marginTop: 8, height: 5, backgroundColor: colors.track, borderRadius: 99, overflow: "hidden" },
+  bar: { width: "66%", height: 5, backgroundColor: colors.red },
+  keepN: { marginTop: 8, fontFamily: font, fontSize: 12, color: colors.muted },
   club: { fontFamily: font, fontSize: 11, letterSpacing: 0.8, color: colors.ink, fontWeight: "700" },
   clubLine: { marginTop: 4, fontFamily: font, fontSize: 13, color: colors.muted },
   main: { flex: 1, backgroundColor: colors.page },

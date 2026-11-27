@@ -4,7 +4,12 @@ import { Shell } from "../components/shell";
 import { colors, font } from "../theme";
 
 const ranges = ["Week", "Month", "Year"] as const;
-const bars = [42, 68, 54, 80, 100, 72, 88];
+const bars = [
+  { label: "May 26", h: 72 },
+  { label: "Jun 2", h: 96 },
+  { label: "Jun 9", h: 78 },
+  { label: "Jun 16", h: 140 },
+];
 
 export default function Progress() {
   const [range, setRange] = useState<(typeof ranges)[number]>("Week");
@@ -12,7 +17,7 @@ export default function Progress() {
     <Shell>
       <ScrollView contentContainerStyle={styles.page}>
         <View style={styles.top}>
-          <Text style={styles.overview}>Training record</Text>
+          <Text style={styles.overview}>Training insights</Text>
           <View style={styles.tabs}>
             {ranges.map((item) => (
               <Pressable key={item} onPress={() => setRange(item)} style={[styles.tab, range === item && styles.tabOn]}>
@@ -21,49 +26,69 @@ export default function Progress() {
             ))}
           </View>
         </View>
+        <Text style={styles.eyebrow}>TRAINING INSIGHTS</Text>
         <Text style={styles.h1}>Your progress</Text>
-        <Text style={styles.lede}>Small wins. Stronger every week.</Text>
+        <Text style={styles.lede}>Small steps. Stronger every week.</Text>
+
+        <View style={styles.stats}>
+          <Stat k="WORKOUTS" v="8" />
+          <Stat k="TRAINING TIME" v="6h 24m" />
+          <Stat k="NEW PRS" v="3" />
+        </View>
 
         <View style={styles.row}>
           <View style={styles.volume}>
-            <Text style={styles.volK}>VOLUME THIS WEEK</Text>
-            <Text style={styles.volN}>24,050<Text style={styles.kg}> kg</Text></Text>
+            <View style={styles.volHead}>
+              <View>
+                <Text style={styles.volK}>TOTAL VOLUME</Text>
+                <Text style={styles.volN}>24,850<Text style={styles.kg}> kg</Text></Text>
+              </View>
+              <View style={styles.delta}><Text style={styles.deltaText}>↑ 12.8%   vs. last month</Text></View>
+            </View>
             <View style={styles.chart}>
-              {bars.map((h, i) => (
-                <View key={i} style={styles.col}>
-                  <View style={[styles.bar, { height: h }, i === 4 && styles.barOn]} />
+              {bars.map((bar) => (
+                <View key={bar.label} style={styles.col}>
+                  <View style={[styles.bar, { height: bar.h }, bar.label === "Jun 16" && styles.barOn]} />
+                  <Text style={styles.barLabel}>{bar.label}</Text>
                 </View>
               ))}
             </View>
           </View>
-          <View style={styles.side}>
-            <View style={styles.card}>
-              <Text style={styles.k}>TIME TRAINED</Text>
-              <Text style={styles.big}>6h 24m</Text>
+          <View style={styles.prs}>
+            <View style={styles.prHead}>
+              <Text style={styles.prTitle}>Personal records</Text>
+              <Text style={styles.viewAll}>VIEW ALL</Text>
             </View>
-            <View style={styles.card}>
-              <Text style={styles.k}>SESSIONS</Text>
-              <Text style={styles.big}>3</Text>
-            </View>
+            <Record name="Barbell bench press" date="Jun 12" value="65 kg" />
+            <Record name="Barbell squat" date="Jun 9" value="90 kg" />
           </View>
         </View>
 
-        <Text style={styles.section}>Personal records</Text>
-        <View style={styles.prs}>
-          <View style={styles.pr}>
-            <Text style={styles.prName}>Barbell bench press</Text>
-            <Text style={styles.prVal}>65 kg</Text>
-          </View>
-          <View style={styles.pr}>
-            <Text style={styles.prName}>Best set</Text>
-            <Text style={styles.prVal}>80 kg</Text>
-          </View>
-        </View>
-        <View style={styles.footer}>
-          <Text style={styles.footerT}>The work is adding up.</Text>
-        </View>
+        <Text style={styles.closing}>The work is adding up.</Text>
+        <Text style={styles.closingSub}>Keep showing up. Every rep is an investment in your stronger self.</Text>
       </ScrollView>
     </Shell>
+  );
+}
+
+function Stat({ k, v }: { k: string; v: string }) {
+  return (
+    <View style={styles.stat}>
+      <Text style={styles.k}>{k}</Text>
+      <Text style={styles.big}>{v}</Text>
+    </View>
+  );
+}
+
+function Record({ name, date, value }: { name: string; date: string; value: string }) {
+  return (
+    <View style={styles.pr}>
+      <View>
+        <Text style={styles.prName}>{name}</Text>
+        <Text style={styles.prDate}>{date}</Text>
+      </View>
+      <Text style={styles.prVal}>{value}</Text>
+    </View>
   );
 }
 
@@ -76,26 +101,34 @@ const styles = StyleSheet.create({
   tabOn: { backgroundColor: "#fff" },
   tabText: { fontFamily: font, color: colors.muted, fontSize: 13, fontWeight: "500" },
   tabTextOn: { color: colors.ink, fontWeight: "600" },
-  h1: { marginTop: 28, fontFamily: font, fontSize: 40, fontWeight: "700", letterSpacing: -1, color: colors.ink },
+  eyebrow: { marginTop: 28, fontFamily: font, fontSize: 11, letterSpacing: 1.2, color: colors.faint, fontWeight: "700" },
+  h1: { marginTop: 8, fontFamily: font, fontSize: 40, fontWeight: "700", letterSpacing: -1, color: colors.ink },
   lede: { marginTop: 8, fontFamily: font, fontSize: 16, color: colors.muted },
-  row: { marginTop: 22, flexDirection: "row", gap: 16 },
-  volume: { flex: 1.6, backgroundColor: colors.dark, borderRadius: 22, padding: 22, minHeight: 280 },
-  volK: { fontFamily: font, color: colors.lime, fontSize: 11, letterSpacing: 1.1, fontWeight: "700" },
-  volN: { marginTop: 12, fontFamily: font, color: "#fff", fontSize: 42, fontWeight: "700", letterSpacing: -1 },
-  kg: { fontSize: 18, fontWeight: "500", color: "#C9CDC4" },
-  chart: { marginTop: 28, flexDirection: "row", alignItems: "flex-end", gap: 12, height: 120 },
-  col: { flex: 1, justifyContent: "flex-end" },
-  bar: { backgroundColor: "#3C4336", borderRadius: 8 },
-  barOn: { backgroundColor: colors.lime },
-  side: { flex: 0.8, gap: 16 },
-  card: { flex: 1, backgroundColor: "#fff", borderRadius: 18, padding: 18, justifyContent: "space-between" },
+  stats: { marginTop: 20, flexDirection: "row", gap: 14 },
+  stat: { flex: 1, backgroundColor: "#fff", borderRadius: 18, padding: 18 },
   k: { fontFamily: font, fontSize: 11, letterSpacing: 0.8, color: colors.faint, fontWeight: "700" },
-  big: { fontFamily: font, fontSize: 32, fontWeight: "700", color: colors.ink, letterSpacing: -0.6 },
-  section: { marginTop: 26, fontFamily: font, fontSize: 18, fontWeight: "600", color: colors.ink },
-  prs: { marginTop: 12, flexDirection: "row", gap: 14 },
-  pr: { flex: 1, backgroundColor: "#fff", borderRadius: 18, padding: 18, flexDirection: "row", justifyContent: "space-between", alignItems: "center" },
-  prName: { fontFamily: font, fontSize: 15, fontWeight: "600", color: colors.ink },
-  prVal: { fontFamily: font, fontSize: 20, fontWeight: "700", color: colors.ink },
-  footer: { marginTop: 16, backgroundColor: "#F1F0EA", borderRadius: 16, padding: 16 },
-  footerT: { fontFamily: font, fontWeight: "600", color: colors.ink },
+  big: { marginTop: 8, fontFamily: font, fontSize: 32, fontWeight: "700", color: colors.ink, letterSpacing: -0.6 },
+  row: { marginTop: 16, flexDirection: "row", gap: 16, alignItems: "stretch" },
+  volume: { flex: 1.7, backgroundColor: colors.dark, borderRadius: 22, padding: 22 },
+  volHead: { flexDirection: "row", justifyContent: "space-between", alignItems: "flex-start" },
+  volK: { fontFamily: font, color: "#C9CDC4", fontSize: 11, letterSpacing: 1.1, fontWeight: "700" },
+  volN: { marginTop: 8, fontFamily: font, color: "#fff", fontSize: 40, fontWeight: "700", letterSpacing: -1 },
+  kg: { fontSize: 18, fontWeight: "500", color: "#C9CDC4" },
+  delta: { backgroundColor: "#2C3328", borderRadius: 999, paddingHorizontal: 10, paddingVertical: 6 },
+  deltaText: { fontFamily: font, color: colors.lime, fontSize: 12, fontWeight: "600" },
+  chart: { marginTop: 28, flexDirection: "row", alignItems: "flex-end", gap: 18, height: 170 },
+  col: { flex: 1, alignItems: "center", justifyContent: "flex-end" },
+  bar: { width: "70%", backgroundColor: "#3C4336", borderRadius: 10 },
+  barOn: { backgroundColor: colors.lime },
+  barLabel: { marginTop: 8, fontFamily: font, color: "#A7ACA3", fontSize: 12 },
+  prs: { flex: 0.9, backgroundColor: "#fff", borderRadius: 20, padding: 18, gap: 12 },
+  prHead: { flexDirection: "row", justifyContent: "space-between", alignItems: "center" },
+  prTitle: { fontFamily: font, fontSize: 16, fontWeight: "600", color: colors.ink },
+  viewAll: { fontFamily: font, fontSize: 11, letterSpacing: 0.8, color: colors.faint, fontWeight: "700" },
+  pr: { backgroundColor: "#F7F6F2", borderRadius: 14, padding: 14, flexDirection: "row", justifyContent: "space-between", alignItems: "center" },
+  prName: { fontFamily: font, fontSize: 14, fontWeight: "600", color: colors.ink },
+  prDate: { marginTop: 4, fontFamily: font, fontSize: 12, color: colors.muted },
+  prVal: { fontFamily: font, fontSize: 18, fontWeight: "700", color: colors.ink },
+  closing: { marginTop: 22, fontFamily: font, fontSize: 20, fontWeight: "700", color: colors.ink },
+  closingSub: { marginTop: 6, fontFamily: font, color: colors.muted, fontSize: 14 },
 });
